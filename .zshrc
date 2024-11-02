@@ -175,23 +175,23 @@ function clone() {
 
 # Clone to ~/i and cd to it
 function clonei() {
-  i && clone "$@" && code . && cd ~2
+  i && clone "$@" && cursor . && cd ~2
 }
 
 function cloner() {
-  repros && clone "$@" && code . && cd ~2
+  repros && clone "$@" && cursor . && cd ~2
 }
 
 function clonef() {
-  forks && clone "$@" && code . && cd ~2
+  forks && clone "$@" && cursor . && cd ~2
 }
 
 function clonew () {
-  works && clone "$@" && code . && cd ~2
+  works && clone "$@" && cursor . && cd ~2
 }
 
-function codei() {
-  i && code "$@" && cd -
+function cursori() {
+  i && cursor "$@" && cd -
 }
 
 function serve() {

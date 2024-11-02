@@ -2,7 +2,7 @@
 
 [core]
 	excludesfile = ~/.gitignore
-	editor = code --wait
+	editor = cursor --wait
 	ignorecase = false
 
 [push]
@@ -21,10 +21,7 @@
 	email = a25690756@gmail.com
 
 [github]
-	user = cofcat456
-
-[diff]
-	tool = default-difftool
+	user = IlyaL
 
 [difftool "default-difftool"]
 	cmd = code --wait --diff $LOCAL $REMOTE
