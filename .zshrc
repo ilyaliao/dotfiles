@@ -81,6 +81,7 @@ alias gbd='git branch -d'
 alias grb='git rebase'
 alias grbom='git rebase origin/main'
 alias grbc='git rebase --continue'
+alias grbu='git reset --hard ORIG_HEAD'
 
 alias gl='git log'
 alias glo='git log --oneline --graph'
