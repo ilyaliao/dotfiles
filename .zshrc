@@ -81,6 +81,7 @@ alias gbd='git branch -d'
 alias grb='git rebase'
 alias grbom='git rebase origin/main'
 alias grbc='git rebase --continue'
+alias grbu='git reset --hard ORIG_HEAD'
 
 alias gl='git log'
 alias glo='git log --oneline --graph'
@@ -226,5 +227,22 @@ function checkCircle() {
   fi
 }
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-SPACESHIP_PROMPT_ASYNC=FALSE
+# place this after nvm initialization!
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
