@@ -60,5 +60,9 @@
     "key": "ctrl+cmd+i",
     "command": "-workbench.action.chat.open",
     "when": "chatPanelParticipantRegistered"
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "workbench.action.restartExtensionHost"
   }
 ]
