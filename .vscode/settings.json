@@ -38,6 +38,7 @@
   "editor.hover.sticky": true,
   "editor.smoothScrolling": true,
   "editor.accessibilitySupport": "off",
+  "editor.minimap.enabled": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.eol": "\n",
