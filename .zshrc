@@ -100,6 +100,7 @@ alias gcm='git commit -m'
 alias gca='git commit -a'
 alias gonemore='git commit -a --amend --no-edit'
 alias gcam='git add -A && git commit -m'
+alias gfp='git fetch --all --prune'
 alias gfrb='git fetch origin && git rebase origin/master'
 
 alias gxn='git clean -dn'
