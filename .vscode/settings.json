@@ -40,6 +40,7 @@
   "editor.smoothScrolling": true,
   "editor.accessibilitySupport": "off",
   "editor.minimap.enabled": false,
+  "editor.gotoLocation.multipleDefinitions": "goto",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.eol": "\n",
