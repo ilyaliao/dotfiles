@@ -14,6 +14,7 @@ plugins=(
 )
 
 export NVM_AUTO_USE=true
+export LAUNCH_EDITOR="cursor"
 
 # https://ohmyz.sh/
 source $ZSH/oh-my-zsh.sh
