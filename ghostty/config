@@ -1,13 +1,7 @@
-macos-titlebar-style = hidden
-
-# Window
 window-save-state = always
-window-padding-x = 10
 window-padding-balance = true
-window-colorspace = display-p3
-
-# Theme
 background-opacity = 0.9
+font-thicken = true
 background-blur-radius = 20
 theme = GitHub Dark
 background = #101216
@@ -31,10 +25,10 @@ palette = 12=#6ca4f8
 palette = 13=#db61a2
 palette = 14=#2b7489
 palette = 15=#ffffff
-
-# Font
 font-size = 14
-font-family = ComicShannsMono Nerd Font Mono
-font-thicken = true
-
+font-family = Berkeley Mono
 adjust-cell-height = 3
+
+clipboard-read = allow
+clipboard-write = allow
+copy-on-select = clipboard

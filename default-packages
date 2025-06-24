@@ -6,4 +6,6 @@ live-server
 madge
 rimraf
 typescript
-tree
+taze
+pnpm-patch-i
+esno

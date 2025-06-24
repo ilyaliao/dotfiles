@@ -24,6 +24,7 @@ source $ZSH/oh-my-zsh.sh
 # -------------------------------- #
 
 alias homeupdate="brew update && brew upgrade && brew cleanup"
+alias homeuninstall="brew uninstall --cask --force --zap"
 
 # -------------------------------- #
 # Node Package Manager
@@ -41,6 +42,7 @@ alias tw="nr test --watch"
 alias w="nr watch"
 alias p="nr play"
 alias c="nr typecheck"
+alias up="nr up"
 alias lint="nr lint"
 alias lintf="nr lint --fix"
 alias release="nr release"
@@ -208,6 +210,10 @@ function serve() {
   fi
 }
 
+# -------------------------------- #
+# Custom
+# -------------------------------- #
+
 function browser() {
   if [[ -z $1 ]] then
     npx broz localhost:4000
@@ -231,3 +237,5 @@ function checkCircle() {
     madge --circular --extensions ts,js $1
   fi
 }
+
+alias bt='npx @agentdeskai/browser-tools-server@1.2.0'

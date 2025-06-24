@@ -5,11 +5,6 @@
     "when": "terminal.active"
   },
   {
-    "key": "cmd+n",
-    "command": "workbench.action.terminal.new",
-    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
-  },
-  {
     "key": "cmd+]",
     "command": "workbench.action.showNextWindowTab"
   },
@@ -22,8 +17,8 @@
     "command": "workbench.action.openRecent"
   },
   {
-    "command": "explorer.newFile",
     "key": "a",
+    "command": "explorer.newFile",
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
@@ -32,37 +27,35 @@
 		"when": "filesExplorerFocus && !inputFocus"
 	},
   {
-    "command": "renameFile",
     "key": "r",
+    "command": "renameFile",
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
-    "command": "filesExplorer.copy",
     "key": "y",
+    "command": "filesExplorer.copy",
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
-    "command": "filesExplorer.paste",
     "key": "p",
+    "command": "filesExplorer.paste",
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
-    "command": "deleteFile",
     "key": "d",
+    "command": "deleteFile",
     "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "key": "cmd+l",
-    "command": "workbench.action.chat.open",
-    "when": "chatPanelParticipantRegistered"
-  },
-  {
-    "key": "ctrl+cmd+i",
-    "command": "-workbench.action.chat.open",
-    "when": "chatPanelParticipantRegistered"
   },
   {
     "key": "shift+cmd+r",
     "command": "workbench.action.restartExtensionHost"
+  },
+  {
+    "key": "cmd+n",
+    "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "cmd+n",
+    "command": "composer.createNew"
   }
 ]
