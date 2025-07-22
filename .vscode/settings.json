@@ -1,20 +1,22 @@
 {
   // ========== Visuals ==========
   "editor.cursorSmoothCaretAnimation": "on",
-  "editor.fontFamily": "Liga SFMono Nerd Font, monospace",
-  "editor.fontSize": 14,
+  "editor.fontFamily": "Input Mono, Symbols Nerd Font, monospace",
   "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "editor.fontWeight": 400,
   "editor.guides.bracketPairs": "active",
   "editor.lineNumbers": "interval",
   "editor.renderWhitespace": "boundary",
   "editor.renderLineHighlight": "none",
+  "editor.bracketPairColorization.enabled": false,
   "window.autoDetectColorScheme": true,
   "workbench.colorTheme": "Vitesse Dark",
   "workbench.editor.tabActionLocation": "left",
   "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.list.smoothScrolling": true,
-  "workbench.preferredDarkColorTheme": "Vitesse Dark",
+  "workbench.preferredDarkColorTheme": "Vitesse Black",
   "workbench.preferredLightColorTheme": "Vitesse Light",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.sideBar.location": "right",
@@ -29,6 +31,8 @@
   "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
   "editor.find.addExtraSpaceOnTop": false,
   "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.showToolbar": "always",
+  "editor.inlayHints.enabled": "off",
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
@@ -37,7 +41,6 @@
   "editor.hover.sticky": true,
   "editor.accessibilitySupport": "off",
   "editor.minimap.enabled": false,
-  "editor.gotoLocation.multipleDefinitions": "goto",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.eol": "\n",
@@ -48,6 +51,9 @@
   "git.enableSmartCommit": true,
   "git.untrackedChanges": "separate",
   "scm.diffDecorationsGutterWidth": 2,
+  "terminal.integrated.fontFamily": "Input Mono, Symbols Nerd Font, monospace",
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontWeight": 300,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.persistentSessionReviveProcess": "never",
@@ -57,6 +63,7 @@
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.value": 5,
+  "search.useParentIgnoreFiles": true,
   "search.exclude": {
     "**/*.snap": true,
     "**/*.svg": true,
@@ -83,10 +90,10 @@
   },
 
   // ==========  Global Level Config, needs to put in User Settings ==========
-  "window.dialogStyle": "custom",
   "window.nativeTabs": true, // this is great, macOS only
   "window.title": "${rootName}", // this make tabs more readable
   "window.titleBarStyle": "custom",
+  "window.dialogStyle": "custom",
   "extensions.autoUpdate": "onlyEnabledExtensions",
 
   // ========== TypeScript configs ==========
@@ -94,6 +101,8 @@
   "typescript.tsserver.watchOptions": {
     "watchFile": "dynamicPriorityPolling"
   },
+  "typescript.experimental.expandableHover": true,
+  "typescript.experimental.useTsgo": false,
 
   // ========== Extension configs ==========
   "emmet.showSuggestionsAsSnippets": true,
@@ -109,9 +118,9 @@
   ],
   "arrayIndexInlay.minLength": 5,
   "coderabbit.autoReviewMode": "disabled",
+  "svg.pathDataHighlight": false,
   "svg.preview.mode": "svg",
-  "interline-translate.defaultTargetLanguage": "zh-TW",
-  "vite.autoStart": false,
+  "color-highlight.markRuler": false,
 
   // ========== i18n-ally ==========
   "i18n-ally.autoDetection": false,
@@ -127,7 +136,7 @@
   "vue.inlayHints.vBindShorthand": true,
   "vue.inlayHints.missingProps": true,
   "vue.autoInsert.bracketSpacing": true,
-  "vue.complete.defineAssignment": true,
+  "vue.inlayHints.inlineHandlerLeading": true,
 
   // ========== Vim ==========
   "vim.easymotion": false,
@@ -264,6 +273,10 @@
     "<C-z>": false,
     "<C-y>": false
   },
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
+  "vim.autoSwitchInputMethod.obtainIMCmd": "/opt/homebrew/bin/im-select",
+  "vim.autoSwitchInputMethod.switchIMCmd": "/opt/homebrew/bin/im-select com.apple.keylayout.ABC {im}",
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1,
   },
@@ -276,7 +289,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "never",
     "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
+    "source.organizeImports": "never",
   },
   // ESLint config: https://github.com/antfu/eslint-config
   "eslint.codeAction.showDocumentation": {
@@ -345,11 +358,14 @@
   "prettier.printWidth": 200,
   "prettier.semi": false,
   "prettier.singleQuote": true,
-
+  "unocss.autocomplete.matchType": "fuzzy",
+  "unocss.remToPxPreview": true,
   "cSpell.allowCompoundWords": true,
   "cSpell.language": "en,en-US",
   "css.lint.hexColorLength": "ignore",
+  "githubIssues.issueBranchTitle": "pr/${user}/issue${issueNumberLabel}",
   "githubIssues.workingIssueFormatScm": "#${issueNumberLabel}",
+  "githubPullRequests.showPullRequestNumberInTree": true,
   "githubPullRequests.fileListLayout": "tree",
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.enabled": false,
@@ -410,12 +426,16 @@
   "cursor.composer.shouldShowMarkdownHoverParticipantActions2": true,
   "cursor.preferNotificationsSameAsChat": true,
   "cursor.composer.textSizeScale": 0.85,
-  "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "cursor.cpp.enablePartialAccepts": true,
+  "cursor.composer.subAgentsMode": "aggressive",
+  "cursor.composer.blockModeStreaming": true,
+  "cursor.composer.cmdPFilePicker2": true,
+  "cursor.semanticSearch.includeCommitsWithFiles": true,
 
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 2025/6/23 上午12:33:27",
+    "//": "Last update at 2025/7/20 下午8:41:57",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
     ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .lfsconfig, .mailmap, .git-blame*",

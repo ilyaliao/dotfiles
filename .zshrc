@@ -14,7 +14,7 @@ plugins=(
 )
 
 export NVM_AUTO_USE=true
-export LAUNCH_EDITOR="cursor"
+export LAUNCH_EDITOR="cursor-nightly"
 
 # https://ohmyz.sh/
 source $ZSH/oh-my-zsh.sh
@@ -76,7 +76,7 @@ alias gst='git stash'
 alias grm='git rm'
 alias gmv='git mv'
 
-alias main='git checkout main'
+alias main='git checkout --force main'
 
 alias gco='git checkout'
 alias gcob='git checkout -b'
@@ -104,7 +104,6 @@ alias gA='git add -A'
 alias gc='git commit'
 alias gcm='git commit -m'
 alias gca='git commit -a'
-alias gonemore='git commit -a --amend --no-edit'
 alias gcam='git add -A && git commit -m'
 alias gfp='git fetch --all --prune'
 alias gfrb='git fetch origin && git rebase origin/master'
@@ -181,25 +180,95 @@ function clone() {
   fi
 }
 
+function cleanpr() {
+  if ! git rev-parse --git-dir >/dev/null 2>&1; then
+    echo "Error: Not in a git repository."
+    return 1
+  fi
+
+  local current_branch
+  current_branch=$(git symbolic-ref --short HEAD 2>/dev/null || echo "__DETACHED__")
+
+  local remotes_to_remove=()
+  while IFS= read -r remote; do
+    if [[ "$remote" != "origin" && "$remote" != "upstream" ]]; then
+      remotes_to_remove+=("$remote")
+    fi
+  done < <(git remote)
+
+  local removed_branches=0
+  local removed_remotes=0
+
+  for remote in "${remotes_to_remove[@]}"; do
+    while IFS=' ' read -r branch upstream; do
+      if [[ "$upstream" == "$remote/"* && "$branch" != "$current_branch" ]]; then
+        if git branch -D "$branch" >/dev/null 2>&1; then
+          ((removed_branches++))
+          # local  remote  branch
+          echo "local  $remote  $branch"
+        fi
+      fi
+    done < <(git for-each-ref --format='%(refname:short) %(upstream:short)' refs/heads 2>/dev/null | grep " $remote/")
+    if git remote remove "$remote" >/dev/null 2>&1; then
+      ((removed_remotes++))
+    fi
+  done
+
+  git fetch --all --prune --quiet >/dev/null 2>&1
+
+  local pr_branches_removed=0
+  while IFS=' ' read -r branch upstream; do
+    if [[ "$branch" != "$current_branch" && "$upstream" == "origin/pr/"* ]]; then
+      if git branch -D "$branch" >/dev/null 2>&1; then
+        ((pr_branches_removed++))
+        # local  author  name
+        # branch like pr/ArthurDarkstone/4841
+        local pr_author pr_name
+        pr_author=$(echo "$upstream" | cut -d'/' -f3)
+        pr_name=$(echo "$upstream" | cut -d'/' -f4-)
+        echo "local  $pr_author  $pr_name"
+      fi
+    fi
+  done < <(git for-each-ref --format='%(refname:short) %(upstream:short)' refs/heads 2>/dev/null | grep " origin/pr/")
+
+  local pr_refs_removed=0
+  while IFS= read -r r_branch; do
+    local trimmed_branch=$(echo "$r_branch" | xargs)
+    if [[ -n "$trimmed_branch" ]]; then
+      if git branch -rd "$trimmed_branch" >/dev/null 2>&1; then
+        ((pr_refs_removed++))
+        # remote  author  name
+        # trimmed_branch like origin/pr/ArthurDarkstone/4841
+        local pr_author pr_name
+        pr_author=$(echo "$trimmed_branch" | cut -d'/' -f3)
+        pr_name=$(echo "$trimmed_branch" | cut -d'/' -f4-)
+        echo "remote  $pr_author  $pr_name"
+      fi
+    fi
+  done < <(git branch -r 2>/dev/null | grep 'origin/pr/')
+
+  echo "Cleaned: $removed_remotes remotes, $((removed_branches + pr_branches_removed)) local branches, $pr_refs_removed remote refs"
+}
+
 # Clone to ~/i and cd to it
 function clonei() {
-  i && clone "$@" && code . && cd ~2
+  i && clone "$@" && cursor-nightly . && cd ~2
 }
 
 function cloner() {
-  repros && clone "$@" && code . && cd ~2
+  repros && clone "$@" && cursor-nightly . && cd ~2
 }
 
 function clonef() {
-  forks && clone "$@" && code . && cd ~2
+  forks && clone "$@" && cursor-nightly . && cd ~2
 }
 
 function clonew () {
-  works && clone "$@" && code . && cd ~2
+  works && clone "$@" && cursor-nightly . && cd ~2
 }
 
 function codei() {
-  i && code "$@" && cd -
+  i && cursor-nightly "$@" && cd -
 }
 
 function serve() {
@@ -239,3 +308,5 @@ function checkCircle() {
 }
 
 alias bt='npx @agentdeskai/browser-tools-server@1.2.0'
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
