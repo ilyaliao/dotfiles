@@ -14,6 +14,7 @@ plugins=(
 )
 
 export NVM_AUTO_USE=true
+export NVM_LAZY_LOAD=true
 export LAUNCH_EDITOR="cursor-nightly"
 
 # https://ohmyz.sh/

@@ -75,8 +75,6 @@ setup_macos() {
   defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
   defaults write com.vscodium ApplePressAndHoldEnabled -bool false
   defaults write com.microsoft.VSCodeExploration ApplePressAndHoldEnabled -bool false
-  log_info "Reset global ApplePressAndHoldEnabled (if necessary)"
-  defaults delete -g ApplePressAndHoldEnabled
 
   log_info "Set a blazingly fast keyboard repeat rate"
   defaults write NSGlobalDomain KeyRepeat -int 1
