@@ -15,10 +15,19 @@ plugins=(
 
 export NVM_AUTO_USE=true
 export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
 export LAUNCH_EDITOR="cursor-nightly"
 
 # https://ohmyz.sh/
 source $ZSH/oh-my-zsh.sh
+
+# -------------------------------- #
+# IDE
+# -------------------------------- #
+
+alias code="open $1 -a \"Cursor Nightly\""
+alias c="open $1 -a \"Cursor Nightly\""
+alias v="open $1 -a \"Visual Studio Code\""
 
 # -------------------------------- #
 # Homebrew

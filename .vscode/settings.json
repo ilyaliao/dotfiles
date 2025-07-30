@@ -1,9 +1,9 @@
 {
   // ========== Visuals ==========
   "editor.cursorSmoothCaretAnimation": "on",
-  "editor.fontFamily": "Input Mono, Symbols Nerd Font, monospace",
-  "editor.fontLigatures": true,
-  "editor.fontSize": 13,
+  "editor.fontFamily": "BlexMono Nerd Font",
+  "editor.fontLigatures": false,
+  "editor.fontSize": 14,
   "editor.fontWeight": 400,
   "editor.guides.bracketPairs": "active",
   "editor.lineNumbers": "interval",
@@ -16,7 +16,6 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.list.smoothScrolling": true,
-  "workbench.preferredDarkColorTheme": "Vitesse Dark",
   "workbench.preferredLightColorTheme": "Vitesse Light",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.sideBar.location": "right",
@@ -24,6 +23,7 @@
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 10,
   "workbench.layoutControl.enabled": false,
+  "workbench.panel.showLabels": false,
 
   // ========== Editor ==========
   "debug.onTaskErrors": "debugAnyway",
@@ -51,9 +51,9 @@
   "git.enableSmartCommit": true,
   "git.untrackedChanges": "separate",
   "scm.diffDecorationsGutterWidth": 2,
-  "terminal.integrated.fontFamily": "Input Mono, Symbols Nerd Font, monospace",
+  // "terminal.integrated.fontFamily": "Input Mono, Symbols Nerd Font, monospace",
   "terminal.integrated.fontSize": 13,
-  "terminal.integrated.fontWeight": 300,
+  // "terminal.integrated.fontWeight": 300,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.persistentSessionReviveProcess": "never",
@@ -96,7 +96,6 @@
   "window.dialogStyle": "custom",
   "extensions.autoUpdate": "onlyEnabledExtensions",
   "eslint.execArgv": ["--max_old_space_size=16000"],
-  "typescript.tsserver.maxTsServerMemory": 16000,
 
   // ========== TypeScript configs ==========
   "typescript.locale": "zh-TW",
@@ -105,6 +104,7 @@
   },
   "typescript.experimental.expandableHover": true,
   "typescript.experimental.useTsgo": false,
+  "typescript.tsserver.maxTsServerMemory": 16000,
 
   // ========== Extension configs ==========
   "emmet.showSuggestionsAsSnippets": true,
@@ -365,9 +365,9 @@
   "githubIssues.workingIssueFormatScm": "#${issueNumberLabel}",
   "githubPullRequests.showPullRequestNumberInTree": true,
   "githubPullRequests.fileListLayout": "tree",
-  "gitlens.codeLens.authors.enabled": false,
-  "gitlens.codeLens.enabled": false,
-  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.enabled": true,
+  // "gitlens.codeLens.authors.enabled": false,
+  // "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.menus": {
     "editor": {
       "blame": false,
@@ -433,7 +433,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 2025/7/27 下午2:27:10",
+    "//": "Last update at 2025/7/30 下午10:34:26",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
     ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .lfsconfig, .mailmap, .git-blame*",
@@ -530,5 +530,4 @@
     "*.xaml": "$(capture).xaml.cs"
   },
   "update.releaseTrack": "prerelease",
-  "githubPullRequests.pullBranch": "never",
 }
