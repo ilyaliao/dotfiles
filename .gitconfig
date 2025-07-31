@@ -2,7 +2,7 @@
 
 [core]
 	excludesfile = ~/.gitignore
-	editor = code --wait
+	editor = cursor-nightly --wait
 	ignorecase = false
 
 [push]
@@ -27,4 +27,4 @@
 	tool = default-difftool
 
 [difftool "default-difftool"]
-	cmd = code --wait --diff $LOCAL $REMOTE
+	cmd = cursor-nightly --wait --diff $LOCAL $REMOTE
