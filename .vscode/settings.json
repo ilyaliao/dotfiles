@@ -7,7 +7,7 @@
   "editor.fontWeight": 400,
   "editor.guides.bracketPairs": "active",
   "editor.lineNumbers": "interval",
-  "editor.renderWhitespace": "boundary",
+  "editor.renderWhitespace": "none",
   "editor.renderLineHighlight": "none",
   "editor.bracketPairColorization.enabled": false,
   "window.autoDetectColorScheme": true,
@@ -530,4 +530,5 @@
     "*.xaml": "$(capture).xaml.cs"
   },
   "update.releaseTrack": "prerelease",
+  "workbench.preferredDarkColorTheme": "GitHub Light Default",
 }

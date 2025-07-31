@@ -26,8 +26,8 @@ source $ZSH/oh-my-zsh.sh
 # -------------------------------- #
 
 alias code="open $1 -a \"Cursor Nightly\""
-alias c="open $1 -a \"Cursor Nightly\""
-alias v="open $1 -a \"Visual Studio Code\""
+alias cursor="open $1 -a \"Cursor Nightly\""
+alias vscode="open $1 -a \"Visual Studio Code\""
 
 # -------------------------------- #
 # Homebrew
