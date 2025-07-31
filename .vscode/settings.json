@@ -2,9 +2,10 @@
   // ========== Visuals ==========
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.fontFamily": "BlexMono Nerd Font",
-  "editor.fontLigatures": false,
+  "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.fontWeight": 400,
+  "editor.lineHeight": 1.7,
   "editor.guides.bracketPairs": "active",
   "editor.lineNumbers": "interval",
   "editor.renderWhitespace": "none",
@@ -16,6 +17,7 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.list.smoothScrolling": true,
+  "workbench.preferredDarkColorTheme": "GitHub Light Default",
   "workbench.preferredLightColorTheme": "Vitesse Light",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.sideBar.location": "right",
@@ -123,6 +125,7 @@
   "svg.pathDataHighlight": false,
   "svg.preview.mode": "svg",
   "color-highlight.markRuler": false,
+  "commentTranslate.targetLanguage": "zh-TW",
 
   // ========== i18n-ally ==========
   "i18n-ally.autoDetection": false,
@@ -530,5 +533,4 @@
     "*.xaml": "$(capture).xaml.cs"
   },
   "update.releaseTrack": "prerelease",
-  "workbench.preferredDarkColorTheme": "GitHub Light Default",
 }
