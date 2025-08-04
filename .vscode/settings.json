@@ -1,11 +1,10 @@
 {
   // ========== Visuals ==========
   "editor.cursorSmoothCaretAnimation": "on",
-  "editor.fontFamily": "BlexMono Nerd Font",
+  "editor.fontFamily": "OperatorMonoSSmLig Nerd Font",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.fontWeight": 400,
-  "editor.lineHeight": 1.7,
   "editor.guides.bracketPairs": "active",
   "editor.lineNumbers": "interval",
   "editor.renderWhitespace": "none",
@@ -26,10 +25,12 @@
   "workbench.tree.indent": 10,
   "workbench.layoutControl.enabled": false,
   "workbench.panel.showLabels": true,
+  "workbench.editor.enablePreview": false,
 
   // ========== Editor ==========
   "debug.onTaskErrors": "debugAnyway",
   "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.hideUnchangedRegions.enabled": true,
   "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
   "editor.find.addExtraSpaceOnTop": false,
   "editor.inlineSuggest.enabled": true,
@@ -424,17 +425,18 @@
   "cursor.general.gitGraphIndexing": "enabled",
   "cursor.composer.shouldShowMarkdownHoverParticipantActions2": true,
   "cursor.preferNotificationsSameAsChat": true,
-  "cursor.composer.textSizeScale": 0.85,
   "cursor.cpp.enablePartialAccepts": true,
   "cursor.composer.subAgentsMode": "aggressive",
   "cursor.composer.blockModeStreaming": true,
   "cursor.composer.cmdPFilePicker2": true,
   "cursor.semanticSearch.includeCommitsWithFiles": true,
+  "cursor.composer.textSizeScale": 0.85,
+  "cursor.composer.queueMessageDefaultBehavior": "queue",
 
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 2025/7/30 下午10:34:26",
+    "//": "Last update at 2025/8/3 下午11:58:39",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
     ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .lfsconfig, .mailmap, .git-blame*",
