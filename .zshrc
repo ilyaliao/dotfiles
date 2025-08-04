@@ -6,11 +6,13 @@ ZSH_THEME="spaceship"
 
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# git clone https://github.com/lukechilds/zsh-nvm ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-nvm
 plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
-  zsh-nvm  
+  zsh-nvm
+  brew
 )
 
 export NVM_AUTO_USE=true
@@ -28,13 +30,6 @@ source $ZSH/oh-my-zsh.sh
 alias code="open $1 -a \"Cursor Nightly\""
 alias cursor="open $1 -a \"Cursor Nightly\""
 alias vscode="open $1 -a \"Visual Studio Code\""
-
-# -------------------------------- #
-# Homebrew
-# -------------------------------- #
-
-alias homeupdate="brew update && brew upgrade && brew cleanup"
-alias homeuninstall="brew uninstall --cask --force --zap"
 
 # -------------------------------- #
 # Node Package Manager
@@ -318,5 +313,3 @@ function checkCircle() {
 }
 
 alias bt='npx @agentdeskai/browser-tools-server@1.2.0'
-
-[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
