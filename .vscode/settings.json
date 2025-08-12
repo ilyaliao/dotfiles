@@ -1,9 +1,10 @@
 {
   // ========== Visuals ==========
   "editor.cursorSmoothCaretAnimation": "on",
-  "editor.fontFamily": " Berkeley Mono, Symbols Nerd Font Mono",
+  "editor.cursorBlinking": "smooth",
+  "editor.fontFamily": "Liga SFMono Nerd Font, Symbols Nerd Font Mono",
   "editor.fontLigatures": true,
-  "editor.fontSize": 15,
+  "editor.fontSize": 14,
   "editor.fontWeight": 400,
   "editor.guides.bracketPairs": false,
   "editor.guides.indentation": false,
@@ -18,7 +19,7 @@
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.list.smoothScrolling": true,
   "workbench.preferredLightColorTheme": "Vitesse Light",
-  "workbench.preferredDarkColorTheme": "Cursor Dark Midnight",
+  "workbench.preferredDarkColorTheme": "Vitesse Black",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
@@ -433,6 +434,7 @@
   "cursor.composer.textSizeScale": 0.85,
   "cursor.composer.queueMessageDefaultBehavior": "queue",
   "cursor.composer.backspaceRemoveContext": false,
+  "cursor.composer.shouldChimeAfterChatFinishes": true,
 
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
