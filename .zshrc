@@ -287,6 +287,13 @@ function serve() {
 }
 
 # -------------------------------- #
+# Homebrew
+# -------------------------------- #
+
+alias homeupdate="brew update && brew upgrade && brew cleanup"
+alias homeuninstall="brew uninstall --cask --force --zap"
+
+# -------------------------------- #
 # Custom
 # -------------------------------- #
 
