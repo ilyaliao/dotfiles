@@ -53,9 +53,5 @@
   {
     "key": "cmd+n",
     "command": "-workbench.action.files.newUntitledFile"
-  },
-  {
-    "key": "cmd+n",
-    "command": "composer.createNew"
   }
 ]
