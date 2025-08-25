@@ -2,9 +2,9 @@
   // ========== Visuals ==========
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorBlinking": "smooth",
-  "editor.fontFamily": "SF Mono, Symbols Nerd Font Mono",
+  "editor.fontFamily": "Berkeley Mono, Symbols Nerd Font Mono",
   "editor.fontLigatures": true,
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "editor.guides.bracketPairs": false,
   "editor.guides.indentation": false,
   "editor.lineNumbers": "interval",
@@ -453,7 +453,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 2025/8/22 下午11:56:34",
+    "//": "Last update at 2025/8/26 上午12:32:43",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
     ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .lfsconfig, .mailmap, .git-blame*",
