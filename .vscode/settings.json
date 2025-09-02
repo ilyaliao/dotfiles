@@ -2,11 +2,10 @@
   // ========== Visuals ==========
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorBlinking": "smooth",
-  "editor.fontFamily": "Berkeley Mono, Symbols Nerd Font Mono",
+  "editor.fontFamily": "Input Mono, Symbols Nerd Font Mono",
   "editor.fontLigatures": true,
-  "editor.fontSize": 14.5,
-  "editor.guides.bracketPairs": false,
-  "editor.guides.indentation": false,
+  "editor.fontSize": 14,
+  "editor.guides.bracketPairs": "active",
   "editor.lineNumbers": "interval",
   "editor.renderWhitespace": "none",
   "editor.renderLineHighlight": "none",
@@ -20,6 +19,7 @@
   "workbench.preferredLightColorTheme": "Vitesse Light",
   "workbench.preferredDarkColorTheme": "Vitesse Dark",
   "workbench.productIconTheme": "icons-carbon",
+  "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 10,
@@ -54,7 +54,6 @@
   "git.enableSmartCommit": true,
   "git.untrackedChanges": "separate",
   "scm.diffDecorationsGutterWidth": 2,
-  "terminal.integrated.fontFamily": "BerkeleyMono-SemiCondensed, Symbols Nerd Font Mono",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
@@ -387,9 +386,7 @@
   "githubIssues.workingIssueFormatScm": "#${issueNumberLabel}",
   "githubPullRequests.showPullRequestNumberInTree": true,
   "githubPullRequests.fileListLayout": "tree",
-  "gitlens.codeLens.enabled": true,
-  // "gitlens.codeLens.authors.enabled": false,
-  // "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.enabled": false,
   "gitlens.menus": {
     "editor": {
       "blame": false,
@@ -451,11 +448,12 @@
   "cursor.composer.backspaceRemoveContext": false,
   "cursor.composer.usageSummaryDisplay": "always",
   "cursor.composer.shouldAutoAcceptDiffs": false,
+  "cursor.composer.textSizeScale": 0.85,
 
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 2025/8/26 上午12:32:43",
+    "//": "Last update at 2025/9/1 下午10:28:29",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
     ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .lfsconfig, .mailmap, .git-blame*",
@@ -553,6 +551,4 @@
     "*.xaml": "$(capture).xaml.cs"
   },
   "update.releaseTrack": "prerelease",
-  "workbench.sideBar.location": "right",
-  "cursor.composer.textSizeScale": 0.85,
 }
