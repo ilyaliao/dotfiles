@@ -2,9 +2,9 @@
   // ========== Visuals ==========
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorBlinking": "smooth",
-  "editor.fontFamily": "Input Mono, Symbols Nerd Font Mono",
+  "editor.fontFamily": "LiterationMono Nerd Font",
   "editor.fontLigatures": true,
-  "editor.fontSize": 14,
+  "editor.fontSize": 14.5,
   "editor.guides.bracketPairs": "active",
   "editor.lineNumbers": "interval",
   "editor.renderWhitespace": "none",
@@ -96,7 +96,6 @@
   "window.titleBarStyle": "custom",
   "window.dialogStyle": "custom",
   "extensions.autoUpdate": "onlyEnabledExtensions",
-  "eslint.execArgv": ["--max_old_space_size=16000"],
 
   // ========== TypeScript configs ==========
   "typescript.locale": "zh-TW",
@@ -105,7 +104,6 @@
   },
   "typescript.experimental.expandableHover": true,
   "typescript.experimental.useTsgo": false,
-  "typescript.tsserver.maxTsServerMemory": 16000,
 
   // ========== Extension configs ==========
   "emmet.showSuggestionsAsSnippets": true,
@@ -120,7 +118,6 @@
     "eslint"
   ],
   "arrayIndexInlay.minLength": 5,
-  "coderabbit.autoReviewMode": "disabled",
   "svg.pathDataHighlight": false,
   "svg.preview.mode": "svg",
   "color-highlight.markRuler": false,
@@ -237,6 +234,14 @@
       "commands": [
         "references-view.findReferences"
       ]
+    }, {
+      "before": [
+        "g",
+        "t"
+      ],
+      "commands": [
+        "editor.action.goToTypeDefinition"
+      ]
     },
     {
       "before": [
@@ -266,7 +271,11 @@
       "commands": [
         "smartClicks.trigger"
       ]
-    }
+    },
+    {
+      "before": ["s"],
+      "commands": ["flash-vscode.start"]
+    },
   ],
   "vim.leader": "<space>",
   "vim.handleKeys": {
@@ -287,9 +296,6 @@
   "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
   "vim.autoSwitchInputMethod.obtainIMCmd": "/opt/homebrew/bin/im-select",
   "vim.autoSwitchInputMethod.switchIMCmd": "/opt/homebrew/bin/im-select com.apple.keylayout.ABC {im}",
-  "extensions.experimental.affinity": {
-    "vscodevim.vim": 1,
-  },
 
   // ========== Eslint ==========
   // ESLint config: https://github.com/antfu/eslint-config
@@ -378,6 +384,7 @@
     "iconify",
     "unocss",
     "unplugin",
+    "unimport",
     "maru",
     "vueuse"
   ],
@@ -453,7 +460,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 2025/9/1 下午10:28:29",
+    "//": "Last update at 2025/9/9 下午11:17:28",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
     ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .lfsconfig, .mailmap, .git-blame*",
@@ -551,4 +558,5 @@
     "*.xaml": "$(capture).xaml.cs"
   },
   "update.releaseTrack": "prerelease",
+  "cursor.enable_agent_window_setting": true,
 }

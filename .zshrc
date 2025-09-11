@@ -321,4 +321,8 @@ function checkCircle() {
   fi
 }
 
+function k() {
+  kill -9 `lsof -i :$1 2>/dev/null | awk '{print($2)}' | tail -n +2 | head -n 1`
+}
+
 alias bt='npx @agentdeskai/browser-tools-server@1.2.0'
