@@ -2,7 +2,8 @@
   // ========== Visuals ==========
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorBlinking": "smooth",
-  "editor.fontFamily": "Berkeley Mono, Symbols Nerd Font",
+  "editor.fontFamily": "Dank Mono, Symbols Nerd Font",
+  "editor.fontWeight": "bold",
   "editor.fontLigatures": false,
   "editor.fontSize": 14,
   "editor.guides.bracketPairs": "active",
@@ -17,7 +18,7 @@
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.list.smoothScrolling": true,
   "workbench.preferredLightColorTheme": "Vitesse Light",
-  "workbench.preferredDarkColorTheme": "Vitesse Dark",
+  "workbench.preferredDarkColorTheme": "Cursor Dark Midnight",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
@@ -460,7 +461,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 2025/9/19 下午10:32:18",
+    "//": "Last update at 2025/9/23 下午11:02:42",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
     ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .lfsconfig, .mailmap, .git-blame*",
