@@ -461,7 +461,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 2025/9/23 下午11:02:42",
+    "//": "Last update at 2025/9/27 上午9:31:48",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
     ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .lfsconfig, .mailmap, .git-blame*",
@@ -558,6 +558,6 @@
     "*.wat": "$(capture).wasm",
     "*.xaml": "$(capture).xaml.cs"
   },
-  "update.releaseTrack": "prerelease",
+  "update.releaseTrack": "dev",
   "cursor.enable_agent_window_setting": true,
 }
