@@ -5,7 +5,7 @@
   "editor.fontFamily": "Dank Mono, Symbols Nerd Font",
   "editor.fontWeight": "bold",
   "editor.fontLigatures": false,
-  "editor.fontSize": 14,
+  "editor.fontSize": 14.5,
   "editor.guides.bracketPairs": "active",
   "editor.lineNumbers": "interval",
   "editor.renderWhitespace": "none",
