@@ -2,8 +2,8 @@
   // ========== Visuals ==========
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorBlinking": "smooth",
-  "editor.fontFamily": "Dank Mono, Symbols Nerd Font",
-  "editor.fontWeight": "bold",
+  "editor.fontFamily": "Consolas, Symbols Nerd Font",
+  "editor.fontWeight": "600",
   "editor.fontLigatures": false,
   "editor.fontSize": 14.5,
   "editor.guides.bracketPairs": "active",
@@ -457,6 +457,8 @@
   "cursor.composer.usageSummaryDisplay": "always",
   "cursor.composer.shouldAutoAcceptDiffs": false,
   "cursor.composer.textSizeScale": 0.85,
+  "cursor.enable_agent_window_setting": true,
+  "cursor.enable_git_worktrees_setting": true,
 
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
@@ -558,6 +560,5 @@
     "*.wat": "$(capture).wasm",
     "*.xaml": "$(capture).xaml.cs"
   },
-  "update.releaseTrack": "dev",
-  "cursor.enable_agent_window_setting": true,
+  "update.releaseTrack": "dev"
 }
