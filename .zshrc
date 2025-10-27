@@ -20,7 +20,7 @@ plugins=(
 export NVM_AUTO_USE=true
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
-export LAUNCH_EDITOR="cursor-nightly"
+export LAUNCH_EDITOR="cursor"
 
 # https://ohmyz.sh/
 source $ZSH/oh-my-zsh.sh
@@ -29,8 +29,8 @@ source $ZSH/oh-my-zsh.sh
 # IDE
 # -------------------------------- #
 
-alias code="open $1 -a \"Cursor Nightly\""
-alias cursor="open $1 -a \"Cursor Nightly\""
+alias code="open $1 -a \"Cursor\""
+alias cursor="open $1 -a \"Cursor\""
 alias vscode="open $1 -a \"Visual Studio Code\""
 
 # -------------------------------- #
