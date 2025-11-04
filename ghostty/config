@@ -27,7 +27,7 @@ palette = 13=#db61a2
 palette = 14=#2b7489
 palette = 15=#ffffff
 font-size = 14
-font-family = Input Mono
+font-family = Berkeley Mono
 adjust-cell-height = 3
 
 clipboard-read = allow

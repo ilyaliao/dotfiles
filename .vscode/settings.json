@@ -2,10 +2,9 @@
   // ========== Visuals ==========
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorBlinking": "smooth",
-  "editor.fontFamily": "Consolas, Symbols Nerd Font",
-  "editor.fontWeight": "600",
+  "editor.fontFamily": "Input Mono, Symbols Nerd Font",
   "editor.fontLigatures": false,
-  "editor.fontSize": 14.5,
+  "editor.fontSize": 14,
   "editor.guides.bracketPairs": "active",
   "editor.lineNumbers": "interval",
   "editor.renderWhitespace": "none",
@@ -18,7 +17,7 @@
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.list.smoothScrolling": true,
   "workbench.preferredLightColorTheme": "Vitesse Light",
-  "workbench.preferredDarkColorTheme": "Cursor Dark Midnight",
+  "workbench.preferredDarkColorTheme": "Vitesse Black",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
@@ -27,7 +26,6 @@
   "workbench.layoutControl.enabled": false,
   "workbench.panel.showLabels": true,
   "workbench.editor.enablePreview": false,
-
   // ========== Editor ==========
   "debug.onTaskErrors": "debugAnyway",
   "diffEditor.ignoreTrimWhitespace": false,
@@ -90,14 +88,12 @@
     "**/CHANGELOG*": true,
     "**/LICENSE*": true
   },
-
   // ==========  Global Level Config, needs to put in User Settings ==========
   "window.nativeTabs": true, // this is great, macOS only
   "window.title": "${rootName}", // this make tabs more readable
   "window.titleBarStyle": "custom",
   "window.dialogStyle": "custom",
   "extensions.autoUpdate": "onlyEnabledExtensions",
-
   // ========== TypeScript configs ==========
   "typescript.locale": "zh-TW",
   "typescript.tsserver.watchOptions": {
@@ -105,7 +101,6 @@
   },
   "typescript.experimental.expandableHover": true,
   "typescript.experimental.useTsgo": false,
-
   // ========== Extension configs ==========
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": false,
@@ -122,7 +117,6 @@
   "svg.pathDataHighlight": false,
   "svg.preview.mode": "svg",
   "color-highlight.markRuler": false,
-
   // ========== CommentTranslate ==========
   "commentTranslate.hover.string": false,
   "commentTranslate.hover.enabled": true,
@@ -131,16 +125,13 @@
   "commentTranslate.hover.content": true,
   "commentTranslate.maxTranslationLength": 1000,
   "commentTranslate.targetLanguage": "zh-TW",
-
   // ========== i18n-ally ==========
   "i18n-ally.autoDetection": false,
   "i18n-ally.displayLanguage": "zh",
   "i18n-ally.ignoredLocales": [],
-
   // ========== Iconify ==========
   "iconify.annotations": true,
   "iconify.inplace": true,
-
   // ========== Vue ==========
   "vue.inlayHints.destructuredProps": true,
   "vue.inlayHints.vBindShorthand": true,
@@ -148,7 +139,6 @@
   "vue.autoInsert.bracketSpacing": true,
   "vue.inlayHints.inlineHandlerLeading": true,
   "vue.editor.focusMode": false,
-
   // ========== Vim ==========
   "vim.easymotion": false,
   "vim.incsearch": false,
@@ -235,7 +225,8 @@
       "commands": [
         "references-view.findReferences"
       ]
-    }, {
+    },
+    {
       "before": [
         "g",
         "y"
@@ -274,8 +265,12 @@
       ]
     },
     {
-      "before": ["s"],
-      "commands": ["flash-vscode.start"]
+      "before": [
+        "s"
+      ],
+      "commands": [
+        "flash-vscode.start"
+      ]
     },
   ],
   "vim.leader": "<space>",
@@ -297,7 +292,6 @@
   "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
   "vim.autoSwitchInputMethod.obtainIMCmd": "/opt/homebrew/bin/im-select",
   "vim.autoSwitchInputMethod.switchIMCmd": "/opt/homebrew/bin/im-select com.apple.keylayout.ABC {im}",
-
   // ========== Eslint ==========
   // ESLint config: https://github.com/antfu/eslint-config
   // Enable the ESlint flat config support
@@ -369,7 +363,6 @@
     "yaml",
     "toml"
   ],
-
   // I only use Prettier for manually formatting
   "prettier.enable": false,
   "prettier.printWidth": 200,
@@ -438,7 +431,6 @@
       "stash": true
     }
   },
-
   // ========== Cursor ==========
   "cursor.composer.shouldAllowCustomModes": true,
   "cursor.composer.shouldAutoSaveNonAgent": true,
@@ -459,11 +451,10 @@
   "cursor.composer.textSizeScale": 0.85,
   "cursor.enable_agent_window_setting": true,
   "cursor.enable_git_worktrees_setting": true,
-
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 2025/10/27 下午10:42:24",
+    "//": "Last update at 2025/11/3 下午10:24:19",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
     ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .lfsconfig, .mailmap, .git-blame*",
