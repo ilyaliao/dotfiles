@@ -31,7 +31,6 @@ source $ZSH/oh-my-zsh.sh
 
 alias code="open $1 -a \"Cursor\""
 alias cursor="open $1 -a \"Cursor\""
-alias vscode="open $1 -a \"Visual Studio Code\""
 
 # -------------------------------- #
 # Node Package Manager
@@ -259,23 +258,23 @@ function cleanpr() {
 
 # Clone to ~/i and cd to it
 function clonei() {
-  i && clone "$@" && cursor-nightly . && cd ~2
+  i && clone "$@" && code . && cd ~2
 }
 
 function cloner() {
-  repros && clone "$@" && cursor-nightly . && cd ~2
+  repros && clone "$@" && code . && cd ~2
 }
 
 function clonef() {
-  forks && clone "$@" && cursor-nightly . && cd ~2
+  forks && clone "$@" && code . && cd ~2
 }
 
 function clonew () {
-  works && clone "$@" && cursor-nightly . && cd ~2
+  works && clone "$@" && code . && cd ~2
 }
 
 function codei() {
-  i && cursor-nightly "$@" && cd -
+  i && code "$@" && cd -
 }
 
 function serve() {
