@@ -2,7 +2,7 @@
 
 [core]
 	excludesfile = ~/.gitignore
-	editor = cursor-nightly --wait
+	editor = code --wait
 	ignorecase = false
 
 [push]
