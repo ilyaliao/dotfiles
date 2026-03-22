@@ -2,7 +2,7 @@
   // ========== Visuals ==========
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorBlinking": "smooth",
-  "editor.fontFamily": "Berkeley Mono, Symbols Nerd Font",
+  "editor.fontFamily": "SF Mono, Hannotate SC, Symbols Nerd Font",
   "editor.fontLigatures": false,
   "editor.fontSize": 14,
   "editor.guides.bracketPairs": "active",
@@ -23,7 +23,6 @@
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 10,
-  "workbench.layoutControl.enabled": false,
   "workbench.panel.showLabels": true,
   "workbench.editor.enablePreview": false,
 
@@ -93,6 +92,7 @@
   "window.nativeTabs": true, // this is great, macOS only
   "window.title": "${rootName}", // this make tabs more readable
   "window.titleBarStyle": "custom",
+  "window.commandCenter": true,
   "window.dialogStyle": "custom",
   "extensions.autoUpdate": "onlyEnabledExtensions",
 
@@ -141,12 +141,15 @@
   "iconify.inplace": true,
 
   // ========== Vue ==========
+  "vue.editor.reactivityVisualization": true, 
+  "vue.editor.templateInterpolationDecorators": true,
   "vue.inlayHints.destructuredProps": true,
   "vue.inlayHints.vBindShorthand": true,
   "vue.inlayHints.missingProps": true,
   "vue.autoInsert.bracketSpacing": true,
   "vue.inlayHints.inlineHandlerLeading": true,
   "vue.editor.focusMode": false,
+  "vue.hover.rich": true,
 
   // ========== Vim ==========
   "vim.easymotion": false,
@@ -444,7 +447,6 @@
 
   // ========== Cursor ==========
   "cursor.composer.shouldAutoSaveNonAgent": true,
-  "cursor.general.enableShadowWorkspace": true,
   "cursor.general.gitGraphIndexing": "enabled",
   "cursor.composer.shouldShowMarkdownHoverParticipantActions2": true,
   "cursor.preferNotificationsSameAsChat": true,
@@ -454,13 +456,15 @@
   "cursor.composer.queueMessageDefaultBehavior": "queue",
   "cursor.composer.usageSummaryDisplay": "always",
   "cursor.composer.textSizeScale": 0.85,
+  "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "cursor.composer.suggestNextPrompt": true,
 
   // updated 2025-12-26 02:26
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 2026/3/3 下午10:51:36",
+    "//": "Last update at 2026/3/23 上午12:36:49",
     ".agent": ".agent, .claude, .cline, .codebuddy, .codex, .commandcode, .continue, .crush, .cursor, .factory, .gemini, .goose, .junie, .kilocode, .kiro, .kode, .mcpjam, .mux, .neovate, .opencode, .openhands, .pi, .pochi, .qoder, .qwen, .roo, .trae, .windsurf, .zencoder",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
@@ -564,4 +568,5 @@
   },
   "update.releaseTrack": "dev",
   "update.mode": "silentlyApplyOnQuit",
+  "gitlens.gitkraken.mcp.autoEnabled": false,
 }
