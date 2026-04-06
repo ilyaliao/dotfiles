@@ -26,8 +26,11 @@ palette = 12=#6ca4f8
 palette = 13=#db61a2
 palette = 14=#2b7489
 palette = 15=#ffffff
+
 font-size = 14
 font-family = Berkeley Mono
+font-family = Hannotate SC
+
 adjust-cell-height = 3
 
 clipboard-read = allow
