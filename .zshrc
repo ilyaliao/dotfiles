@@ -53,6 +53,9 @@ alias lint="nr lint"
 alias lintf="nr lint --fix"
 alias release="nr release"
 alias re="nr release"
+alias cc="claude --dangerously-skip-permissions"
+alias ccc="claude --dangerously-skip-permissions -c"
+alias ccr="claude --dangerously-skip-permissions -r"
 
 # -------------------------------- #
 # Best LS Command Replacement
@@ -186,76 +189,6 @@ function clone() {
   fi
 }
 
-function cleanpr() {
-  if ! git rev-parse --git-dir >/dev/null 2>&1; then
-    echo "Error: Not in a git repository."
-    return 1
-  fi
-
-  local current_branch
-  current_branch=$(git symbolic-ref --short HEAD 2>/dev/null || echo "__DETACHED__")
-
-  local remotes_to_remove=()
-  while IFS= read -r remote; do
-    if [[ "$remote" != "origin" && "$remote" != "upstream" ]]; then
-      remotes_to_remove+=("$remote")
-    fi
-  done < <(git remote)
-
-  local removed_branches=0
-  local removed_remotes=0
-
-  for remote in "${remotes_to_remove[@]}"; do
-    while IFS=' ' read -r branch upstream; do
-      if [[ "$upstream" == "$remote/"* && "$branch" != "$current_branch" ]]; then
-        if git branch -D "$branch" >/dev/null 2>&1; then
-          ((removed_branches++))
-          # local  remote  branch
-          echo "local  $remote  $branch"
-        fi
-      fi
-    done < <(git for-each-ref --format='%(refname:short) %(upstream:short)' refs/heads 2>/dev/null | grep " $remote/")
-    if git remote remove "$remote" >/dev/null 2>&1; then
-      ((removed_remotes++))
-    fi
-  done
-
-  git fetch --all --prune --quiet >/dev/null 2>&1
-
-  local pr_branches_removed=0
-  while IFS=' ' read -r branch upstream; do
-    if [[ "$branch" != "$current_branch" && "$upstream" == "origin/pr/"* ]]; then
-      if git branch -D "$branch" >/dev/null 2>&1; then
-        ((pr_branches_removed++))
-        # local  author  name
-        # branch like pr/ArthurDarkstone/4841
-        local pr_author pr_name
-        pr_author=$(echo "$upstream" | cut -d'/' -f3)
-        pr_name=$(echo "$upstream" | cut -d'/' -f4-)
-        echo "local  $pr_author  $pr_name"
-      fi
-    fi
-  done < <(git for-each-ref --format='%(refname:short) %(upstream:short)' refs/heads 2>/dev/null | grep " origin/pr/")
-
-  local pr_refs_removed=0
-  while IFS= read -r r_branch; do
-    local trimmed_branch=$(echo "$r_branch" | xargs)
-    if [[ -n "$trimmed_branch" ]]; then
-      if git branch -rd "$trimmed_branch" >/dev/null 2>&1; then
-        ((pr_refs_removed++))
-        # remote  author  name
-        # trimmed_branch like origin/pr/ArthurDarkstone/4841
-        local pr_author pr_name
-        pr_author=$(echo "$trimmed_branch" | cut -d'/' -f3)
-        pr_name=$(echo "$trimmed_branch" | cut -d'/' -f4-)
-        echo "remote  $pr_author  $pr_name"
-      fi
-    fi
-  done < <(git branch -r 2>/dev/null | grep 'origin/pr/')
-
-  echo "Cleaned: $removed_remotes remotes, $((removed_branches + pr_branches_removed)) local branches, $pr_refs_removed remote refs"
-}
-
 # Clone to ~/i and cd to it
 function clonei() {
   i && clone "$@" && code . && cd ~2
@@ -319,9 +252,3 @@ function checkCircle() {
     madge --circular --extensions ts,js $1
   fi
 }
-
-function k() {
-  kill -9 `lsof -i :$1 2>/dev/null | awk '{print($2)}' | tail -n +2 | head -n 1`
-}
-
-alias bt='npx @agentdeskai/browser-tools-server@1.2.0'
