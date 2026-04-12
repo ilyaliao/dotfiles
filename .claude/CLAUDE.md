@@ -19,6 +19,8 @@
 ## Git
 
 - Never commit automatically unless explicitly requested
+- Prefer squash merge
+- Commit message: single line, concise and impactful. Describe the task purpose ("why"), not what you did ("what"). Follow conventional commit format and match the tone of recent commits
 
 ## Security
 
@@ -27,8 +29,9 @@
 ## Code Style
 
 - Follow existing project patterns, import styles, and directory structure
-- Max 500 lines per file; React components under 300 lines
+- Max 500 lines per file; Vue SFCs under 300 lines
 - No useless comments — don't comment obvious code (e.g., variable declarations)
+- Follow best practices from https://github.com/antfu/skills
 
 ## Workflow
 
