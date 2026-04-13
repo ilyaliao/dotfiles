@@ -20,7 +20,7 @@
 
 - Never commit automatically unless explicitly requested
 - Prefer squash merge
-- Commit message: single line, concise and impactful. Describe the task purpose ("why"), not what you did ("what"). Follow conventional commit format and match the tone of recent commits
+- Commit message: single line, concise and impactful. Describe the task purpose ("why"), not what you did ("what"). Use `/commit-commands:commit` to commit
 
 ## Security
 
@@ -39,6 +39,4 @@
 - For renames or bulk changes, search globally to confirm impact scope first
 - Use `ast-grep` (sg) for code search and refactoring when possible
 - Run lint (includes typecheck) after writing code, but don't build
-- **Only lint/typecheck/format the files you modified** — never run these tools on the entire project. Scope checks to changed files only
-- **Must pass lint + typecheck before committing** — a task is not complete until both pass on modified files with zero errors. All errors including style (quotes, semi, brace-style, etc.) must be fixed. Use `eslint --fix` to auto-fix, then verify zero errors remain
 - Ask when uncertain, don't assume
