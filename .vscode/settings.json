@@ -569,4 +569,5 @@
   "update.releaseTrack": "dev",
   "update.mode": "silentlyApplyOnQuit",
   "gitlens.gitkraken.mcp.autoEnabled": false,
+  "cursor.general.fontSmoothingAntialiased": true,
 }
