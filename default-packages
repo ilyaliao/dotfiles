@@ -1,9 +1,5 @@
-@antfu/ni
 @vscode/vsce
-giget
 degit
-live-server
-madge
 rimraf
 typescript
 taze
