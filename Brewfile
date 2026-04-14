@@ -19,8 +19,8 @@ brew "rbenv"              # Ruby version manager
 brew "imagemagick"        # Image processing
 
 # Utilities
-brew "sudo-touchid"       # Touch ID for sudo
-brew "im-select"          # Input method switcher (for Vim)
+brew "artginzburg/tap/sudo-touchid"  # Touch ID for sudo
+brew "daipeihust/tap/im-select"      # Input method switcher (for Vim)
 brew "agent-browser"      # Browser automation for AI agents
 
 # Apps
