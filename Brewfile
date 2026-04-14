@@ -19,14 +19,11 @@ brew "rbenv"              # Ruby version manager
 brew "imagemagick"        # Image processing
 
 # Utilities
-brew "htop"               # Process monitor
-brew "terminal-notifier"  # macOS notifications from terminal
 brew "sudo-touchid"       # Touch ID for sudo
 brew "im-select"          # Input method switcher (for Vim)
 brew "agent-browser"      # Browser automation for AI agents
 
 # Apps
-cask "arc"
 cask "claude"
 cask "claude-code@latest"
 cask "codex-app"

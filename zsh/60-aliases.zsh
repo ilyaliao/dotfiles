@@ -81,4 +81,15 @@ alias gct='git branch --all | fzf --preview "git log --oneline -10 {1}" | sed "s
 
 # Homebrew
 alias homeupdate="brew update && brew upgrade && brew cleanup"
-alias homeuninstall="brew uninstall --cask --force --zap"
+homeuninstall() {
+  local name
+  for name in "$@"; do
+    if brew list --cask "$name" &>/dev/null; then
+      brew uninstall --cask --force --zap "$name"
+    elif brew list --formula "$name" &>/dev/null; then
+      brew uninstall --force "$name"
+    else
+      echo "homeuninstall: '$name' 未安裝" >&2
+    fi
+  done
+}
