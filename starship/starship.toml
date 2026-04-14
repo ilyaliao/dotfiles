@@ -1,0 +1,38 @@
+# Spaceship-style arrow
+[character]
+success_symbol = '[→](bold green)'
+error_symbol = '[→](bold red)'
+vimcmd_symbol = '[←](bold green)'
+
+# Always show Docker whale (context != default/desktop-linux on OrbStack)
+[docker_context]
+only_with_files = false
+symbol = '🐳 '
+format = 'via [$symbol$context]($style) '
+
+# Spaceship default threshold
+[cmd_duration]
+min_time = 2000
+
+[jobs]
+symbol = '✦ '
+number_threshold = 1
+symbol_threshold = 1
+
+# VCS: show +added/-deleted line counts in git repos
+[git_metrics]
+disabled = false
+
+# Cloud/Infra: show kubectl context only in k8s-relevant dirs
+[kubernetes]
+disabled = false
+detect_files = ['k8s', 'kustomization.yaml', 'Chart.yaml', 'skaffold.yaml']
+detect_folders = ['k8s', '.kube']
+
+# Shell env: direnv status (loaded/denied .envrc)
+[direnv]
+disabled = false
+
+# Shell env: mise health
+[mise]
+disabled = false
