@@ -259,7 +259,6 @@
   },
   "enabledPlugins": {
     "agent-skills@addy-agent-skills": true,
-    "caveman@caveman": true,
     "chrome-devtools-mcp@claude-plugins-official": true,
     "claude-hud@claude-hud": true,
     "claude-md-management@claude-plugins-official": true,
@@ -282,12 +281,6 @@
         "repo": "addyosmani/agent-skills"
       },
       "autoUpdate": true
-    },
-    "caveman": {
-      "source": {
-        "source": "github",
-        "repo": "JuliusBrussee/caveman"
-      }
     },
     "claude-hud": {
       "source": {
