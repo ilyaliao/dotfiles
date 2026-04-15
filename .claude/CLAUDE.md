@@ -20,7 +20,7 @@
 
 - Never commit automatically unless explicitly requested
 - Prefer squash merge
-- Commit message: single line, concise and impactful. Describe the task purpose ("why"), not what you did ("what"). Use `/commit-commands:commit` to commit
+- Commit message: single line, concise and impactful. Describe the task purpose ("why"), not what you did ("what"). Use `/commit-commands:commit` when committing
 
 ## Security
 
@@ -38,5 +38,5 @@
 - Before starting, understand the task scope and identify affected modules
 - For renames or bulk changes, search globally to confirm impact scope first
 - Use `ast-grep` (sg) for code search and refactoring when possible
-- Run lint (includes typecheck) after writing code, but don't build
+- Don't build unless explicitly requested
 - Ask when uncertain, don't assume
