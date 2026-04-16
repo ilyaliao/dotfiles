@@ -254,7 +254,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "node ~/.claude/plugins/cache/claude-hud/claude-hud/*/dist/index.js"
+    "command": "~/.claude/bin/hud.sh"
   },
   "enabledPlugins": {
     "agent-skills@addy-agent-skills": true,
