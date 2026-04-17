@@ -11,6 +11,17 @@ Audit files against Anthony Fu's best practices and report violations as a check
 
 The authoritative source is **[antfu/skills](https://github.com/antfu/skills)** on GitHub. This skill does not modify files — it only reports. The user reads the checklist and decides what to fix.
 
+## Report language
+
+Always emit the report in **繁體中文台灣用語**. Keep these untranslated so downstream tools can parse them:
+
+- Section markers: `## Summary`, `## Violations`, `## Clean files`, `## Skipped`, `## Possible additions`
+- Field labels inside violations: `Evidence`, `Fix`, `Source`
+- Rule IDs (`vue-sfc/sfc-script-setup`), file paths, code excerpts, and URLs
+- Severity emoji (🔴 / 🟡 / 🔵) and the English token after them (`Error` / `Warning` / `Info`)
+
+Translate to 繁體中文台灣用語: the short rule description after the em dash, every `Evidence` / `Fix` value, and any prose outside the structured blocks (summaries, skipped reasons, possible additions, questions to the user). Technical terms and API names stay in their original form (`<script setup>`, `ref`, `reactive`, `compilerOptions.strict`, etc.).
+
 ## Workflow
 
 ### 1. Determine scope
@@ -58,6 +69,17 @@ If a reference would apply but no file in scope triggers its rules, skip loading
 
 ### 4. Audit
 
+#### 4a. Decide: serial or parallel
+
+Count `R` = number of references selected in Step 3 and `F` = number of files in scope.
+
+- **Parallel** when `R >= 3` **OR** (`F >= 8` **AND** `R >= 2`) → go to 4c
+- **Serial** otherwise → go to 4b
+
+Rationale for the threshold: each reference is independent and audit is read-only, so parallelism is safe. The cost is context + orchestration overhead, which only pays off once references and files multiply. Below the threshold, running in the main agent is faster.
+
+#### 4b. Serial audit (in this agent)
+
 For each rule in each loaded reference:
 
 1. Check whether the rule applies to any file in scope.
@@ -67,6 +89,65 @@ For each rule in each loaded reference:
 **Be concrete.** For every violation, capture `file:line` (or file-level for config rules). Cite the exact matched text when practical.
 
 **Stay conservative.** If a rule's detection is ambiguous (e.g., could be a legitimate edge case), mark it 🔵 Info instead of 🟡/🔴. Don't claim violations you can't evidence.
+
+Skip to Step 5.
+
+#### 4c. Parallel audit (dispatch sub-agents)
+
+Resolve each reference to an **absolute path** first (the skill lives at `~/.claude/skills/antfu-check/references/<name>.md`; use `git rev-parse --show-toplevel` if you need the repo root for the file list).
+
+Spawn one `general-purpose` sub-agent per reference in a **single message with multiple `Agent` tool calls** so they run concurrently. Give each sub-agent exactly this brief, filling in the bracketed placeholders:
+
+````
+You are auditing files against ONE Anthony Fu best-practice reference. Report violations only — do not modify any file.
+
+Reference (absolute path): [e.g. /Users/me/.claude/skills/antfu-check/references/vue-sfc.md]
+Files in scope (absolute paths, newline-separated):
+[file list]
+Stack profile: [compact line from Step 2, e.g. "vue 3, vitest, pnpm monorepo, library=false"]
+
+Steps:
+1. Read the reference file in full.
+2. For each rule in the reference, check whether it applies to any file in scope. Skip non-applicable rules silently.
+3. For applicable rules, run the detection described (Grep for patterns, Read for AST-level checks, inline JSON parse for config rules). Only use Read, Grep, Glob. Do not write, edit, or run shell commands beyond what's needed for detection.
+4. For each violation, capture file:line and the matched text. Be conservative — downgrade ambiguous cases to 🔵 Info.
+
+Output format (繁體中文台灣用語 for prose; keep rule IDs, field labels, paths, and emoji+English token untranslated):
+
+```
+## <reference-slug>
+
+### `<file-path>`
+
+**🔴 Error <rule-id>** — <繁中簡述>
+- Evidence: L<n> `<matched code>`
+- Fix: <繁中修正說明>
+- Source: [antfu/skills → <...>](<url>) (also: local skill `<name>`)
+
+<repeat per violation; group by file>
+```
+
+If no violations found for this reference, return exactly:
+```
+## <reference-slug>
+(無違規)
+```
+
+Also return a final line:
+`__meta__ rules_checked=<n> files_audited=<n>`
+
+Length: under 600 words unless violations genuinely require more.
+````
+
+#### 4d. Aggregate sub-agent results
+
+The sub-agents group violations by reference (`## <reference-slug>` → `### <file>`). The final report in Step 5 groups by file instead. Transform:
+
+1. Parse each sub-agent response. Drop `(無違規)` blocks. Collect `__meta__` lines.
+2. Build a dict `violations_by_file: { <file-path>: [violation-entry, ...] }` by iterating each `### <file>` section across all sub-agents and appending its violation entries.
+3. Emit the Step 5 report's `## Violations` section by iterating `violations_by_file` (one `### <file>` heading per key, all collected entries beneath — preserve the original entry text verbatim, including the `Source:` line).
+4. Sum `rules_checked` from all `__meta__` lines → `Rules evaluated:` in the header.
+5. If a sub-agent failed or timed out, note it in the `## Skipped` section (e.g., `規則集 vue-sfc(sub-agent 未回應,已略過)`) rather than re-running serially — the user can retry.
 
 ### 5. Emit the report
 
@@ -90,32 +171,32 @@ Use this exact structure. The header, summary, and violation entry shape matter 
 
 ### `src/components/UserCard.vue`
 
-**🔴 vue-sfc/sfc-script-setup** — SFC should use `<script setup lang="ts">`
+**🔴 Error vue-sfc/sfc-script-setup** — SFC 應使用 `<script setup lang="ts">`
 - Evidence: L1 `export default defineComponent({ ... })`
-- Fix: Rewrite with `<script setup lang="ts">`; move `props`/`data`/`methods` to Composition API.
+- Fix: 改寫為 `<script setup lang="ts">`,將 `props`/`data`/`methods` 遷移到 Composition API。
 - Source: [antfu/skills → vue-best-practices/references/sfc.md](https://github.com/antfu/skills/blob/main/skills/vue-best-practices/references/sfc.md) (also: local skill `vue-best-practices`)
 
-**🟡 vue-sfc/style-scoped** — `<style>` block is missing `scoped`
+**🟡 Warning vue-sfc/style-scoped** — `<style>` 區塊缺少 `scoped`
 - Evidence: L45 `<style lang="scss">`
-- Fix: Add `scoped` unless this is a global stylesheet.
+- Fix: 除非這是全域樣式表,否則加上 `scoped`。
 - Source: [antfu/skills → vue-best-practices/references/sfc.md](https://github.com/antfu/skills/blob/main/skills/vue-best-practices/references/sfc.md)
 
 ### `tsconfig.json`
 
-**🔴 project-setup/tsconfig-strict** — `compilerOptions.strict` is not `true`
+**🔴 Error project-setup/tsconfig-strict** — `compilerOptions.strict` 未設為 `true`
 - Evidence: `"strict": false`
-- Fix: Set `"strict": true`. Enables all strict type-checking options.
+- Fix: 設為 `"strict": true`,啟用所有嚴格型別檢查。
 - Source: [antfu/skills → antfu/SKILL.md](https://github.com/antfu/skills/blob/main/skills/antfu/SKILL.md) (also: local skill `antfu`)
 
 ## Clean files
 
-- `src/composables/useCounter.ts` — 7 rules checked, no violations
-- `package.json` — 5 rules checked, no violations
+- `src/composables/useCounter.ts` — 已檢查 7 條規則,無違規
+- `package.json` — 已檢查 5 條規則,無違規
 
 ## Skipped
 
-- `src/assets/logo.svg` (binary)
-- Rule `pnpm-monorepo/catalog-usage` (no `pnpm-workspace.yaml` present)
+- `src/assets/logo.svg`(二進位檔)
+- 規則 `pnpm-monorepo/catalog-usage`(專案無 `pnpm-workspace.yaml`)
 ````
 
 ## Severity guide
