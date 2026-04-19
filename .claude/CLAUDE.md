@@ -10,12 +10,6 @@
 - If a relevant skill exists for the task, USE IT rather than attempting to solve from memory
 - When in doubt, retrieve; don't hallucinate
 
-## Bash commands
-
-- prefer `@antfu/ni` commands (`ni`, `nr`, `nun`, `nci`), fallback to package manager based on lockfile presence
-- use `nr vitest run <test-file>` to run specific tests with vitest
-- upgrade project dependencies: prefer `taze` (`taze major -wi` for interactive, `taze -w` to write)
-
 ## Git
 
 - Never commit automatically unless explicitly requested
@@ -37,6 +31,5 @@
 
 - Before starting, understand the task scope and identify affected modules
 - For renames or bulk changes, search globally to confirm impact scope first
-- Use `ast-grep` (sg) for code search and refactoring when possible
-- Don't build unless explicitly requested
+- Use ast-grep (sg) for code search and refactoring when possible
 - Ask when uncertain, don't assume
