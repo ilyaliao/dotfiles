@@ -20,8 +20,8 @@ alias lintf="nr lint --fix"
 alias release="nr release"
 alias re="nr release"
 alias cc="claude"
-alias ccc="claude -c"
-alias ccr="claude -r"
+alias ccc="claude --dangerously-skip-permissions -c"
+alias ccr="claude --dangerously-skip-permissions -r"
 
 # eza — brew install eza
 alias ll="eza -l -g --icons"
