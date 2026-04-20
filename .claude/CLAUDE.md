@@ -1,5 +1,9 @@
 # CLAUDE RULES
 
+## Core Principle
+
+Prefer the simplest solution that actually works — no speculative abstractions, no defensive code for impossible cases, no "just in case" features. Clarity beats cleverness; fewer lines beat more lines when readability is equal.
+
 ## IMPORTANT: Reasoning Strategy
 
 **Prefer retrieval-led reasoning over pre-training-led reasoning.**
@@ -13,7 +17,6 @@
 ## Git
 
 - Never commit automatically unless explicitly requested
-- Prefer squash merge
 - Commit message: single line, concise and impactful. Describe the task purpose ("why"), not what you did ("what"). Use `/commit-commands:commit` when committing
 
 ## Security
@@ -23,13 +26,12 @@
 ## Code Style
 
 - Follow existing project patterns, import styles, and directory structure
-- Max 500 lines per file; Vue SFCs under 300 lines
+- Max 500 lines per file;
 - No useless comments — don't comment obvious code (e.g., variable declarations)
-- Follow best practices from https://github.com/antfu/skills
+- Prefer antfu ecosystem conventions (pnpm, unocss, vueuse, eslint-config) when the project already uses them
 
 ## Workflow
 
 - Before starting, understand the task scope and identify affected modules
 - For renames or bulk changes, search globally to confirm impact scope first
-- Use ast-grep (sg) for code search and refactoring when possible
 - Ask when uncertain, don't assume
