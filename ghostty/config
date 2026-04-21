@@ -29,7 +29,7 @@ palette = 15=#ffffff
 
 font-size = 14
 font-family = Berkeley Mono
-font-family = Symbols Nerd Font Mono
+font-family = Symbols Nerd Font
 font-family = Hannotate SC
 
 adjust-cell-height = 3
