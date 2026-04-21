@@ -262,7 +262,8 @@
     "zeabur@zeabur": true,
     "pr-review-toolkit@claude-plugins-official": true,
     "superpowers@claude-plugins-official": true,
-    "skill-creator@claude-plugins-official": true
+    "skill-creator@claude-plugins-official": true,
+    "open-source@open-source": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -278,6 +279,12 @@
         "repo": "zeabur/zeabur-claude-plugin"
       },
       "autoUpdate": true
+    },
+    "open-source": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/ilyal/i/open-source"
+      }
     }
   },
   "language": "繁體中文台灣用語",
