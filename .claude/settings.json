@@ -202,29 +202,16 @@
   },
   "enabledPlugins": {
     "chrome-devtools-mcp@claude-plugins-official": true,
-    "claude-md-management@claude-plugins-official": true,
-    "code-review@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true,
-    "codex@openai-codex": true,
     "commit-commands@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
-    "figma@claude-plugins-official": false,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "zeabur@zeabur": true,
-    "pr-review-toolkit@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
-    "open-source@open-source": true
+    "open-source@open-source": true,
+    "figma@claude-plugins-official": false
   },
   "extraKnownMarketplaces": {
-    "openai-codex": {
-      "source": {
-        "source": "github",
-        "repo": "openai/codex-plugin-cc"
-      },
-      "autoUpdate": true
-    },
     "zeabur": {
       "source": {
         "source": "github",
