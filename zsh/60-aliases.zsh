@@ -2,6 +2,16 @@
 alias code="open $1 -a \"Cursor\""
 alias cursor="open $1 -a \"Cursor\""
 
+# Claude Code
+alias cc="claude"
+alias ccc="claude -c"
+alias ccr="claude -r"
+
+# Cursor Agent
+alias ca="agent"
+alias cac="agent --continue"
+alias car="agent --resume"
+
 # Node Package Manager — https://github.com/antfu/ni
 alias nio="ni --prefer-offline"
 alias s="nr start"
@@ -19,9 +29,6 @@ alias lint="nr lint"
 alias lintf="nr lint --fix"
 alias release="nr release"
 alias re="nr release"
-alias cc="claude"
-alias ccc="claude -c"
-alias ccr="claude -r"
 
 # eza — brew install eza
 alias ll="eza -l -g --icons"
