@@ -24,8 +24,8 @@ Source: [antfu/skills — vue-best-practices/references/reactivity.md](https://g
 - **Detection**: Pattern like `const { foo, bar } = reactive({ ... })` or `const { x } = someReactiveObject`. Destructuring loses reactivity.
 - **Fix**: Keep the reactive object whole, or use `toRefs(...)`:
   ```ts
-  const state = reactive({ foo: 1, bar: 2 })
-  const { foo, bar } = toRefs(state)  // each is a Ref
+  const state = reactive({ foo: 1, bar: 2 });
+  const { foo, bar } = toRefs(state); // each is a Ref
   ```
 - **Source**: [antfu/skills → vue-best-practices/references/reactivity.md](https://github.com/antfu/skills/blob/main/skills/vue-best-practices/references/reactivity.md)
 
@@ -47,14 +47,18 @@ Source: [antfu/skills — vue-best-practices/references/reactivity.md](https://g
 - **Applies to**: `**/*.vue`, composable files
 - **Detection**: `watch(source, (v) => { otherRef.value = derive(v) })` — using `watch` to produce a derived value.
 - **Fix**: Replace with `computed`:
+
   ```ts
   // before
-  const doubled = ref(0)
-  watch(count, (v) => { doubled.value = v * 2 })
+  const doubled = ref(0);
+  watch(count, (v) => {
+    doubled.value = v * 2;
+  });
 
   // after
-  const doubled = computed(() => count.value * 2)
+  const doubled = computed(() => count.value * 2);
   ```
+
 - **Source**: [antfu/skills → vue-best-practices/references/reactivity.md](https://github.com/antfu/skills/blob/main/skills/vue-best-practices/references/reactivity.md)
 
 ---
@@ -77,13 +81,13 @@ Source: [antfu/skills — vue-best-practices/references/reactivity.md](https://g
 - **Fix**:
   ```ts
   interface Props {
-    title: string
-    count?: number
+    title: string;
+    count?: number;
   }
-  const props = defineProps<Props>()
+  const props = defineProps<Props>();
   const emit = defineEmits<{
-    change: [value: number]
-  }>()
+    change: [value: number];
+  }>();
   ```
 - **Source**: [antfu/skills → vue-best-practices/references/component-data-flow.md](https://github.com/antfu/skills/blob/main/skills/vue-best-practices/references/component-data-flow.md)
 
@@ -105,14 +109,16 @@ Source: [antfu/skills — vue-best-practices/references/reactivity.md](https://g
 - **Applies to**: `**/*.vue` in projects on Vue 3.4+
 - **Detection**: Component declares both a `modelValue` prop and a `'update:modelValue'` emit manually, instead of using `defineModel`.
 - **Fix**:
+
   ```ts
   // before
-  const props = defineProps<{ modelValue: string }>()
-  const emit = defineEmits<{ 'update:modelValue': [value: string] }>()
+  const props = defineProps<{ modelValue: string }>();
+  const emit = defineEmits<{ "update:modelValue": [value: string] }>();
 
   // after
-  const model = defineModel<string>()
+  const model = defineModel<string>();
   ```
+
 - **Source**: [antfu/skills → vue-best-practices/references/component-data-flow.md](https://github.com/antfu/skills/blob/main/skills/vue-best-practices/references/component-data-flow.md)
 
 ---
@@ -125,7 +131,7 @@ Source: [antfu/skills — vue-best-practices/references/reactivity.md](https://g
 - **Fix**: Use `InjectionKey<T>` / `Symbol` keys exported from a shared module for type safety:
   ```ts
   // keys.ts
-  export const countKey: InjectionKey<Ref<number>> = Symbol('count')
+  export const countKey: InjectionKey<Ref<number>> = Symbol("count");
   ```
 - **Source**: [antfu/skills → vue-best-practices/references/component-data-flow.md](https://github.com/antfu/skills/blob/main/skills/vue-best-practices/references/component-data-flow.md)
 

@@ -4,8 +4,7 @@
     "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "400000",
     "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
     "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "1",
-    "CLAUDE_CODE_NO_FLICKER": "1",
-    "CLAUDE_CODE_EFFORT_LEVEL": "max"
+    "CLAUDE_CODE_NO_FLICKER": "1"
   },
   "includeCoAuthoredBy": true,
   "permissions": {
@@ -58,9 +57,7 @@
       "WebFetch(domain:*.ilyal.me)",
       "WebSearch"
     ],
-    "deny": [
-      "Skill(a11y-debugging)"
-    ],
+    "deny": ["Skill(a11y-debugging)"],
     "defaultMode": "auto"
   },
   "hooks": {
@@ -190,11 +187,6 @@
           {
             "type": "command",
             "command": "~/.claude/bin/set-title.sh \"🤖 $(basename \"$CLAUDE_PROJECT_DIR\")\"",
-            "timeout": 5000
-          },
-          {
-            "type": "command",
-            "command": "afplay /System/Library/Sounds/Glass.aiff",
             "timeout": 5000
           }
         ]

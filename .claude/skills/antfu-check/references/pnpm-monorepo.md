@@ -42,7 +42,7 @@ Source: [antfu/skills — pnpm](https://github.com/antfu/skills/tree/main/skills
   catalogs:
     frontend:
       vue: ^3.5.0
-      '@vue/compiler-sfc': ^3.5.0
+      "@vue/compiler-sfc": ^3.5.0
     dev:
       typescript: ^5.6.0
       vitest: ^2.1.0

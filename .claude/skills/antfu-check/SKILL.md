@@ -33,6 +33,7 @@ git diff HEAD --name-only --diff-filter=ACMR
 ```
 
 Overrides:
+
 - If the user passed paths or globs in the invocation, use those instead.
 - If `--all` was requested, use `git ls-files`.
 - If `git` is unavailable or no changes exist, ask the user which files to audit.
@@ -55,15 +56,15 @@ Record a compact stack profile mentally (no need to print it to the user yet).
 
 Load only the reference files you need. Each one lists concrete rules with IDs, severity, detection hints, and fix links.
 
-| Load this reference | When |
-|---|---|
-| `references/project-setup.md` | Always (covers tsconfig, eslint, vscode, gitignore, workflows) |
-| `references/pnpm-monorepo.md` | `isMonorepo` OR `pnpm-workspace.yaml` in scope |
+| Load this reference                | When                                                                  |
+| ---------------------------------- | --------------------------------------------------------------------- |
+| `references/project-setup.md`      | Always (covers tsconfig, eslint, vscode, gitignore, workflows)        |
+| `references/pnpm-monorepo.md`      | `isMonorepo` OR `pnpm-workspace.yaml` in scope                        |
 | `references/library-publishing.md` | `isLibrary` OR `tsdown.config.*`/`package.json` of a library in scope |
-| `references/vue-sfc.md` | Any `*.vue` in scope |
-| `references/vue-reactivity.md` | Any `*.vue` in scope OR composable files (`src/composables/**/*.ts`) |
-| `references/vue-router.md` | `vue-router` in deps AND any `router/**` or route component in scope |
-| `references/vue-testing.md` | `vitest` in deps AND any `*.{test,spec}.*` in scope |
+| `references/vue-sfc.md`            | Any `*.vue` in scope                                                  |
+| `references/vue-reactivity.md`     | Any `*.vue` in scope OR composable files (`src/composables/**/*.ts`)  |
+| `references/vue-router.md`         | `vue-router` in deps AND any `router/**` or route component in scope  |
+| `references/vue-testing.md`        | `vitest` in deps AND any `*.{test,spec}.*` in scope                   |
 
 If a reference would apply but no file in scope triggers its rules, skip loading it.
 
@@ -153,7 +154,7 @@ The sub-agents group violations by reference (`## <reference-slug>` → `### <fi
 
 Use this exact structure. The header, summary, and violation entry shape matter — downstream tools parse them.
 
-````markdown
+```markdown
 # antfu-check Report
 
 **Scope**: <e.g., `git diff HEAD` (6 files) | user-specified>
@@ -172,11 +173,13 @@ Use this exact structure. The header, summary, and violation entry shape matter 
 ### `src/components/UserCard.vue`
 
 **🔴 Error vue-sfc/sfc-script-setup** — SFC 應使用 `<script setup lang="ts">`
+
 - Evidence: L1 `export default defineComponent({ ... })`
 - Fix: 改寫為 `<script setup lang="ts">`,將 `props`/`data`/`methods` 遷移到 Composition API。
 - Source: [antfu/skills → vue-best-practices/references/sfc.md](https://github.com/antfu/skills/blob/main/skills/vue-best-practices/references/sfc.md) (also: local skill `vue-best-practices`)
 
 **🟡 Warning vue-sfc/style-scoped** — `<style>` 區塊缺少 `scoped`
+
 - Evidence: L45 `<style lang="scss">`
 - Fix: 除非這是全域樣式表,否則加上 `scoped`。
 - Source: [antfu/skills → vue-best-practices/references/sfc.md](https://github.com/antfu/skills/blob/main/skills/vue-best-practices/references/sfc.md)
@@ -184,6 +187,7 @@ Use this exact structure. The header, summary, and violation entry shape matter 
 ### `tsconfig.json`
 
 **🔴 Error project-setup/tsconfig-strict** — `compilerOptions.strict` 未設為 `true`
+
 - Evidence: `"strict": false`
 - Fix: 設為 `"strict": true`,啟用所有嚴格型別檢查。
 - Source: [antfu/skills → antfu/SKILL.md](https://github.com/antfu/skills/blob/main/skills/antfu/SKILL.md) (also: local skill `antfu`)
@@ -197,7 +201,7 @@ Use this exact structure. The header, summary, and violation entry shape matter 
 
 - `src/assets/logo.svg`(二進位檔)
 - 規則 `pnpm-monorepo/catalog-usage`(專案無 `pnpm-workspace.yaml`)
-````
+```
 
 ## Severity guide
 

@@ -17,8 +17,8 @@ Source: [antfu/skills — antfu](https://github.com/antfu/skills/tree/main/skill
 - **Fix**:
   ```ts
   // eslint.config.mjs
-  import antfu from '@antfu/eslint-config'
-  export default antfu()
+  import antfu from "@antfu/eslint-config";
+  export default antfu();
   ```
   Add `@antfu/eslint-config` to `devDependencies`.
 - **Source**: [antfu/skills → antfu/references/antfu-eslint-config.md](https://github.com/antfu/skills/blob/main/skills/antfu/references/antfu-eslint-config.md)

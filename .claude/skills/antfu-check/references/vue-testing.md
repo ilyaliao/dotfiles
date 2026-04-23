@@ -34,14 +34,16 @@ These rules apply only when `vitest` is a dependency.
 - **Applies to**: `**/*.{test,spec}.{ts,tsx}` that import Pinia stores
 - **Detection**: Test calls `useSomeStore()` without installing a Pinia instance first (missing `createTestingPinia()` or `setActivePinia(createPinia())`).
 - **Fix**:
+
   ```ts
-  import { createTestingPinia } from '@pinia/testing'
-  import { mount } from '@vue/test-utils'
+  import { createTestingPinia } from "@pinia/testing";
+  import { mount } from "@vue/test-utils";
 
   const wrapper = mount(MyComponent, {
     global: { plugins: [createTestingPinia()] },
-  })
+  });
   ```
+
 - **Source**: [antfu/skills → vue-testing-best-practices/SKILL.md](https://github.com/antfu/skills/blob/main/skills/vue-testing-best-practices/SKILL.md)
 
 ---

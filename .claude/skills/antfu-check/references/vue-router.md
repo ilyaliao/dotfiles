@@ -30,18 +30,20 @@ These rules apply only when `vue-router` is a dependency.
 - **Applies to**: `src/router/**/*.ts` global guards, in-component guards
 - **Detection**: Guard function signature takes `next` and calls `next(...)` with values (not just `next()` bare). Vue Router 4 prefers returning the target.
 - **Fix**: Return the target instead:
+
   ```ts
   // before
   router.beforeEach((to, from, next) => {
-    if (!auth.user) return next({ name: 'login' })
-    next()
-  })
+    if (!auth.user) return next({ name: "login" });
+    next();
+  });
 
   // after
   router.beforeEach((to) => {
-    if (!auth.user) return { name: 'login' }
-  })
+    if (!auth.user) return { name: "login" };
+  });
   ```
+
 - **Source**: [antfu/skills → vue-router-best-practices/SKILL.md](https://github.com/antfu/skills/blob/main/skills/vue-router-best-practices/SKILL.md)
 
 ---
@@ -53,8 +55,12 @@ These rules apply only when `vue-router` is a dependency.
 - **Detection**: Component does initial data-fetch based on `route.params.*` in `onMounted` / `<script setup>` top-level, but doesn't re-fetch when params change (no `watch(() => route.params, ...)` or `beforeRouteUpdate`).
 - **Fix**: Add a watcher:
   ```ts
-  const route = useRoute()
-  watch(() => route.params.id, id => fetchUser(id), { immediate: true })
+  const route = useRoute();
+  watch(
+    () => route.params.id,
+    (id) => fetchUser(id),
+    { immediate: true },
+  );
   ```
 - **Source**: [antfu/skills → vue-router-best-practices/SKILL.md](https://github.com/antfu/skills/blob/main/skills/vue-router-best-practices/SKILL.md)
 

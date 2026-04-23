@@ -26,13 +26,13 @@ These rules apply only when the audited package is a **library** (detected by `p
 - **Fix**: Migrate to tsdown. Use the `tsdown-migrate` local skill for `tsup → tsdown` conversions.
   ```ts
   // tsdown.config.ts
-  import { defineConfig } from 'tsdown'
+  import { defineConfig } from "tsdown";
   export default defineConfig({
-    entry: ['src/index.ts'],
-    format: ['esm'],
+    entry: ["src/index.ts"],
+    format: ["esm"],
     dts: true,
     exports: true,
-  })
+  });
   ```
 - **Source**: [antfu/skills → tsdown/SKILL.md](https://github.com/antfu/skills/blob/main/skills/tsdown/SKILL.md)
 

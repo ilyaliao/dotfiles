@@ -72,6 +72,7 @@ Source: [antfu/skills — vue-best-practices](https://github.com/antfu/skills/tr
 - **Applies to**: `**/*.vue`
 - **Detection**: Same element carries both `v-if` and `v-for` directives. Grep pattern: element with both `v-if="..."` and `v-for="..."` attributes.
 - **Fix**: Move the filter into a `computed`:
+
   ```vue
   <!-- bad -->
   <li v-for="u in users" v-if="u.active">{{ u.name }}</li>
@@ -80,9 +81,10 @@ Source: [antfu/skills — vue-best-practices](https://github.com/antfu/skills/tr
   <li v-for="u in activeUsers" :key="u.id">{{ u.name }}</li>
 
   <script setup lang="ts">
-  const activeUsers = computed(() => users.value.filter(u => u.active))
+  const activeUsers = computed(() => users.value.filter((u) => u.active));
   </script>
   ```
+
 - **Source**: [antfu/skills → vue-best-practices/references/sfc.md](https://github.com/antfu/skills/blob/main/skills/vue-best-practices/references/sfc.md)
 
 ---
@@ -123,13 +125,15 @@ Source: [antfu/skills — vue-best-practices](https://github.com/antfu/skills/tr
 - **Applies to**: `**/*.vue` in projects on Vue 3.5+
 - **Detection**: Template ref pattern using `const foo = ref(null)` paired with `ref="foo"` in template (Vue 3.5 introduced `useTemplateRef`).
 - **Fix**:
+
   ```ts
   // before
-  const input = ref<HTMLInputElement | null>(null)
+  const input = ref<HTMLInputElement | null>(null);
   // <input ref="input">
 
   // after
-  const input = useTemplateRef<HTMLInputElement>('input')
+  const input = useTemplateRef<HTMLInputElement>("input");
   // <input ref="input">
   ```
+
 - **Source**: [antfu/skills → vue-best-practices/references/sfc.md](https://github.com/antfu/skills/blob/main/skills/vue-best-practices/references/sfc.md)
