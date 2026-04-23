@@ -3,7 +3,6 @@
   "env": {
     "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "400000",
     "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
-    "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "1",
     "CLAUDE_CODE_NO_FLICKER": "1"
   },
   "includeCoAuthoredBy": true,
@@ -65,15 +64,6 @@
   "hooks": {
     "Notification": [
       {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/bin/set-title.sh \"💬 $(basename \"$CLAUDE_PROJECT_DIR\")\"",
-            "timeout": 5000
-          }
-        ]
-      },
-      {
         "matcher": "*",
         "hooks": [
           {
@@ -84,15 +74,6 @@
       }
     ],
     "PermissionRequest": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/bin/set-title.sh \"💬 $(basename \"$CLAUDE_PROJECT_DIR\")\"",
-            "timeout": 5000
-          }
-        ]
-      },
       {
         "matcher": "*",
         "hooks": [
@@ -169,30 +150,12 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/bin/set-title.sh \"🤖 $(basename \"$CLAUDE_PROJECT_DIR\")\"",
-            "timeout": 5000
-          }
-        ]
-      },
-      {
-        "hooks": [
-          {
-            "type": "command",
             "command": "~/.vibe-island/bin/vibe-island-bridge --source claude"
           }
         ]
       }
     ],
     "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/bin/set-title.sh \"🤖 $(basename \"$CLAUDE_PROJECT_DIR\")\"",
-            "timeout": 5000
-          }
-        ]
-      },
       {
         "hooks": [
           {
@@ -223,15 +186,6 @@
       }
     ],
     "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/bin/set-title.sh \"⚡ $(basename \"$CLAUDE_PROJECT_DIR\")\"",
-            "timeout": 5000
-          }
-        ]
-      },
       {
         "hooks": [
           {
