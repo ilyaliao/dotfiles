@@ -21,7 +21,7 @@ alias release="nr release"
 alias re="nr release"
 alias cc="claude"
 alias ccc="claude -c"
-alias ccr="claude --dangerously-skip-permissions -r"
+alias ccr="claude -r"
 
 # eza — brew install eza
 alias ll="eza -l -g --icons"
