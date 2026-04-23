@@ -57,7 +57,9 @@
       "WebFetch(domain:*.ilyal.me)",
       "WebSearch"
     ],
-    "deny": ["Skill(a11y-debugging)"],
+    "deny": [
+      "Skill(a11y-debugging)"
+    ],
     "defaultMode": "auto"
   },
   "hooks": {
@@ -76,7 +78,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/ilyal/.vibe-island/bin/vibe-island-bridge --source claude"
+            "command": "~/.vibe-island/bin/vibe-island-bridge --source claude"
           }
         ]
       }
@@ -96,7 +98,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/ilyal/.vibe-island/bin/vibe-island-bridge --source claude",
+            "command": "~/.vibe-island/bin/vibe-island-bridge --source claude",
             "timeout": 86400
           }
         ]
@@ -117,7 +119,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/ilyal/.vibe-island/bin/vibe-island-bridge --source claude"
+            "command": "~/.vibe-island/bin/vibe-island-bridge --source claude"
           }
         ]
       }
@@ -127,7 +129,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/ilyal/.vibe-island/bin/vibe-island-bridge --source claude"
+            "command": "~/.vibe-island/bin/vibe-island-bridge --source claude"
           }
         ]
       }
@@ -147,7 +149,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/ilyal/.vibe-island/bin/vibe-island-bridge --source claude"
+            "command": "~/.vibe-island/bin/vibe-island-bridge --source claude"
           }
         ]
       }
@@ -157,7 +159,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/ilyal/.vibe-island/bin/vibe-island-bridge --source claude"
+            "command": "~/.vibe-island/bin/vibe-island-bridge --source claude"
           }
         ]
       }
@@ -176,7 +178,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/ilyal/.vibe-island/bin/vibe-island-bridge --source claude"
+            "command": "~/.vibe-island/bin/vibe-island-bridge --source claude"
           }
         ]
       }
@@ -195,7 +197,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/ilyal/.vibe-island/bin/vibe-island-bridge --source claude"
+            "command": "~/.vibe-island/bin/vibe-island-bridge --source claude"
           }
         ]
       }
@@ -205,7 +207,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/ilyal/.vibe-island/bin/vibe-island-bridge --source claude"
+            "command": "~/.vibe-island/bin/vibe-island-bridge --source claude"
           }
         ]
       }
@@ -215,7 +217,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/ilyal/.vibe-island/bin/vibe-island-bridge --source claude"
+            "command": "~/.vibe-island/bin/vibe-island-bridge --source claude"
           }
         ]
       }
@@ -234,11 +236,15 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/ilyal/.vibe-island/bin/vibe-island-bridge --source claude"
+            "command": "~/.vibe-island/bin/vibe-island-bridge --source claude"
           }
         ]
       }
     ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "sh ~/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
     "chrome-devtools-mcp@claude-plugins-official": true,
@@ -280,10 +286,6 @@
     }
   },
   "language": "繁體中文台灣用語",
-  "statusLine": {
-    "type": "command",
-    "command": "sh ~/.claude/statusline-command.sh"
-  },
   "alwaysThinkingEnabled": true,
   "showClearContextOnPlanAccept": true,
   "skipDangerousModePermissionPrompt": true,
