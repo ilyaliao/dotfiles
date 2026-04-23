@@ -5,7 +5,6 @@ cwd=$(echo "$input"       | jq -r '.workspace.current_dir // .cwd // empty')
 model=$(echo "$input"     | jq -r '.model.display_name // empty')
 version=$(echo "$input"   | jq -r '.version // empty')
 compact_win=$(jq -r '.env.CLAUDE_CODE_AUTO_COMPACT_WINDOW // empty' "$HOME/.claude/settings.json" 2>/dev/null)
-effort=$(jq -r '.env.CLAUDE_CODE_EFFORT_LEVEL // empty' "$HOME/.claude/settings.json" 2>/dev/null)
 ctx_pct=""
 if [ -n "$compact_win" ]; then
   ctx_pct=$(echo "$input" | jq --arg win "$compact_win" -r '
@@ -251,9 +250,6 @@ if [ -n "$ctx_pct" ]; then
   ctx_color=$(pick_color "$ctx_pct")
   printf " %s|%s %s󰧑%s  %s%d%%%s" "$DIM" "$RESET" "$PINK" "$RESET" "$ctx_color" "$ctx_int" "$RESET"
   [ -n "$ctx_limit_fmt" ] && printf " %s(%s)%s" "$DIM" "$ctx_limit_fmt" "$RESET"
-fi
-if [ -n "$effort" ]; then
-  printf " %s|%s %s%s  %s%s%s" "$DIM" "$RESET" "$GREEN_CT" "$RESET" "$GREEN_CT" "$effort" "$RESET"
 fi
 if [ -n "$version" ]; then
   printf " %s|%s %s%s  %sv%s%s" "$DIM" "$RESET" "$MAUVE" "$RESET" "$MAUVE" "$version" "$RESET"
