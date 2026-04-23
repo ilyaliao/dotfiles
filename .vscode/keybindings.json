@@ -22,10 +22,10 @@
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
-		"key": "shift+a",
-		"command": "explorer.newFolder",
-		"when": "filesExplorerFocus && !inputFocus"
-	},
+    "key": "shift+a",
+    "command": "explorer.newFolder",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
   {
     "key": "r",
     "command": "renameFile",

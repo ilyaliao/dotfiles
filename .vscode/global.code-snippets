@@ -2,30 +2,24 @@
   "import": {
     "scope": "javascript,typescript,typescriptreact",
     "prefix": "im",
-    "body": [
-      "import { $2 } from '$1';"
-    ],
-    "description": "Import a module"
+    "body": ["import { $2 } from '$1';"],
+    "description": "Import a module",
   },
   "export": {
     "scope": "javascript,typescript",
     "prefix": "ex",
-    "body": [
-      "export { $2 } from '$1';"
-    ],
-    "description": "Export a module"
+    "body": ["export { $2 } from '$1';"],
+    "description": "Export a module",
   },
   "export-all": {
     "scope": "javascript,typescript",
     "prefix": "exa",
-    "body": [
-      "export * from '$2';"
-    ],
-    "description": "Export all module"
+    "body": ["export * from '$2';"],
+    "description": "Export all module",
   },
   "Destructure Object": {
     "prefix": "cc",
-    "body": "const { $2 } = $1"
+    "body": "const { $2 } = $1",
   },
   "vue-script-setup": {
     "scope": "vue",
@@ -42,38 +36,28 @@
       "  <div>",
       "    <slot/>",
       "  </div>",
-      "</template>"
-    ]
+      "</template>",
+    ],
   },
   "vue-template-el": {
     "scope": "javascript,typescript,vue",
     "prefix": "trel",
-    "body": [
-      "const ${1:el} = shallowRef<HTMLDivElement | null>(null)"
-    ]
+    "body": ["const ${1:el} = shallowRef<HTMLDivElement | null>(null)"],
   },
   "vue-template-ref": {
     "scope": "javascript,typescript,vue",
     "prefix": "tref",
-    "body": [
-      "const ${1:ref} = shallowRef<ComponentExposed<typeof ${2:component}> | null>(null)"
-    ]
+    "body": ["const ${1:ref} = shallowRef<ComponentExposed<typeof ${2:component}> | null>(null)"],
   },
   "vue-computed": {
     "scope": "javascript,typescript,vue",
     "prefix": "com",
-    "body": [
-      "computed(() => $1 )"
-    ]
+    "body": ["computed(() => $1 )"],
   },
   "vue-watch-effect": {
     "scope": "javascript,typescript,vue",
     "prefix": "watchE",
-    "body": [
-      "watchEffect(() => {",
-      "  $1",
-      "})"
-    ]
+    "body": ["watchEffect(() => {", "  $1", "})"],
   },
   "if-vitest": {
     "scope": "javascript,typescript",
@@ -82,8 +66,8 @@
       "if (import.meta.vitest) {",
       "  const { describe, it, expect } = import.meta.vitest",
       "  ${1}",
-      "}"
-    ]
+      "}",
+    ],
   },
   "markdown-api-table": {
     "scope": "markdown",
@@ -106,14 +90,12 @@
       "",
       "</td>",
       "</tr>",
-      "</table>"
-    ]
+      "</table>",
+    ],
   },
   "i18n": {
     "scope": "javascript,typescript,vue",
     "prefix": "18n",
-    "body": [
-      "const { t } = useI18n()"
-    ]
-  }
+    "body": ["const { t } = useI18n()"],
+  },
 }
