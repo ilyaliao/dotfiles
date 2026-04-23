@@ -1,0 +1,4 @@
+{
+  "$schema": "https://cdn.jsdelivr.net/npm/oxfmt@latest/configuration_schema.json",
+  "ignorePatterns": [".git/**", ".DS_Store"]
+}
