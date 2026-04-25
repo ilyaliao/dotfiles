@@ -12,7 +12,9 @@ zinit wait lucid for \
   OMZP::npm
 
 zinit wait lucid for \
-  atinit"zicompinit; zicdreplay" \
+  atinit"zicompinit; zicdreplay; \
+    compdef _i_complete i; compdef _repros_complete repros; \
+    compdef _forks_complete forks; compdef _works_complete works" \
     zdharma-continuum/fast-syntax-highlighting \
   atload"_zsh_autosuggest_start" \
     zsh-users/zsh-autosuggestions \
