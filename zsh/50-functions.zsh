@@ -40,6 +40,14 @@ function works() {
   cd ~/w/$1
 }
 
+function .claude() {
+  cd ~/.claude
+}
+
+function dotfiles() {
+  cd ~/dotfiles
+}
+
 function pr() {
   if [ $1 = "ls" ]; then
     gh pr list
