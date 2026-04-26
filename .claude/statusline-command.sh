@@ -1,4 +1,13 @@
 #!/bin/sh
+# Claude Code Statusline
+#
+# Layout:
+#   model_icon model [worktree] | ctx% (limit) | version
+#   dir | branch | diff
+#   time | session duration | cost ($/h)
+#   用量 ████░░░░░░ 40% (剩 N 小時 重置)
+#   本周 ██████░░░░ 60% (剩 N 天 N 小時 重置)
+
 input=$(cat)
 
 cwd=$(echo "$input"       | jq -r '.workspace.current_dir // .cwd // empty')
@@ -32,8 +41,6 @@ ctx_size=$(echo "$input"  | jq -r '.context_window.context_window_size // empty'
 branch=""
 diff_add=""
 diff_del=""
-base_add=""
-base_del=""
 if [ -n "$cwd" ] && [ -d "$cwd" ]; then
   branch=$(git -C "$cwd" symbolic-ref --short HEAD 2>/dev/null || git -C "$cwd" rev-parse --short HEAD 2>/dev/null)
   if [ -n "$branch" ]; then
@@ -41,41 +48,6 @@ if [ -n "$cwd" ] && [ -d "$cwd" ]; then
     diff_add=$(echo "$stat" | grep -oE '[0-9]+ insertion' | grep -oE '[0-9]+')
     diff_del=$(echo "$stat" | grep -oE '[0-9]+ deletion' | grep -oE '[0-9]+')
 
-    base=$(git -C "$cwd" config "branch.$branch.base" 2>/dev/null)
-    if [ -z "$base" ]; then
-      head_sha=$(git -C "$cwd" rev-parse HEAD 2>/dev/null)
-      best_ts=0
-      for b in $(git -C "$cwd" for-each-ref --format='%(refname:short)' refs/heads/ 2>/dev/null); do
-        [ "$b" = "$branch" ] && continue
-        mb=$(git -C "$cwd" merge-base "$b" HEAD 2>/dev/null)
-        [ -z "$mb" ] || [ "$mb" = "$head_sha" ] && continue
-        ts=$(git -C "$cwd" show -s --format=%ct "$mb" 2>/dev/null)
-        [ -z "$ts" ] && continue
-        if [ "$ts" -gt "$best_ts" ]; then
-          best_ts="$ts"
-          base="$b"
-        fi
-      done
-    fi
-    if [ -z "$base" ]; then
-      base=$(git -C "$cwd" symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null | sed 's|^origin/||')
-    fi
-    if [ -n "$base" ] && [ "$base" != "$branch" ]; then
-      base_ref=""
-      if git -C "$cwd" show-ref --verify --quiet "refs/heads/$base"; then
-        base_ref="$base"
-      elif git -C "$cwd" show-ref --verify --quiet "refs/remotes/origin/$base"; then
-        base_ref="origin/$base"
-      fi
-      if [ -n "$base_ref" ]; then
-        fork_point=$(git -C "$cwd" merge-base "$base_ref" HEAD 2>/dev/null)
-        if [ -n "$fork_point" ]; then
-          bstat=$(git -C "$cwd" diff "$fork_point" --shortstat 2>/dev/null)
-          base_add=$(echo "$bstat" | grep -oE '[0-9]+ insertion' | grep -oE '[0-9]+')
-          base_del=$(echo "$bstat" | grep -oE '[0-9]+ deletion' | grep -oE '[0-9]+')
-        fi
-      fi
-    fi
   fi
 fi
 
@@ -256,20 +228,13 @@ if [ -n "$version" ]; then
 fi
 printf "\n"
 if [ -n "$branch" ]; then
-  base_diff_str=""
-  if [ -n "$base_add" ] || [ -n "$base_del" ]; then
-    base_diff_str=" ${DIM}|${RESET} ${MAUVE}${RESET}  "
-    [ -n "$base_add" ] && base_diff_str="${base_diff_str}${GREEN}+${base_add}${RESET}"
-    [ -n "$base_del" ] && [ -n "$base_add" ] && base_diff_str="${base_diff_str} "
-    [ -n "$base_del" ] && base_diff_str="${base_diff_str}${RED}-${base_del}${RESET}"
-  fi
   diff_str=""
   if [ -n "$diff_add" ] || [ -n "$diff_del" ]; then
-    diff_str=" ${DIM}|${RESET} ${SAPPHIRE}${RESET}  "
+    diff_str=" ${DIM}|${RESET} ${MAUVE}${RESET}  "
     [ -n "$diff_add" ] && diff_str="${diff_str}${GREEN}+${diff_add}${RESET}"
     [ -n "$diff_del" ] && diff_str="${diff_str} ${RED}-${diff_del}${RESET}"
   fi
-  printf "%s  %s%s %s|%s %s%s  %s%s%s\n" "$CYAN" "$dir" "$RESET" "$DIM" "$RESET" "$BRANCH" "$RESET" "$branch" "$diff_str" "$base_diff_str"
+  printf "%s  %s%s %s|%s %s%s  %s%s\n" "$CYAN" "$dir" "$RESET" "$DIM" "$RESET" "$BRANCH" "$RESET" "$branch" "$diff_str"
 else
   printf "%s  %s%s\n" "$CYAN" "$dir" "$RESET"
 fi
