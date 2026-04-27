@@ -230,8 +230,6 @@
   "alwaysThinkingEnabled": true,
   "showClearContextOnPlanAccept": true,
   "skipDangerousModePermissionPrompt": true,
-  "theme": "auto",
-  "editorMode": "vim",
   "skipAutoPermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754041037675

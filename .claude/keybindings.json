@@ -14,7 +14,7 @@
     {
       "context": "Chat",
       "bindings": {
-        "escape": null,
+        "escape": "chat:cancel",
         "shift+tab": "chat:cycleMode",
         "meta+p": "chat:modelPicker",
         "meta+t": "chat:thinkingToggle",
