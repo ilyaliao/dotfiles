@@ -52,6 +52,7 @@
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
   "git.untrackedChanges": "separate",
+  "scm.defaultViewMode": "tree",
   "scm.diffDecorationsGutterWidth": 2,
   "terminal.integrated.fontFamily": "SF Mono, Symbols Nerd Font Mono",
   "terminal.integrated.fontSize": 14,
@@ -459,6 +460,7 @@
   "cursor.composer.textSizeScale": 0.85,
   "cursor.composer.shouldChimeAfterChatFinishes": true,
   "cursor.composer.suggestNextPrompt": true,
+  "cursor.general.fontSmoothingAntialiased": true,
 
   // updated 2025-12-26 02:26
   // https://github.com/antfu/vscode-file-nesting-config
@@ -570,7 +572,5 @@
     "*.xaml": "$(capture).xaml.cs"
   },
   "update.releaseTrack": "dev",
-  "update.mode": "silentlyApplyOnQuit",
-  "gitlens.gitkraken.mcp.autoEnabled": false,
-  "cursor.general.fontSmoothingAntialiased": true,
+  "update.mode": "silentlyApplyOnQuit"
 }
