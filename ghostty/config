@@ -5,7 +5,8 @@ window-width = 133
 window-height = 40
 background-opacity = 0.9
 font-thicken = true
-background-blur-radius = 20
+background-blur = macos-glass-clear
+macos-titlebar-style = transparent
 theme = GitHub Dark
 background = #101216
 foreground = #8b949e
@@ -43,5 +44,3 @@ clipboard-write = allow
 copy-on-select = clipboard
 
 auto-update-channel = tip
-
-custom-shader = shaders/cursor_sweep.glsl
