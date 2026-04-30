@@ -2,8 +2,8 @@
 # Claude Code Statusline
 #
 # Layout:
-#   model_icon model [worktree] | ctx% (limit) | version
-#   dir | branch | diff
+#   model_icon model | ctx% (limit) | version
+#   repo 或 cwd | branch [worktree] | diff（cwd 與 worktree 同名時左欄改為主 repo 目錄名，避免重複）
 #   time | session duration | cost ($/h)
 #   用量 ████░░░░░░ 40% (剩 N 小時 重置)
 #   本周 ██████░░░░ 60% (剩 N 天 N 小時 重置)
@@ -207,8 +207,13 @@ else
 fi
 wt_str=""
 [ -n "$worktree" ] && wt_str=" ${DIM}[${worktree}]${RESET}"
+dir_disp="$dir"
+if [ -n "$cwd" ] && [ -n "$worktree" ] && [ "$dir" = "$worktree" ]; then
+  gt=$(git -C "$cwd" rev-parse --show-toplevel 2>/dev/null)
+  [ -n "$gt" ] && dir_disp=$(basename "$gt")
+fi
 model_icon=$(pick_model_icon "$ctx_pct")
-printf "%s%s  %s%s%s" "$YELLOW" "$model_icon" "$short_model" "$RESET" "$wt_str"
+printf "%s%s  %s%s" "$YELLOW" "$model_icon" "$short_model" "$RESET"
 ctx_limit=""
 if [ -n "$compact_win" ]; then
   ctx_limit="$compact_win"
@@ -234,9 +239,9 @@ if [ -n "$branch" ]; then
     [ -n "$diff_add" ] && diff_str="${diff_str}${GREEN}+${diff_add}${RESET}"
     [ -n "$diff_del" ] && diff_str="${diff_str} ${RED}-${diff_del}${RESET}"
   fi
-  printf "%s  %s%s %s|%s %s%s  %s%s\n" "$CYAN" "$dir" "$RESET" "$DIM" "$RESET" "$BRANCH" "$RESET" "$branch" "$diff_str"
+  printf "%s  %s%s %s|%s %s%s  %s%s%s\n" "$CYAN" "$dir_disp" "$RESET" "$DIM" "$RESET" "$BRANCH" "$RESET" "$branch" "$wt_str" "$diff_str"
 else
-  printf "%s  %s%s\n" "$CYAN" "$dir" "$RESET"
+  printf "%s  %s%s%s\n" "$CYAN" "$dir_disp" "$RESET" "$wt_str"
 fi
 
 # Line 3: 現在時間 + session 時長
