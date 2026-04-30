@@ -1,0 +1,1 @@
+READ ~/.claude/CLAUDE.md
