@@ -17,7 +17,7 @@
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.list.smoothScrolling": true,
   "workbench.preferredLightColorTheme": "Vitesse Light",
-  "workbench.preferredDarkColorTheme": "Vitesse Black",
+  "workbench.preferredDarkColorTheme": "Vitesse Light Soft",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
@@ -379,10 +379,7 @@
     "toml"
   ],
   // I only use Prettier for manually formatting
-  "prettier.enable": false,
-  "prettier.printWidth": 200,
-  "prettier.semi": false,
-  "prettier.singleQuote": true,
+  "prettier.enable": true,
   "unocss.autocomplete.matchType": "fuzzy",
   "unocss.remToPxPreview": true,
   "cSpell.allowCompoundWords": true,
