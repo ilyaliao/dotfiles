@@ -209,7 +209,8 @@
     "figma@claude-plugins-official": false,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true
+    "typescript-lsp@claude-plugins-official": true,
+    "pr-review-toolkit@claude-plugins-official": true
   },
   "language": "繁體中文台灣用語",
   "alwaysThinkingEnabled": true,
