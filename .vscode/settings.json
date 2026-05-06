@@ -17,7 +17,7 @@
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.list.smoothScrolling": true,
   "workbench.preferredLightColorTheme": "Vitesse Light",
-  "workbench.preferredDarkColorTheme": "Vitesse Light Soft",
+  "workbench.preferredDarkColorTheme": "Vitesse Dark",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
@@ -455,7 +455,7 @@
   "cursor.composer.queueMessageDefaultBehavior": "queue",
   "cursor.composer.usageSummaryDisplay": "always",
   "cursor.composer.textSizeScale": 0.85,
-  "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "cursor.composer.shouldChimeAfterChatFinishes": false,
   "cursor.composer.suggestNextPrompt": true,
   "cursor.general.fontSmoothingAntialiased": true,
 
@@ -464,7 +464,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 2026/4/24 上午1:33:29",
+    "//": "Last update at 2026/5/6 下午10:20:51",
     ".agent": ".agent, .claude, .cline, .codebuddy, .codex, .commandcode, .continue, .crush, .cursor, .factory, .gemini, .goose, .junie, .kilocode, .kiro, .kode, .mcpjam, .mux, .neovate, .opencode, .openhands, .pi, .pochi, .qoder, .qwen, .roo, .trae, .windsurf, .zencoder",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
