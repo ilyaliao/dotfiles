@@ -7,6 +7,7 @@ background-opacity = 0.7
 font-thicken = true
 background-blur = macos-glass-clear
 macos-titlebar-style = transparent
+macos-icon = blueprint
 theme = GitHub Dark
 background = #101216
 foreground = #8b949e
