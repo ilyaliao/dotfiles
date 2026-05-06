@@ -2,41 +2,83 @@
 # Claude Code Statusline
 #
 # Layout:
-#   model_icon model | ctx% (limit) | version
-#   repo 或 cwd | branch [worktree] | diff（cwd 與 worktree 同名時左欄改為主 repo 目錄名，避免重複）
-#   time | session duration | cost ($/h)
+#   model_icon model [worktree] | ctx% (limit) | version
+#   dir | branch | diff
+#   time | session duration | cost
 #   用量 ████░░░░░░ 40% (剩 N 小時 重置)
 #   本周 ██████░░░░ 60% (剩 N 天 N 小時 重置)
 
 input=$(cat)
 
-cwd=$(echo "$input"       | jq -r '.workspace.current_dir // .cwd // empty')
-model=$(echo "$input"     | jq -r '.model.display_name // empty')
-version=$(echo "$input"   | jq -r '.version // empty')
+# ╔════════════════════════════════════════════════════════════════════╗
+# ║                           INPUT PARSING                            ║
+# ╚════════════════════════════════════════════════════════════════════╝
+
+# Parse the entire input with one jq invocation. Each field becomes one line;
+# missing fields stay empty so `read` keeps positional alignment.
+{
+  IFS= read -r cwd
+  IFS= read -r model
+  IFS= read -r version
+  IFS= read -r worktree
+  IFS= read -r ctx_size
+  IFS= read -r tok_input
+  IFS= read -r tok_cache_create
+  IFS= read -r tok_cache_read
+  IFS= read -r ctx_used_pct_field
+  IFS= read -r usage_5h
+  IFS= read -r usage_5h_reset
+  IFS= read -r usage_7d
+  IFS= read -r usage_7d_reset
+  IFS= read -r total_cost
+  IFS= read -r duration_ms
+} <<EOF
+$(echo "$input" | jq -r '
+  [
+    .workspace.current_dir // .cwd // "",
+    .model.display_name // "",
+    .version // "",
+    .workspace.git_worktree // "",
+    .context_window.context_window_size // "",
+    .context_window.current_usage.input_tokens // 0,
+    .context_window.current_usage.cache_creation_input_tokens // 0,
+    .context_window.current_usage.cache_read_input_tokens // 0,
+    .context_window.used_percentage // "",
+    .rate_limits.five_hour.used_percentage // "",
+    .rate_limits.five_hour.resets_at // "",
+    .rate_limits.seven_day.used_percentage // "",
+    .rate_limits.seven_day.resets_at // "",
+    .cost.total_cost_usd // "",
+    .cost.total_duration_ms // ""
+  ] | .[]
+')
+EOF
+
+# ╔════════════════════════════════════════════════════════════════════╗
+# ║                       CONTEXT % CALCULATION                        ║
+# ╚════════════════════════════════════════════════════════════════════╝
+
 compact_win=$(jq -r '.env.CLAUDE_CODE_AUTO_COMPACT_WINDOW // empty' "$HOME/.claude/settings.json" 2>/dev/null)
+
+# Compute ctx_pct: compact-window-based first, then API field, then context_window_size fallback.
+tok_total=$(( ${tok_input:-0} + ${tok_cache_create:-0} + ${tok_cache_read:-0} ))
 ctx_pct=""
-if [ -n "$compact_win" ]; then
-  ctx_pct=$(echo "$input" | jq --arg win "$compact_win" -r '
-    (
-      (.context_window.current_usage.input_tokens // 0) +
-      (.context_window.current_usage.cache_creation_input_tokens // 0) +
-      (.context_window.current_usage.cache_read_input_tokens // 0)
-    ) as $used
-    | if $used > 0
-      then ($used * 100 / ($win | tonumber))
-      else empty end
-  ')
+if [ -n "$compact_win" ] && [ "$tok_total" -gt 0 ]; then
+  ctx_pct=$(( (tok_total * 100 + compact_win / 2) / compact_win ))
+elif [ -n "$ctx_used_pct_field" ]; then
+  ctx_pct="$ctx_used_pct_field"
+elif [ -n "$ctx_size" ] && [ "${tok_input:-0}" -gt 0 ]; then
+  ctx_pct=$(( (tok_input * 100 + ctx_size / 2) / ctx_size ))
 fi
-if [ -z "$ctx_pct" ]; then
-  ctx_pct=$(echo "$input" | jq -r '
-    .context_window.used_percentage //
-    (if .context_window.context_window_size and .context_window.current_usage.input_tokens
-     then (.context_window.current_usage.input_tokens * 100 / .context_window.context_window_size)
-     else empty end)
-  ')
-fi
-worktree=$(echo "$input"  | jq -r '.workspace.git_worktree // empty')
-ctx_size=$(echo "$input"  | jq -r '.context_window.context_window_size // empty')
+
+session_duration_s=""
+[ -n "$duration_ms" ] && session_duration_s=$(( duration_ms / 1000 ))
+
+_now=$(date +%s)
+
+# ╔════════════════════════════════════════════════════════════════════╗
+# ║                              GIT INFO                              ║
+# ╚════════════════════════════════════════════════════════════════════╝
 
 branch=""
 diff_add=""
@@ -45,24 +87,18 @@ if [ -n "$cwd" ] && [ -d "$cwd" ]; then
   branch=$(git -C "$cwd" symbolic-ref --short HEAD 2>/dev/null || git -C "$cwd" rev-parse --short HEAD 2>/dev/null)
   if [ -n "$branch" ]; then
     stat=$(git -C "$cwd" diff HEAD --shortstat 2>/dev/null)
-    diff_add=$(echo "$stat" | grep -oE '[0-9]+ insertion' | grep -oE '[0-9]+')
-    diff_del=$(echo "$stat" | grep -oE '[0-9]+ deletion' | grep -oE '[0-9]+')
-
+    case "$stat" in
+      *insertion*) tmp=${stat%% insertion*}; diff_add=${tmp##* } ;;
+    esac
+    case "$stat" in
+      *deletion*) tmp=${stat%% deletion*}; diff_del=${tmp##* } ;;
+    esac
   fi
 fi
 
-usage_5h=$(echo "$input"     | jq -r '.rate_limits.five_hour.used_percentage // empty')
-usage_5h_reset=$(echo "$input" | jq -r '.rate_limits.five_hour.resets_at // empty')
-usage_7d=$(echo "$input"     | jq -r '.rate_limits.seven_day.used_percentage // empty')
-usage_7d_reset=$(echo "$input" | jq -r '.rate_limits.seven_day.resets_at // empty')
-total_in=$(echo "$input"  | jq -r '.context_window.total_input_tokens // empty')
-total_out=$(echo "$input" | jq -r '.context_window.total_output_tokens // empty')
-total_cost=$(echo "$input" | jq -r '.cost.total_cost_usd // empty')
-duration_ms=$(echo "$input" | jq -r '.cost.total_duration_ms // empty')
-session_duration_s=""
-if [ -n "$duration_ms" ]; then
-  session_duration_s=$(( duration_ms / 1000 ))
-fi
+# ╔════════════════════════════════════════════════════════════════════╗
+# ║                         COLORS & CONSTANTS                         ║
+# ╚════════════════════════════════════════════════════════════════════╝
 
 BAR_W=10
 ESC=$(printf '\033')
@@ -86,7 +122,11 @@ GREEN_CT="${ESC}[38;2;166;218;149m"
 YELLOW_CT="${ESC}[38;2;238;212;159m"
 MAUVE="${ESC}[38;2;198;160;246m"
 
-# Pick a color for a usage percentage (5-step: <20 green, <40 teal, <60 yellow, <80 bold orange, >=80 red)
+# ╔════════════════════════════════════════════════════════════════════╗
+# ║                          HELPER FUNCTIONS                          ║
+# ╚════════════════════════════════════════════════════════════════════╝
+
+# 5-step usage palette: <20 green, <40 teal, <60 yellow, <80 bold orange, >=80 red
 pick_color() {
   pct=$1
   if [ -z "$pct" ]; then
@@ -94,19 +134,15 @@ pick_color() {
     return
   fi
   int=$(printf "%.0f" "$pct")
-  if [ "$int" -ge 80 ]; then
-    printf "%s" "$RED"
-  elif [ "$int" -ge 60 ]; then
-    printf "%s" "$BOLD_ORANGE"
-  elif [ "$int" -ge 40 ]; then
-    printf "%s" "$YELLOW"
-  elif [ "$int" -ge 20 ]; then
-    printf "%s" "$TEAL"
-  else
-    printf "%s" "$GREEN"
+  if   [ "$int" -ge 80 ]; then printf "%s" "$RED"
+  elif [ "$int" -ge 60 ]; then printf "%s" "$BOLD_ORANGE"
+  elif [ "$int" -ge 40 ]; then printf "%s" "$YELLOW"
+  elif [ "$int" -ge 20 ]; then printf "%s" "$TEAL"
+  else                         printf "%s" "$GREEN"
   fi
 }
-# Pick a model icon by ctx percentage (chill -> panic -> dead)
+
+# Model icon by ctx percentage (chill -> panic -> dead)
 pick_model_icon() {
   pct=$1
   if [ -z "$pct" ]; then
@@ -114,33 +150,23 @@ pick_model_icon() {
     return
   fi
   int=$(printf "%.0f" "$pct")
-  if [ "$int" -ge 100 ]; then
-    printf "%s" "󱚢"
-  elif [ "$int" -ge 80 ]; then
-    printf "%s" "󱚞"
-  elif [ "$int" -ge 60 ]; then
-    printf "%s" "󱚠"
-  elif [ "$int" -ge 40 ]; then
-    printf "%s" "󱚤"
-  elif [ "$int" -ge 20 ]; then
-    printf "%s" "󱜚"
-  else
-    printf "%s" "󱙺"
+  if   [ "$int" -ge 100 ]; then printf "%s" "󱚢"
+  elif [ "$int" -ge 80 ];  then printf "%s" "󱚞"
+  elif [ "$int" -ge 60 ];  then printf "%s" "󱚠"
+  elif [ "$int" -ge 40 ];  then printf "%s" "󱚤"
+  elif [ "$int" -ge 20 ];  then printf "%s" "󱜚"
+  else                          printf "%s" "󱙺"
   fi
 }
 
-
-# Render a progress bar: filled ▇ blocks + empty ░ blocks, width BAR_W
+# Progress bar: filled █ + empty ░, total width BAR_W
 render_bar() {
   pct=$1
   color=$2
   if [ -z "$pct" ]; then
-    i=0
     bar=""
-    while [ $i -lt $BAR_W ]; do
-      bar="${bar}░"
-      i=$((i+1))
-    done
+    i=0
+    while [ $i -lt $BAR_W ]; do bar="${bar}░"; i=$((i+1)); done
     printf "%s%s%s" "$DIM" "$bar" "$RESET"
     return
   fi
@@ -149,22 +175,17 @@ render_bar() {
   [ $filled -lt 0 ] && filled=0
   [ $filled -gt $BAR_W ] && filled=$BAR_W
   empty=$(( BAR_W - filled ))
-
   bar=""
-  i=0
-  while [ $i -lt $filled ]; do bar="${bar}█"; i=$((i+1)); done
-  j=0
+  i=0; while [ $i -lt $filled ]; do bar="${bar}█"; i=$((i+1)); done
   empty_part=""
-  while [ $j -lt $empty ]; do empty_part="${empty_part}░"; j=$((j+1)); done
+  j=0; while [ $j -lt $empty ]; do empty_part="${empty_part}░"; j=$((j+1)); done
   printf "%s%s%s%s%s" "$color" "$bar" "$DIM" "$empty_part" "$RESET"
 }
 
-# Format token count with K/M suffix (e.g. 127398 -> "127.4K", 1234567 -> "1.2M")
+# Format token count with K/M suffix
 format_tokens() {
   n=$1
-  if [ -z "$n" ] || [ "$n" = "null" ]; then
-    return
-  fi
+  [ -z "$n" ] || [ "$n" = "null" ] && return
   awk -v n="$n" 'BEGIN{
     if (n >= 1000000) { x=n/1000000; if (x==int(x)) printf "%dM", x; else printf "%.1fM", x }
     else if (n >= 1000) { x=n/1000; if (x==int(x)) printf "%dK", x; else printf "%.1fK", x }
@@ -172,34 +193,50 @@ format_tokens() {
   }'
 }
 
-# Format "2h 30m, at 14:30" (relative + absolute) given ISO-8601 timestamp
+# "剩 2 小時 30 分 重置" given an epoch timestamp
 format_reset() {
   ts=$1
   [ -z "$ts" ] && return
-  now=$(date +%s)
-  diff=$(( ts - now ))
+  diff=$(( ts - _now ))
   [ $diff -le 0 ] && return
-
   d=$(( diff / 86400 ))
   h=$(( (diff % 86400) / 3600 ))
   m=$(( (diff % 3600) / 60 ))
-  if [ $d -gt 0 ]; then
-    rel=$(printf "%d 天 %d 小時" "$d" "$h")
-  elif [ $h -gt 0 ]; then
-    rel=$(printf "%d 小時 %d 分" "$h" "$m")
-  else
-    rel=$(printf "%d 分" "$m")
+  if   [ $d -gt 0 ]; then rel=$(printf "%d 天 %d 小時" "$d" "$h")
+  elif [ $h -gt 0 ]; then rel=$(printf "%d 小時 %d 分" "$h" "$m")
+  else                    rel=$(printf "%d 分" "$m")
   fi
-
   printf "剩 %s 重置" "$rel"
 }
 
-# Line 1: directory + model
-if [ -n "$cwd" ]; then
-  dir=$(basename "$cwd")
-else
-  dir="?"
-fi
+# Render one usage line (用量/本周): label + bar + percent + optional countdown.
+# Empty pct degrades to 0%/dim so the line stays present from the first frame.
+render_usage_line() {
+  label=$1
+  pct=$2
+  reset_ts=$3
+  if [ -n "$pct" ]; then
+    int=$(printf "%.0f" "$pct")
+    color=$(pick_color "$pct")
+  else
+    int=0
+    color="$DIM"
+  fi
+  bar=$(render_bar "$pct" "$color")
+  reset_str=$(format_reset "$reset_ts")
+  if [ -n "$reset_str" ]; then
+    printf "%s%s%s %s %s%3d%%%s %s(%s)%s\n" "$DIM" "$label" "$RESET" "$bar" "$color" "$int" "$RESET" "$DIM" "$reset_str" "$RESET"
+  else
+    printf "%s%s%s %s %s%3d%%%s\n" "$DIM" "$label" "$RESET" "$bar" "$color" "$int" "$RESET"
+  fi
+}
+
+# ╔════════════════════════════════════════════════════════════════════╗
+# ║             RENDER LINE 1   —   MODEL · CTX · VERSION              ║
+# ╚════════════════════════════════════════════════════════════════════╝
+
+# Line 1: model icon + name + ctx% + version
+if [ -n "$cwd" ]; then dir=$(basename "$cwd"); else dir="?"; fi
 if [ -n "$model" ]; then
   short_model=$(echo "$model" | sed 's/Claude //' | sed 's/ (New)//')
 else
@@ -207,19 +244,10 @@ else
 fi
 wt_str=""
 [ -n "$worktree" ] && wt_str=" ${DIM}[${worktree}]${RESET}"
-dir_disp="$dir"
-if [ -n "$cwd" ] && [ -n "$worktree" ] && [ "$dir" = "$worktree" ]; then
-  gt=$(git -C "$cwd" rev-parse --show-toplevel 2>/dev/null)
-  [ -n "$gt" ] && dir_disp=$(basename "$gt")
-fi
 model_icon=$(pick_model_icon "$ctx_pct")
-printf "%s%s  %s%s" "$YELLOW" "$model_icon" "$short_model" "$RESET"
-ctx_limit=""
-if [ -n "$compact_win" ]; then
-  ctx_limit="$compact_win"
-elif [ -n "$ctx_size" ]; then
-  ctx_limit="$ctx_size"
-fi
+printf "%s%s  %s%s%s" "$YELLOW" "$model_icon" "$short_model" "$RESET" "$wt_str"
+
+ctx_limit="${compact_win:-$ctx_size}"
 ctx_limit_fmt=""
 [ -n "$ctx_limit" ] && ctx_limit_fmt=$(format_tokens "$ctx_limit")
 if [ -n "$ctx_pct" ]; then
@@ -228,10 +256,14 @@ if [ -n "$ctx_pct" ]; then
   printf " %s|%s %s󰧑%s  %s%d%%%s" "$DIM" "$RESET" "$PINK" "$RESET" "$ctx_color" "$ctx_int" "$RESET"
   [ -n "$ctx_limit_fmt" ] && printf " %s(%s)%s" "$DIM" "$ctx_limit_fmt" "$RESET"
 fi
-if [ -n "$version" ]; then
-  printf " %s|%s %s%s  %sv%s%s" "$DIM" "$RESET" "$MAUVE" "$RESET" "$MAUVE" "$version" "$RESET"
-fi
+[ -n "$version" ] && printf " %s|%s %s%s  %sv%s%s" "$DIM" "$RESET" "$MAUVE" "$RESET" "$MAUVE" "$version" "$RESET"
 printf "\n"
+
+# ╔════════════════════════════════════════════════════════════════════╗
+# ║              RENDER LINE 2   —   DIR · BRANCH · DIFF               ║
+# ╚════════════════════════════════════════════════════════════════════╝
+
+# Line 2: dir + branch + diff
 if [ -n "$branch" ]; then
   diff_str=""
   if [ -n "$diff_add" ] || [ -n "$diff_del" ]; then
@@ -239,12 +271,16 @@ if [ -n "$branch" ]; then
     [ -n "$diff_add" ] && diff_str="${diff_str}${GREEN}+${diff_add}${RESET}"
     [ -n "$diff_del" ] && diff_str="${diff_str} ${RED}-${diff_del}${RESET}"
   fi
-  printf "%s  %s%s %s|%s %s%s  %s%s%s\n" "$CYAN" "$dir_disp" "$RESET" "$DIM" "$RESET" "$BRANCH" "$RESET" "$branch" "$wt_str" "$diff_str"
+  printf "%s  %s%s %s|%s %s%s  %s%s\n" "$CYAN" "$dir" "$RESET" "$DIM" "$RESET" "$BRANCH" "$RESET" "$branch" "$diff_str"
 else
-  printf "%s  %s%s%s\n" "$CYAN" "$dir_disp" "$RESET" "$wt_str"
+  printf "%s  %s%s\n" "$CYAN" "$dir" "$RESET"
 fi
 
-# Line 3: 現在時間 + session 時長
+# ╔════════════════════════════════════════════════════════════════════╗
+# ║             RENDER LINE 3   —   TIME · DURATION · COST             ║
+# ╚════════════════════════════════════════════════════════════════════╝
+
+# Line 3: clock + session duration + cost
 h=$(date +%H)
 case $h in
   03|04|05) period="凌晨" ;;
@@ -261,55 +297,25 @@ if [ -n "$session_duration_s" ] && [ "$session_duration_s" -gt 0 ]; then
   d_h=$(( session_duration_s / 3600 ))
   d_m=$(( (session_duration_s % 3600) / 60 ))
   d_ss=$(( session_duration_s % 60 ))
-  if [ $d_h -gt 0 ]; then
-    duration_str=$(printf "%d 小時 %d 分" "$d_h" "$d_m")
-  elif [ $d_m -gt 0 ]; then
-    duration_str=$(printf "%d 分 %d 秒" "$d_m" "$d_ss")
-  else
-    duration_str=$(printf "%d 秒" "$d_ss")
+  if   [ $d_h -gt 0 ]; then duration_str=$(printf "%d 小時 %d 分" "$d_h" "$d_m")
+  elif [ $d_m -gt 0 ]; then duration_str=$(printf "%d 分 %d 秒" "$d_m" "$d_ss")
+  else                      duration_str=$(printf "%d 秒" "$d_ss")
   fi
 fi
 cost_str=""
 if [ -n "$total_cost" ]; then
   cost_fmt=$(awk -v c="$total_cost" 'BEGIN{printf "%.2f", c}')
-  rate_suffix=""
-  if [ -n "$session_duration_s" ] && [ "$session_duration_s" -gt 60 ]; then
-    rate=$(awk -v c="$total_cost" -v s="$session_duration_s" 'BEGIN{printf "%.2f", c * 3600 / s}')
-    rate_suffix=" ${DIM}(\$${rate}/h)${RESET}"
-  fi
-  cost_str=$(printf "%s%s  %s%s" "$YELLOW_CT" "$RESET" "$cost_fmt" "$rate_suffix")
+  cost_str=$(printf "%s%s  %s" "$YELLOW_CT" "$RESET" "$cost_fmt")
 fi
 printf "%s%s  %s" "$TEAL" "$RESET" "$now_time"
-if [ -n "$duration_str" ]; then
-  printf " %s|%s %s%s  %s" "$DIM" "$RESET" "$PEACH" "$RESET" "$duration_str"
-fi
-if [ -n "$cost_str" ]; then
-  printf " %s|%s %s" "$DIM" "$RESET" "$cost_str"
-fi
+[ -n "$duration_str" ] && printf " %s|%s %s%s  %s" "$DIM" "$RESET" "$PEACH" "$RESET" "$duration_str"
+[ -n "$cost_str" ] && printf " %s|%s %s" "$DIM" "$RESET" "$cost_str"
 printf "\n"
 
-# Line 4: Usage (5h)
-if [ -n "$usage_5h" ]; then
-  u5_int=$(printf "%.0f" "$usage_5h")
-  u5_color=$(pick_color "$usage_5h")
-  bar=$(render_bar "$usage_5h" "$u5_color")
-  reset_str=$(format_reset "$usage_5h_reset")
-  if [ -n "$reset_str" ]; then
-    printf "%s用量%s %s %s%3d%%%s %s(%s)%s\n" "$DIM" "$RESET" "$bar" "$u5_color" "$u5_int" "$RESET" "$DIM" "$reset_str" "$RESET"
-  else
-    printf "%s用量%s %s %s%3d%%%s\n" "$DIM" "$RESET" "$bar" "$u5_color" "$u5_int" "$RESET"
-  fi
-fi
+# ╔════════════════════════════════════════════════════════════════════╗
+# ║                RENDER LINES 4 & 5   —   USAGE BARS                 ║
+# ╚════════════════════════════════════════════════════════════════════╝
 
-# Line 5: Weekly (7d)
-if [ -n "$usage_7d" ]; then
-  u7_int=$(printf "%.0f" "$usage_7d")
-  u7_color=$(pick_color "$usage_7d")
-  bar=$(render_bar "$usage_7d" "$u7_color")
-  reset_str=$(format_reset "$usage_7d_reset")
-  if [ -n "$reset_str" ]; then
-    printf "%s本周%s %s %s%3d%%%s %s(%s)%s\n" "$DIM" "$RESET" "$bar" "$u7_color" "$u7_int" "$RESET" "$DIM" "$reset_str" "$RESET"
-  else
-    printf "%s本周%s %s %s%3d%%%s\n" "$DIM" "$RESET" "$bar" "$u7_color" "$u7_int" "$RESET"
-  fi
-fi
+# Lines 4 & 5: usage bars (always render so they appear from the first frame)
+render_usage_line "用量" "$usage_5h" "$usage_5h_reset"
+render_usage_line "本周" "$usage_7d" "$usage_7d_reset"
