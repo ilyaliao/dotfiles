@@ -17,7 +17,7 @@ Prefer the simplest solution that actually works — no speculative abstractions
 ## Git
 
 - Never commit automatically unless explicitly requested
-- Commit message: single line, concise and impactful. Describe the task purpose ("why"), not what you did ("what"). Use `/commit-commands:commit` when committing
+- Unless explicitly instructed otherwise, prefer rebase over merge commits when integrating or updating branch history
 
 ## Security
 
@@ -28,7 +28,6 @@ Prefer the simplest solution that actually works — no speculative abstractions
 - Follow existing project patterns, import styles, and directory structure
 - Max 500 lines per file;
 - No useless comments — don't comment obvious code (e.g., variable declarations)
-- Prefer antfu ecosystem conventions (pnpm, unocss, vueuse, eslint-config) when the project already uses them
 
 ## Workflow
 
