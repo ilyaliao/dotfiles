@@ -5,7 +5,8 @@
     "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1",
     "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
     "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "1",
-    "CLAUDE_CODE_NO_FLICKER": "1"
+    "CLAUDE_CODE_NO_FLICKER": "1",
+    "CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE": "1"
   },
   "includeCoAuthoredBy": true,
   "permissions": {
@@ -217,6 +218,7 @@
   "showClearContextOnPlanAccept": true,
   "skipDangerousModePermissionPrompt": true,
   "autoScrollEnabled": true,
+  "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754041037675
