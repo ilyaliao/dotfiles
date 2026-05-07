@@ -2,8 +2,8 @@
 # Claude Code Statusline
 #
 # Layout:
-#   model_icon model [worktree] | ctx% (limit) | version
-#   dir | branch | diff
+#   model_icon model | ctx% (limit) | version
+#   dir | branch [worktree] | diff
 #   time | session duration | cost
 #   用量 ████░░░░░░ 40% (剩 N 小時 重置)
 #   本周 ██████░░░░ 60% (剩 N 天 N 小時 重置)
@@ -242,10 +242,8 @@ if [ -n "$model" ]; then
 else
   short_model="?"
 fi
-wt_str=""
-[ -n "$worktree" ] && wt_str=" ${DIM}[${worktree}]${RESET}"
 model_icon=$(pick_model_icon "$ctx_pct")
-printf "%s%s  %s%s%s" "$YELLOW" "$model_icon" "$short_model" "$RESET" "$wt_str"
+printf "%s%s  %s%s" "$YELLOW" "$model_icon" "$short_model" "$RESET"
 
 ctx_limit="${compact_win:-$ctx_size}"
 ctx_limit_fmt=""
@@ -271,7 +269,9 @@ if [ -n "$branch" ]; then
     [ -n "$diff_add" ] && diff_str="${diff_str}${GREEN}+${diff_add}${RESET}"
     [ -n "$diff_del" ] && diff_str="${diff_str} ${RED}-${diff_del}${RESET}"
   fi
-  printf "%s  %s%s %s|%s %s%s  %s%s\n" "$CYAN" "$dir" "$RESET" "$DIM" "$RESET" "$BRANCH" "$RESET" "$branch" "$diff_str"
+  wt_str=""
+  [ -n "$worktree" ] && wt_str=" ${DIM}[${worktree}]${RESET}"
+  printf "%s  %s%s %s|%s %s%s  %s%s%s%s\n" "$CYAN" "$dir" "$RESET" "$DIM" "$RESET" "$BRANCH" "$RESET" "$branch" "$wt_str" "$diff_str"
 else
   printf "%s  %s%s\n" "$CYAN" "$dir" "$RESET"
 fi
