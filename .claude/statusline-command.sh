@@ -3,7 +3,7 @@
 #
 # Layout:
 #   model_icon model | ctx% (limit) | version
-#   dir | branch [worktree] | diff
+#   dir | branch [worktree]
 #   time | session duration | cost
 #   用量 ████░░░░░░ 40% (剩 N 小時 重置)
 #   本周 ██████░░░░ 60% (剩 N 天 N 小時 重置)
@@ -81,19 +81,8 @@ _now=$(date +%s)
 # ╚════════════════════════════════════════════════════════════════════╝
 
 branch=""
-diff_add=""
-diff_del=""
 if [ -n "$cwd" ] && [ -d "$cwd" ]; then
   branch=$(git -C "$cwd" symbolic-ref --short HEAD 2>/dev/null || git -C "$cwd" rev-parse --short HEAD 2>/dev/null)
-  if [ -n "$branch" ]; then
-    stat=$(git -C "$cwd" diff HEAD --shortstat 2>/dev/null)
-    case "$stat" in
-      *insertion*) tmp=${stat%% insertion*}; diff_add=${tmp##* } ;;
-    esac
-    case "$stat" in
-      *deletion*) tmp=${stat%% deletion*}; diff_del=${tmp##* } ;;
-    esac
-  fi
 fi
 
 # ╔════════════════════════════════════════════════════════════════════╗
@@ -258,20 +247,14 @@ fi
 printf "\n"
 
 # ╔════════════════════════════════════════════════════════════════════╗
-# ║              RENDER LINE 2   —   DIR · BRANCH · DIFF               ║
+# ║                 RENDER LINE 2   —   DIR · BRANCH                   ║
 # ╚════════════════════════════════════════════════════════════════════╝
 
-# Line 2: dir + branch + diff
+# Line 2: dir + branch
 if [ -n "$branch" ]; then
-  diff_str=""
-  if [ -n "$diff_add" ] || [ -n "$diff_del" ]; then
-    diff_str=" ${DIM}|${RESET} ${MAUVE}${RESET}  "
-    [ -n "$diff_add" ] && diff_str="${diff_str}${GREEN}+${diff_add}${RESET}"
-    [ -n "$diff_del" ] && diff_str="${diff_str} ${RED}-${diff_del}${RESET}"
-  fi
   wt_str=""
   [ -n "$worktree" ] && wt_str=" ${DIM}[${worktree}]${RESET}"
-  printf "%s  %s%s %s|%s %s%s  %s%s%s%s\n" "$CYAN" "$dir" "$RESET" "$DIM" "$RESET" "$BRANCH" "$RESET" "$branch" "$wt_str" "$diff_str"
+  printf "%s  %s%s %s|%s %s%s  %s%s%s\n" "$CYAN" "$dir" "$RESET" "$DIM" "$RESET" "$BRANCH" "$RESET" "$branch" "$wt_str"
 else
   printf "%s  %s%s\n" "$CYAN" "$dir" "$RESET"
 fi
