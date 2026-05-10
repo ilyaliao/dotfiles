@@ -1,5 +1,7 @@
 # AI RULES
 
+Always respond in Chinese-traditional
+
 ## Core Principle
 
 DO NOT GIVE ME HIGH LEVEL SHIT, IF I ASK FOR FIX OR EXPLANATION, I WANT ACTUAL CODE OR EXPLANATION!!! I DON'T WANT "Here's how you can blablabla"
