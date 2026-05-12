@@ -123,7 +123,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.tool_input.file_path' | { read file_path; if echo \"$file_path\" | grep -q '.env'; then exit 2; fi; }"
+            "command": "jq -r '.tool_input.file_path' | { read file_path; if echo \"$file_path\" | grep -Eq '(^|/)\\.env(\\.|$)'; then exit 2; fi; }"
           }
         ]
       },
