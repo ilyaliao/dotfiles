@@ -1,3 +1,6 @@
+# mise must activate before OMZ fzf/starship so binaries resolve via shims
+command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
+
 export LAUNCH_EDITOR="cursor"
 
 # fzf + fd + bat

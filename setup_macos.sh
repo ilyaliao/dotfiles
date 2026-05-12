@@ -108,6 +108,8 @@ setup_mise() {
   ln -sfn "$HOME/dotfiles/mise/config.toml" "$HOME/.config/mise/config.toml"
   log_info "Linked mise config.toml"
 
+  mise trust "$HOME/dotfiles/mise/config.toml" 2>/dev/null || true
+
   mise install
 
   if [ -f "$HOME/dotfiles/mise/default-npm-packages.txt" ]; then
