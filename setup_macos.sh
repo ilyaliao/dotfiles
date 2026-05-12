@@ -96,5 +96,26 @@ setup_macos() {
   log_warning "Some changes may require a logout/restart to take effect."
 }
 
-# Run the setup function
+setup_mise() {
+  fmt_title_underline "Setting up mise"
+
+  if ! command -v mise >/dev/null 2>&1; then
+    log_warning "mise not found — run 'brew bundle --file=~/dotfiles/Brewfile' first"
+    return 1
+  fi
+
+  mkdir -p "$HOME/.config/mise"
+  ln -sfn "$HOME/dotfiles/mise/config.toml" "$HOME/.config/mise/config.toml"
+  log_info "Linked mise config.toml"
+
+  mise install
+
+  if [ -f "$HOME/dotfiles/mise/default-npm-packages.txt" ]; then
+    log_info "Installing global npm packages..."
+    xargs -I {} npm install -g {} < "$HOME/dotfiles/mise/default-npm-packages.txt"
+  fi
+}
+
+# Run the setup functions
 setup_macos
+setup_mise

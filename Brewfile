@@ -16,6 +16,7 @@ brew "gh"                 # GitHub CLI
 brew "ni"                 # Node package manager selector
 brew "pnpm"               # Fast Node package manager
 brew "rbenv"              # Ruby version manager
+brew "mise"               # Polyglot runtime version manager
 brew "imagemagick"        # Image processing
 
 # Utilities
