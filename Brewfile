@@ -2,22 +2,12 @@
 tap "artginzburg/tap"
 tap "daipeihust/tap"
 
-# Shell
+# Shell (starship / fzf / fd / bat / eza / gh / ni → see mise/config.toml)
+
 brew "zsh"
-brew "starship"           # Prompt
-brew "fzf"                # Fuzzy finder
-brew "fd"                 # Fast file search (fzf backend)
-brew "bat"                # File preview with syntax highlighting (fzf backend)
-brew "eza"                # Modern ls replacement
-brew "ripgrep"            # Fast grep
 
 # Development
-brew "gh"                 # GitHub CLI
-brew "ni"                 # Node package manager selector
-brew "pnpm"               # Fast Node package manager
-brew "rbenv"              # Ruby version manager
-brew "mise"               # Polyglot runtime version manager
-brew "imagemagick"        # Image processing
+brew "mise"               # Polyglot runtime + CLI versions (Node, bat, fzf, …)
 
 # Utilities
 brew "artginzburg/tap/sudo-touchid"  # Touch ID for sudo
