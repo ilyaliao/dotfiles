@@ -30,7 +30,6 @@ Source from [`antfu vscode`](https://github.com/antfu/vscode-settings)
 - [naumovs.color-highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
 - [WakaTime.vscode-wakatime](https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime)
 - [znck.grammarly](https://marketplace.visualstudio.com/items?itemName=znck.grammarly)
-- [asvetliakov.vscode-neovim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim)
 
 ## NVM package
 

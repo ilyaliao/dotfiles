@@ -11,9 +11,6 @@ brew "bat"                # File preview with syntax highlighting (fzf backend)
 brew "eza"                # Modern ls replacement
 brew "ripgrep"            # Fast grep
 
-# Editor
-brew "neovim"             # Modern Vim — config at ~/.config/nvim
-
 # Development
 brew "gh"                 # GitHub CLI
 brew "ni"                 # Node package manager selector
