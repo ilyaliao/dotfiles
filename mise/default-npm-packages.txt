@@ -1,12 +1,8 @@
-@antfu/ni
-@nestjs/cli
 @openai/codex
-@vscode/vsce
+agent-browser
 degit
 esno
 giget
-live-server
-madge
 pnpm-patch-i
 rimraf
 taze
