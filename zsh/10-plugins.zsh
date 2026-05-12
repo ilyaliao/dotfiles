@@ -21,5 +21,4 @@ zinit wait lucid for \
   zsh-users/zsh-completions \
   atload"bindkey '^[[A' history-substring-search-up; bindkey '^[[B' history-substring-search-down" \
     zsh-users/zsh-history-substring-search \
-  MichaelAquilina/zsh-you-should-use \
-  lukechilds/zsh-nvm
+  MichaelAquilina/zsh-you-should-use
