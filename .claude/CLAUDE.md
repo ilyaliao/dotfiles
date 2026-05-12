@@ -36,6 +36,11 @@ If I ask for adjustments to code I have provided you, do not repeat all of my co
 
 - Never read or access .env files
 
+## Code Style
+- Follow existing project patterns, import styles, and directory structure
+- No comments unless flagging (1) unexpected behavior or (2) special design intent
+- No JSDoc in business code — only for frameworks/libraries
+
 ## Workflow
 
 - Before starting, understand the task scope and identify affected modules
