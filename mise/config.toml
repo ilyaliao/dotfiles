@@ -1,5 +1,6 @@
 [tools]
 node = "lts"
+python = "3.12.13"
 
 bat = "0.26.1"
 eza = "0.23.4"
