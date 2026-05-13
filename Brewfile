@@ -2,17 +2,14 @@
 tap "artginzburg/tap"
 tap "daipeihust/tap"
 
-# Shell (starship / fzf / fd / bat / eza / gh / ni → see mise/config.toml)
-
 brew "zsh"
 
 # Development
-brew "mise"               # Polyglot runtime + CLI versions (Node, bat, fzf, …)
+brew "mise"
 
 # Utilities
 brew "artginzburg/tap/sudo-touchid"  # Touch ID for sudo
 brew "daipeihust/tap/im-select"      # Input method switcher (for Vim)
-brew "agent-browser"      # Browser automation for AI agents
 
 # Apps
 cask "claude"
