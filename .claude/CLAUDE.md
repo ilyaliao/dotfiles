@@ -29,6 +29,7 @@ If I ask for adjustments to code I have provided you, do not repeat all of my co
 ## Git
 
 - Never commit automatically unless explicitly requested
+- Never create worktrees automatically unless explicitly requested
 - Keep commit messages short and purposeful: no prose or narrative in the subject; the subject line must state the goal or outcome, not enumerate code changes
 - Unless explicitly instructed otherwise, prefer rebase over merge commits when integrating or updating branch history
 
