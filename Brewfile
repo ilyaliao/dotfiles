@@ -31,7 +31,6 @@ cask "chatwise"           # Chat client
 cask "input-source-pro"   # Input source manager
 cask "monitorcontrol"     # External monitor brightness
 cask "notion-mail"
-cask "rectangle"          # Window manager
 cask "scroll-reverser"    # Mouse scroll direction
 cask "surfshark"          # VPN
 
