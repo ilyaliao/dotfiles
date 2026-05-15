@@ -400,6 +400,7 @@
   "githubPullRequests.showPullRequestNumberInTree": true,
   "githubPullRequests.fileListLayout": "tree",
   "gitlens.codeLens.enabled": false,
+  "gitlens.gitkraken.mcp.autoEnabled": false,
   "gitlens.menus": {
     "editor": {
       "blame": false,
