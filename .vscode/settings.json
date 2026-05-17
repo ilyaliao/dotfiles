@@ -448,8 +448,11 @@
   // ========== Cursor ==========
   "cursor.composer.shouldAutoSaveNonAgent": true,
   "cursor.general.gitGraphIndexing": "enabled",
+  "cursor.general.glassShowWarningNotifications": true,
+  "cursor.general.reduceTransparency": true,
   "cursor.composer.shouldShowMarkdownHoverParticipantActions2": true,
   "cursor.preferNotificationsSameAsChat": true,
+  "cursor.chatMaxWidth": 600,
   "cursor.cpp.enablePartialAccepts": true,
   "cursor.composer.cmdPFilePicker2": true,
   "cursor.semanticSearch.includeCommitsWithFiles": true,
@@ -458,14 +461,13 @@
   "cursor.composer.textSizeScale": 0.85,
   "cursor.composer.shouldChimeAfterChatFinishes": false,
   "cursor.composer.suggestNextPrompt": true,
-  "cursor.general.fontSmoothingAntialiased": true,
 
   // updated 2025-12-26 02:26
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 2026/5/13 上午12:55:56",
+    "//": "Last update at 2026/5/17 下午1:32:43",
     ".agent": ".agent, .claude, .cline, .codebuddy, .codex, .commandcode, .continue, .crush, .cursor, .factory, .gemini, .goose, .junie, .kilocode, .kiro, .kode, .mcpjam, .mux, .neovate, .opencode, .openhands, .pi, .pochi, .qoder, .qwen, .roo, .trae, .windsurf, .zencoder",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
