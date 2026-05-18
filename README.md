@@ -14,6 +14,7 @@
 - [`claude-code@latest`](https://code.claude.com/docs/en/overview)
 - [Codex](https://developers.openai.com/codex) (`codex-app`)
 - [`codexbar`](https://codexbar.app/) — menu-bar Codex companion
+- [Vibe Island](https://vibeisland.app/) — Dynamic Island AI agent utility
 - [ChatWise](https://chatwise.app)
 - [Ghostty](https://ghostty.org) — GPU-accelerated terminal
 - [OrbStack](https://orbstack.dev) — containers / Linux VMs

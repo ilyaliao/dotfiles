@@ -25,6 +25,7 @@ cask "notion"
 cask "orbstack"
 # cask "raycast"          # Trying Raycast 2.0 instead — https://www.raycast.com/new
 cask "spotify"
+cask "vibe-island"
 
 # Utilities (Apps)
 cask "aldente"            # Battery charge limiter
