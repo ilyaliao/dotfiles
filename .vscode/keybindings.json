@@ -53,5 +53,10 @@
   {
     "key": "cmd+n",
     "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "alt+cmd+m",
+    "command": "workbench.action.maximizeEditorHideSidebar",
+    "when": "auxiliaryBarVisible || sideBarVisible || editorPartMultipleEditorGroups && !editorPartMaximizedEditorGroup"
   }
 ]

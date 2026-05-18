@@ -452,7 +452,6 @@
   "cursor.general.reduceTransparency": true,
   "cursor.composer.shouldShowMarkdownHoverParticipantActions2": true,
   "cursor.preferNotificationsSameAsChat": true,
-  "cursor.chatMaxWidth": 600,
   "cursor.cpp.enablePartialAccepts": true,
   "cursor.composer.cmdPFilePicker2": true,
   "cursor.semanticSearch.includeCommitsWithFiles": true,
