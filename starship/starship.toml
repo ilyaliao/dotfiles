@@ -36,3 +36,25 @@ disabled = false
 # Shell env: mise health
 [mise]
 disabled = false
+
+[sudo]
+disabled = false
+
+[container]
+disabled = false
+
+[memory_usage]
+disabled = false
+threshold = 80
+
+[time]
+disabled = false
+
+[package]
+disabled = false
+
+[claude_model]
+disabled = false
+
+[claude_context]
+disabled = false
