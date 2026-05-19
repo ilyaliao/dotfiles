@@ -61,10 +61,17 @@ setup_cursor() {
   log_info "Cursor/User/keybindings.json -> ~/dotfiles/.vscode/keybindings.json"
 }
 
-setup_ai() {
+setup_tmux() {
+  fmt_title_underline "Tmux (~/.tmux.conf)"
+  ln -sfn ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+  log_info "~/.tmux.conf -> ~/dotfiles/tmux/tmux.conf"
+}
+
+setup_symlinks() {
   setup_claude
   setup_codex
   setup_cursor
+  setup_tmux
 }
 
-setup_ai
+setup_symlinks

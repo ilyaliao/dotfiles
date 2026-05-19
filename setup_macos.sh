@@ -118,6 +118,35 @@ setup_mise() {
   fi
 }
 
+setup_tmux() {
+  fmt_title_underline "Setting up tmux"
+
+  if ! command -v tmux >/dev/null 2>&1; then
+    log_warning "tmux not found — run 'brew bundle --file=~/dotfiles/Brewfile' first"
+    return 1
+  fi
+
+  local tpm_dir="$HOME/.tmux/plugins/tpm"
+  if [ ! -d "$tpm_dir/.git" ]; then
+    log_info "Cloning TPM..."
+    mkdir -p "$HOME/.tmux/plugins"
+    git clone --depth=1 https://github.com/tmux-plugins/tpm "$tpm_dir"
+  else
+    log_info "TPM already installed at $tpm_dir"
+  fi
+
+  if [ -f "$HOME/.tmux.conf" ] || [ -L "$HOME/.tmux.conf" ]; then
+    log_info "Installing TPM plugins..."
+    tmux start-server 2>/dev/null || true
+    if ! "$tpm_dir/bin/install_plugins"; then
+      log_warning "install_plugins failed — in tmux press prefix C-t then I"
+    fi
+  else
+    log_warning "No ~/.tmux.conf — run ~/dotfiles/setup_symlinks.sh first"
+  fi
+}
+
 # Run the setup functions
 setup_macos
 setup_mise
+setup_tmux

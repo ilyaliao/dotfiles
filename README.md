@@ -7,6 +7,7 @@
 - [`sudo-touchid`](https://github.com/artginzburg/sudo-touchid) (`artginzburg/tap`) — Touch ID for `sudo`
 - [`im-select`](https://github.com/daipeihust/im-select) (`daipeihust/tap`) — input-method switcher for Vim
 - [`mole`](https://github.com/tw93/Mole) — Mac cleanup / optimization
+- [`tmux`](https://github.com/tmux/tmux) — terminal multiplexer
 
 ### Apps (casks)
 
@@ -46,7 +47,6 @@
 
 ### CLI tools
 
-- [bat](https://github.com/sharkdp/bat) — `cat` with syntax highlighting
 - [eza](https://eza.rocks) — modern `ls`
 - [fd](https://github.com/sharkdp/fd) — friendlier `find`
 - [fzf](https://github.com/junegunn/fzf) — fuzzy finder
@@ -83,6 +83,16 @@
 - [`fzf`](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fzf)
 - [`ssh`](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh)
 - [`npm`](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/npm)
+
+## tmux
+
+### TPM plugins
+
+- [`tmux-sensible`](https://github.com/tmux-plugins/tmux-sensible)
+- [`tmux-pain-control`](https://github.com/tmux-plugins/tmux-pain-control)
+- [`tmux-prefix-highlight`](https://github.com/tmux-plugins/tmux-prefix-highlight)
+- [`catppuccin/tmux`](https://github.com/catppuccin/tmux)
+- [`tpm`](https://github.com/tmux-plugins/tpm)
 
 ## Editor
 

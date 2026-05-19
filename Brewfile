@@ -11,6 +11,7 @@ brew "mise"
 brew "artginzburg/tap/sudo-touchid"  # Touch ID for sudo
 brew "daipeihust/tap/im-select"      # Input method switcher (for Vim)
 brew "mole"                          # Mac cleanup / optimization
+brew "tmux"                          # Terminal multiplexer
 
 # Apps
 cask "claude"
