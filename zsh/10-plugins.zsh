@@ -11,6 +11,9 @@ zinit wait lucid for \
   OMZP::ssh \
   OMZP::npm
 
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
 zinit wait lucid for \
   atinit"zicompinit; zicdreplay; \
     compdef _i_complete i; compdef _repros_complete repros; \
