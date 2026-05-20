@@ -4,7 +4,6 @@
   "env": {
     "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1",
     "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
-    "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "1",
     "CLAUDE_CODE_NO_FLICKER": "1",
     "ENABLE_TOOL_SEARCH": "true"
   },
@@ -32,7 +31,7 @@
       "Bash(pnpm:*)",
       "Bash(pkill:*)",
       "Bash(touch:*)",
-      "Bash(grep:*)",
+      "Bash(rg:*)",
       "Bash(sqlite3:*)",
       "Bash(curl:*)",
       "Bash(rg:*)",
@@ -60,6 +59,7 @@
       "WebSearch"
     ],
     "deny": [
+      "Bash(grep*)",
       "Skill(commit-push-pr)"
     ],
     "defaultMode": "auto"
@@ -94,7 +94,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.tool_input.file_path' | { read file_path; if echo \"$file_path\" | grep -Eiq '\\.(ts|mts|tsx|js|mjs|jsx|json|css|html|md|vue)$'; then nr lint --fix \"$file_path\"; fi; }"
+            "command": "jq -r '.tool_input.file_path' | { read file_path; if echo \"$file_path\" | rg -Eiq '\\.(ts|mts|tsx|js|mjs|jsx|json|css|html|md|vue)$'; then nr lint --fix \"$file_path\"; fi; }"
           }
         ]
       },
@@ -124,7 +124,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.tool_input.file_path' | { read file_path; if echo \"$file_path\" | grep -Eq '(^|/)\\.env(\\.|$)'; then exit 2; fi; }"
+            "command": "jq -r '.tool_input.file_path' | { read file_path; if echo \"$file_path\" | rg -Eq '(^|/)\\.env(\\.|$)'; then exit 2; fi; }"
           }
         ]
       },
@@ -199,6 +199,9 @@
       }
     ]
   },
+  "worktree": {
+    "baseRef": "fresh"
+  },
   "statusLine": {
     "type": "command",
     "command": "sh ~/.claude/statusline-command.sh"
@@ -232,9 +235,12 @@
   "alwaysThinkingEnabled": true,
   "showClearContextOnPlanAccept": true,
   "skipDangerousModePermissionPrompt": true,
+  "verbose": true,
+  "skipCopyPicker": false,
   "remoteControlAtStartup": true,
-  "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
+  "agentPushNoautoCompacttifEnabled": false,
+  "autoCompact": false,
   "feedbackSurveyState": {
     "lastShownTime": 1754041037675
   }

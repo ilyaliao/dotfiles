@@ -37,6 +37,7 @@ If I ask for adjustments to code I have provided you, do not repeat all of my co
 - Never read or access .env files
 
 ## Code Style
+
 - Follow existing project patterns, import styles, and directory structure
 - No comments unless flagging (1) unexpected behavior or (2) special design intent
 - No JSDoc in business code — only for frameworks/libraries
@@ -46,3 +47,4 @@ If I ask for adjustments to code I have provided you, do not repeat all of my co
 - Before starting, understand the task scope and identify affected modules
 - For renames or bulk changes, search globally to confirm impact scope first
 - Ask when uncertain, don't assume
+- Use `rg` instead of `grep` for all text/regex searches
