@@ -34,7 +34,6 @@ cask "chatwise"           # Chat client
 cask "cleanshot"          # Screenshot tool
 cask "input-source-pro"   # Input source manager
 cask "monitorcontrol"     # External monitor brightness
-cask "notion-mail"
 cask "repobar"            # GitHub repo menu-bar dashboard
 cask "scroll-reverser"    # Mouse scroll direction
 

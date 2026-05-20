@@ -25,7 +25,6 @@
 - [Spotify](https://www.spotify.com)
 - [Discord](https://discord.com)
 - [Notion](https://www.notion.com)
-- [Notion Mail](https://www.notion.com/mail)
 - [AlDente](https://apphousekitchen.com) — battery charge limiter
 - [CleanShot](https://getcleanshot.com/) — screenshot tool
 - [Input Source Pro](https://inputsource.pro) — input-source manager
