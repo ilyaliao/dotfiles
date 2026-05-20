@@ -13,7 +13,8 @@
 
 - [Claude](https://code.claude.com/docs/zh-TW/desktop)
 - [`claude-code@latest`](https://code.claude.com/docs/en/overview)
-- [Codex](https://developers.openai.com/codex) (`codex-app`)
+- [Codex CLI](https://github.com/openai/codex) (`codex`) — terminal coding agent
+- [Codex](https://developers.openai.com/codex) (`codex-app`) — desktop app
 - [`codexbar`](https://codexbar.app/) — menu-bar Codex companion
 - [Vibe Island](https://vibeisland.app/) — Dynamic Island AI agent utility
 - [ChatWise](https://chatwise.app)
@@ -55,7 +56,6 @@
 
 ## npm
 
-- [`@openai/codex`](https://github.com/openai/codex)
 - [`agent-browser`](https://agent-browser.dev/)
 - [`degit`](https://github.com/Rich-Harris/degit)
 - [`esno`](https://github.com/esbuild-kit/esno)

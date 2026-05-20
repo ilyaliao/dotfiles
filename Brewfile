@@ -16,7 +16,8 @@ brew "tmux"                          # Terminal multiplexer
 # Apps
 cask "claude"
 cask "claude-code@latest"
-cask "codex-app"
+cask "codex"       # CLI
+cask "codex-app"   # Desktop app
 cask "codexbar"
 cask "discord"
 cask "figma@beta"
