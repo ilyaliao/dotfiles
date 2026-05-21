@@ -236,7 +236,7 @@
   "alwaysThinkingEnabled": true,
   "showClearContextOnPlanAccept": true,
   "skipDangerousModePermissionPrompt": true,
-  "verbose": true,
+  "verbose": false,
   "skipCopyPicker": false,
   "remoteControlAtStartup": true,
   "skipAutoPermissionPrompt": true,
