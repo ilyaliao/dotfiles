@@ -22,7 +22,6 @@ cask "codexbar"
 cask "discord"
 cask "figma@beta"
 cask "ghostty"
-cask "google-chrome"
 cask "notion"
 cask "orbstack"
 # cask "raycast"          # Trying Raycast 2.0 instead — https://www.raycast.com/new

@@ -22,7 +22,6 @@
 - [OrbStack](https://orbstack.dev) — containers / Linux VMs
 - [Figma](https://www.figma.com) (`figma@beta`)
 - [Raycast](https://www.raycast.com) — trying [Raycast 2.0](https://www.raycast.com/new)
-- [Google Chrome](https://www.google.com/chrome/)
 - [Spotify](https://www.spotify.com)
 - [Discord](https://discord.com)
 - [Notion](https://www.notion.com)
