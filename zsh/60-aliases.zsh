@@ -30,6 +30,11 @@ alias lintf="nr lint --fix"
 alias release="nr release"
 alias re="nr release"
 
+# Socket Firewall — https://github.com/SocketDev/sfw-installer
+alias npm="sfw npm"
+alias pnpm="sfw pnpm"
+alias yarn="sfw yarn"
+
 # eza — brew install eza
 alias ll="eza -l -g --icons"
 alias lla="ll -a"
