@@ -1,4 +1,3 @@
-agent-browser
 degit
 esno
 pnpm-patch-i

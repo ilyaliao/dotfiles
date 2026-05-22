@@ -6,6 +6,7 @@ brew "zsh"
 
 # Development
 brew "mise"
+brew "agent-browser"  # Browser automation CLI for AI agents
 
 # Utilities
 brew "artginzburg/tap/sudo-touchid"  # Touch ID for sudo
