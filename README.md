@@ -60,6 +60,7 @@
 - [`esno`](https://github.com/esbuild-kit/esno)
 - [`pnpm-patch-i`](https://github.com/antfu/pnpm-patch-i)
 - [`rimraf`](https://github.com/isaacs/rimraf)
+- [`sfw`](https://github.com/SocketDev/sfw-installer) — Socket Firewall, malware-package guard for npm/pnpm/yarn/bun
 - [`taze`](https://github.com/antfu/taze)
 - [`typescript`](https://www.typescriptlang.org)
 

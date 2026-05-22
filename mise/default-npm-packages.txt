@@ -3,5 +3,6 @@ degit
 esno
 pnpm-patch-i
 rimraf
+sfw
 taze
 typescript
