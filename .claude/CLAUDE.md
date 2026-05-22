@@ -28,7 +28,7 @@ If I ask for adjustments to code I have provided you, do not repeat all of my co
 
 ## Git
 
-- Never commit automatically unless explicitly requested
+- When pushing or creating a PR, always ask for user confirmation via AskUserQuestion
 - Keep commit messages short and purposeful: no prose or narrative in the subject; the subject line must state the goal or outcome, not enumerate code changes
 - Unless explicitly instructed otherwise, prefer rebase over merge commits when integrating or updating branch history
 
