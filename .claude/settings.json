@@ -233,6 +233,7 @@
     }
   },
   "language": "繁體中文台灣用語",
+  "viewMode": "focus",
   "alwaysThinkingEnabled": true,
   "showClearContextOnPlanAccept": true,
   "skipDangerousModePermissionPrompt": true,
