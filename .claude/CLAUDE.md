@@ -31,6 +31,7 @@ Always respond in Chinese-traditional
 
 - When pushing or creating a PR, always ask for user confirmation via AskUserQuestion
 - When creating git commits, always use a semantic commit prefixes, with or without parenthetical qualifiers.
+- When creating git commits, always include a `Co-authored-by:` trailer using the authoring agent's canonical name and email.
 - When opening pull requests or merge requests, always use a semantic commit message as the title.
 - Never bypass pre-commit hooks. Never use `--no-verify` or equivalent flags without explicit permission.
 
