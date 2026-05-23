@@ -24,16 +24,14 @@ Always respond in Chinese-traditional
 ## Running scripts and commands
 
 - If the project has a "scripts" or "script" directory, run those scripts for tasks like testing, linting, formatting, etc.
-- If the project has a `script/lint` or `scripts/lint` script, run it before committing changes with Git.
-- If linting fails, fix the linting errors and run the linter until all the errors are resolved.
 
 ## Working with Git
 
 - When pushing or creating a PR, always ask for user confirmation via AskUserQuestion
-- When creating git commits, always use a semantic commit prefixes, with or without parenthetical qualifiers.
-- When creating git commits, always include a `Co-authored-by:` trailer using the authoring agent's canonical name and email.
+- When creating git commits, always add yourself as a Co-author.
 - When opening pull requests or merge requests, always use a semantic commit message as the title.
 - Never bypass pre-commit hooks. Never use `--no-verify` or equivalent flags without explicit permission.
+- Use the `/commit-commands:commit` skill to generate commit messages, not free-form authoring.
 
 ## Working with Node.js and npm
 
@@ -128,5 +126,3 @@ Use the following tools for browser automation tasks:
 - If you suggest adding more than two rules in one session, stop and ask whether we're overcorrecting.
 - When an AGENTS.md grows past about 200 lines, propose deletions or consolidations alongside additions, not just additions.
 - If I ask you to "audit AGENTS.md", read the whole file and propose a list of rules to delete because they're obsolete, duplicated, or never followed in practice, with one-sentence reasoning each.
-- At the start of work in a new project, check whether the project has its own `AGENTS.md`. If it doesn't, suggest creating one and offer to draft it. AGENTS.md is for agents: technical instructions about the project (stack, scripts, conventions, gotchas, paths, build and test commands). Include an instruction in the project-level AGENTS.md to make it update itself when meaningful changes are made to the project.
-- Also check whether the project has a `README.md`. If it doesn't, suggest creating one. README.md is for humans: what the project is, why it exists, and how a person gets started. Don't conflate the two. If a project has only one of the two, don't duplicate content across them, link between them where useful. Link to AGENTS.md from the README.md when relevant.
