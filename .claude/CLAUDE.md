@@ -109,7 +109,7 @@ Use the following tools for browser automation tasks:
 - IMPORTANT: NEVER PUSH TO THE MAIN OR DEFAULT BRANCH. ALWAYS PUSH TO A FEATURE BRANCH.
 - IMPORTANT: If your last message included HTTP or HTTPS URLs, offer to open those for me in my default browser.
 - Don't push commits to branches with PRs that have already been merged.
-- Use `rg` instead of `grep` for all text/regex searches
+- Use `rg` instead of `grep` for all text/regex searches, including inside pipelines (`... | rg ...`)
 
 ## General advice
 

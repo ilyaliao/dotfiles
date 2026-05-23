@@ -34,7 +34,6 @@
       "Bash(rg:*)",
       "Bash(sqlite3:*)",
       "Bash(curl:*)",
-      "Bash(rg:*)",
       "Bash(chmod:*)",
       "Bash(lsof:*)",
       "Bash(make:*)",
@@ -59,7 +58,6 @@
       "WebSearch"
     ],
     "deny": [
-      "Bash(grep*)",
       "Skill(commit-push-pr)"
     ],
     "defaultMode": "auto"
@@ -232,15 +230,15 @@
       "autoUpdate": true
     }
   },
-  "language": "繁體中文台灣用語",
   "viewMode": "focus",
+  "language": "繁體中文台灣用語",
   "alwaysThinkingEnabled": true,
   "showClearContextOnPlanAccept": true,
   "skipDangerousModePermissionPrompt": true,
   "verbose": false,
-  "skipCopyPicker": false,
   "remoteControlAtStartup": true,
   "skipAutoPermissionPrompt": true,
+  "skipCopyPicker": false,
   "agentPushNoautoCompacttifEnabled": false,
   "autoCompact": false,
   "feedbackSurveyState": {
