@@ -58,5 +58,21 @@
     "key": "alt+cmd+m",
     "command": "workbench.action.maximizeEditorHideSidebar",
     "when": "auxiliaryBarVisible || sideBarVisible || editorPartMultipleEditorGroups && !editorPartMaximizedEditorGroup"
+  },
+  {
+    "key": "alt+cmd+[",
+    "command": "runCommands",
+    "args": {
+      "commands": ["workbench.action.focusSideBar", "workbench.action.increaseViewSize"]
+    },
+    "when": "sideBarVisible"
+  },
+  {
+    "key": "alt+cmd+]",
+    "command": "runCommands",
+    "args": {
+      "commands": ["workbench.action.focusSideBar", "workbench.action.decreaseViewSize"]
+    },
+    "when": "sideBarVisible"
   }
 ]
