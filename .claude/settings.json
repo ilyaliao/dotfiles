@@ -9,6 +9,7 @@
     "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD": "1"
   },
   "includeCoAuthoredBy": true,
+  "cleanupPeriodDays": 180,
   "permissions": {
     "allow": [
       "Bash(mkdir:*)",
