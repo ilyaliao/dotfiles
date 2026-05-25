@@ -6,6 +6,7 @@ alias cursor="open $1 -a \"Cursor\""
 alias cc="claude"
 alias ccc="claude -c"
 alias ccr="claude -r"
+alias ccd="claude --dangerously-skip-permissions"
 
 # Cursor Agent
 alias ca="agent"
