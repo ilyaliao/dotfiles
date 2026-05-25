@@ -238,9 +238,8 @@
   "verbose": false,
   "remoteControlAtStartup": true,
   "skipAutoPermissionPrompt": true,
-  "skipCopyPicker": false,
-  "agentPushNoautoCompacttifEnabled": false,
-  "autoCompact": false,
+  "useAutoModeDuringPlan": true,
+  "agentPushNotifEnabled": false,
   "feedbackSurveyState": {
     "lastShownTime": 1754041037675
   }
