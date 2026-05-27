@@ -27,7 +27,7 @@ Always respond in Chinese-traditional
 
 ## Working with Git
 
-- When pushing or creating a PR, always ask for user confirmation via AskUserQuestion
+- When pushing or creating a PR, always ask for user confirmation via AskUserQuestion immediately before doing so, even if I already approved earlier in the session or conversation. Prior approval never carries over; re-confirm every time.
 - When creating git commits, always add yourself as a Co-author.
 - When opening pull requests or merge requests, always use a semantic commit message as the title.
 - Never bypass pre-commit hooks. Never use `--no-verify` or equivalent flags without explicit permission.
