@@ -1,5 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "cleanupPeriodDays": 180,
   "skillListingBudgetFraction": 0.03,
   "env": {
     "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1",
@@ -9,7 +10,6 @@
     "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD": "1"
   },
   "includeCoAuthoredBy": true,
-  "cleanupPeriodDays": 180,
   "permissions": {
     "allow": [
       "Bash(mkdir:*)",
@@ -214,7 +214,8 @@
     "rust-analyzer-lsp@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
-    "context7-plugin@context7-marketplace": true
+    "context7-plugin@context7-marketplace": true,
+    "security-guidance@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "context7-marketplace": {
@@ -239,9 +240,9 @@
   "skipDangerousModePermissionPrompt": true,
   "verbose": false,
   "remoteControlAtStartup": true,
+  "agentPushNotifEnabled": false,
   "skipAutoPermissionPrompt": true,
   "useAutoModeDuringPlan": true,
-  "agentPushNotifEnabled": false,
   "feedbackSurveyState": {
     "lastShownTime": 1754041037675
   }
