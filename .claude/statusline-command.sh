@@ -251,49 +251,16 @@ printf "\n"
 # ╚════════════════════════════════════════════════════════════════════╝
 
 # Line 2: dir + branch
-if [ -n "$branch" ]; then
-  wt_str=""
-  [ -n "$worktree" ] && wt_str=" ${DIM}[${worktree}]${RESET}"
-  printf "%s  %s%s %s|%s %s%s  %s%s%s\n" "$CYAN" "$dir" "$RESET" "$DIM" "$RESET" "$BRANCH" "$RESET" "$branch" "$wt_str"
+if [ -n "$worktree" ]; then
+  dir_icon=""
 else
-  printf "%s  %s%s\n" "$CYAN" "$dir" "$RESET"
+  dir_icon=""
 fi
-
-# ╔════════════════════════════════════════════════════════════════════╗
-# ║             RENDER LINE 3   —   TIME · DURATION · COST             ║
-# ╚════════════════════════════════════════════════════════════════════╝
-
-# Line 3: clock + session duration + cost
-h=$(date +%H)
-case $h in
-  03|04|05) period="凌晨" ;;
-  06|07|08|09|10) period="早上" ;;
-  11|12) period="中午" ;;
-  13|14|15|16|17) period="下午" ;;
-  18|19|20|21|22) period="晚上" ;;
-  *) period="半夜" ;;
-esac
-hour_12=$(date +%I | sed 's/^0//')
-now_time="${period} ${hour_12}:$(date +%M)"
-duration_str=""
-if [ -n "$session_duration_s" ] && [ "$session_duration_s" -gt 0 ]; then
-  d_h=$(( session_duration_s / 3600 ))
-  d_m=$(( (session_duration_s % 3600) / 60 ))
-  d_ss=$(( session_duration_s % 60 ))
-  if   [ $d_h -gt 0 ]; then duration_str=$(printf "%d 小時 %d 分" "$d_h" "$d_m")
-  elif [ $d_m -gt 0 ]; then duration_str=$(printf "%d 分 %d 秒" "$d_m" "$d_ss")
-  else                      duration_str=$(printf "%d 秒" "$d_ss")
-  fi
+if [ -n "$branch" ]; then
+  printf "%s%s  %s%s %s|%s %s  %s%s%s\n" "$CYAN" "$dir_icon" "$dir" "$RESET" "$DIM" "$RESET" "$BRANCH" "$RESET" "$branch" "$RESET"
+else
+  printf "%s%s  %s%s\n" "$CYAN" "$dir_icon" "$dir" "$RESET"
 fi
-cost_str=""
-if [ -n "$total_cost" ]; then
-  cost_fmt=$(awk -v c="$total_cost" 'BEGIN{printf "%.2f", c}')
-  cost_str=$(printf "%s%s  %s" "$YELLOW_CT" "$RESET" "$cost_fmt")
-fi
-printf "%s%s  %s" "$TEAL" "$RESET" "$now_time"
-[ -n "$duration_str" ] && printf " %s|%s %s%s  %s" "$DIM" "$RESET" "$PEACH" "$RESET" "$duration_str"
-[ -n "$cost_str" ] && printf " %s|%s %s" "$DIM" "$RESET" "$cost_str"
-printf "\n"
 
 # ╔════════════════════════════════════════════════════════════════════╗
 # ║                RENDER LINES 4 & 5   —   USAGE BARS                 ║
