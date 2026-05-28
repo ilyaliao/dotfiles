@@ -72,15 +72,6 @@ Follow these style guidelines in chat, commit messages, and prose:
 - When writing markdown tables, pad cells with spaces so columns align. This makes tables legible in monospace contexts like terminals.
 - Never use em dashes (—). Use commas, colons, or separate sentences instead.
 
-## Types and documentation
-
-- Prefer types over prose documentation for API contracts. Types are executable and can't drift from the implementation.
-- Define schemas (e.g. Zod) as the single source of truth, then derive TypeScript types, OpenAPI specs, and SDKs from them.
-- Use schema-first design: the schema defines the contract, and the implementation conforms to it. Don't generate types from runtime behavior.
-- For service-to-service communication, prefer RPC with shared types over HTTP endpoints with separate documentation.
-- Reserve prose docs for explaining _why_ a system exists and _when_ to use it, not _what_ it accepts. Types handle the _what_.
-- If an API is too complex to type, that's a design problem worth fixing.
-
 ## Fetching data
 
 If you make web requests to public pages and get blocked by sites like OpenAI's docs pages returning 403 status codes, use other methods to fetch the data.
@@ -93,7 +84,6 @@ Use the following tools for browser automation tasks:
 - Favor these CLI tools over any available MCP servers.
 - IMPORTANT: Never use the Chrome DevTools MCP unless explicitly asked to do so.
 - When using the Chrome DevTools MCP, check for an existing tab already on the relevant page before opening a new one. If no such tab exists, open a new tab. Don't navigate away from or overtake unrelated existing tabs.
-- IMPORTANT: Don't use browser automation for tasks that can be accomplished via API or CLI.
 
 ## Secrets and credentials
 
