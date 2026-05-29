@@ -7,19 +7,44 @@ Always respond in Chinese-traditional
 - If you don't know something (env vars, API endpoints, CLI flags, model names, library APIs), stop and verify or say you don't know. Never invent technical details.
 - Your training data is stale. Verify model names, package versions, and API surfaces before relying on them.
 - Don't say a task is done until typechecks, linters, and tests pass. If none are configured, say so explicitly instead of claiming success.
-- When renaming a function, type, or variable, search separately for: direct references, type-level references, string literals containing the name, dynamic imports, re-exports and barrel files, and test or mock files. One grep is not enough.
 
-## Before coding
+## Think Before Coding
 
-- State assumptions explicitly before implementing. If uncertain, ask.
-- If multiple interpretations of a request exist, present them, don't pick silently.
-- If something is unclear, stop and name what's confusing instead of guessing.
-- Write the minimum code that solves the problem. No speculative features, no abstractions for single-use code, no configurability that wasn't asked for.
-- Don't add error handling for impossible scenarios.
-- Touch only what the task requires. Don't "improve" adjacent code, comments, or formatting.
-- Match existing style in a file, even if you'd write it differently.
-- If you notice unrelated dead code or bugs, mention them, don't fix them unprompted.
-- Clean up orphans your changes create (unused imports, variables). Don't remove pre-existing dead code unless asked.
+Don't assume. Don't hide confusion. Surface tradeoffs.
+
+Before implementing:
+- State your assumptions explicitly. If uncertain, ask.
+- If multiple interpretations exist, present them - don't pick silently.
+- If a simpler approach exists, say so. Push back when warranted.
+- If something is unclear, stop. Name what's confusing. Ask.
+
+## Simplicity First
+
+Minimum code that solves the problem. Nothing speculative.
+
+- No features beyond what was asked.
+- No abstractions for single-use code.
+- No "flexibility" or "configurability" that wasn't requested.
+- No error handling for impossible scenarios.
+- If you write 200 lines and it could be 50, rewrite it.
+
+Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
+
+## Surgical Changes
+
+Touch only what you must. Clean up only your own mess.
+
+When editing existing code:
+- Don't "improve" adjacent code, comments, or formatting.
+- Don't refactor things that aren't broken.
+- Match existing style, even if you'd do it differently.
+- If you notice unrelated dead code, mention it - don't delete it.
+
+When your changes create orphans:
+- Remove imports/variables/functions that YOUR changes made unused.
+- Don't remove pre-existing dead code unless asked.
+
+The test: Every changed line should trace directly to the user's request.
 
 ## Running scripts and commands
 
@@ -29,36 +54,18 @@ Always respond in Chinese-traditional
 
 - When pushing or creating a PR, always ask for user confirmation via AskUserQuestion immediately before doing so, even if I already approved earlier in the session or conversation. Prior approval never carries over; re-confirm every time.
 - When creating git commits, always add yourself as a Co-author.
-- When opening pull requests or merge requests, always use a semantic commit message as the title.
+- When opening pull requests, always use a semantic commit message as the title.
 - Never bypass pre-commit hooks. Never use `--no-verify` or equivalent flags without explicit permission.
 - Use the `/commit-commands:commit` skill to generate commit messages, not free-form authoring.
 
-## Working with Node.js and npm
-
-- Always use `npx` when running global npm CLIs, e.g. `npx wrangler` instead of `wrangler`
-
-## Working with GitHub and GitLab
+## Working with GitHub
 
 - Use `gh` for GitHub repositories.
-- When writing a pull request (GitHub) or merge request (GitLab) body, be concise. Explain the problem and the solution succinctly.
-- Whenever you are commenting on a PR or MR, always make sure you're commenting in the right place.
-- If you're responding to a reviewer's inline comment, then comment on their comment, not the PR/MR itself.
-- When analyzing an issue, PR, or MR, read all the comments and discussion threads, not just the title and opening description. The context and nuance is often in the conversation.
-- After creating or updating a pull request or merge request or issue, open the URL in my default browser for me.
+- Whenever you are commenting on a PR, always make sure you're commenting in the right place.
+- If you're responding to a reviewer's inline comment, then comment on their comment, not the PR itself.
+- When analyzing an issue or PR, read all the comments and discussion threads, not just the title and opening description. The context and nuance is often in the conversation.
+- After creating or updating a pull request or issue, open the URL in my default browser for me.
 - When creating a new GitHub repo with `gh repo create`, set the `--homepage` and `--description` flags if there's enough context to do so.
-
-## Writing a good PR body
-
-Follow these guidelines when writing the body of the pull request:
-
-- Be concise and descriptive
-- Don't oversell the changes. It's not an advertisement.
-- Don't use fancy words like "comprehensive", "utilize", "implement", "exhaustive", "simplify", "optimize", "seamlessly"
-- Start the PR body with the words "This PR..."
-- Do not include a "Summary" heading
-- Do not mention the test plan
-- If there is a Linear ticket or GitHub issue, include a link to the ticket or issue in the PR body.
-- If there is a GitLab issue, include a link to the issue in the MR body.
 
 ## Style guide
 
@@ -97,13 +104,11 @@ Use the following tools for browser automation tasks:
 - IMPORTANT: NEVER PUSH TO THE MAIN OR DEFAULT BRANCH. ALWAYS PUSH TO A FEATURE BRANCH.
 - IMPORTANT: If your last message included HTTP or HTTPS URLs, offer to open those for me in my default browser.
 - Don't push commits to branches with PRs that have already been merged.
-- Use `rg` instead of `grep` for all text/regex searches, including inside pipelines (`... | rg ...`)
 
 ## General advice
 
 - Whenever it's possible to do something via API or CLI, favor that over using a web-based flow, which requires manual clicking and is less efficient for automation.
 - Finish your messages with a list of any relevant URLs that I should know about. That could include pages you looked up, GitHub issues or PRs you created, etc. No need to repeat them too many times.
-- Whenever you overcome some kind of obstacle or challenge or learns something that could be generally useful across all sessions, prompt to add a note to the global AGENTS.md file so that the future sessions can benefit. This could be a new rule, a new style guideline, a new tool to use, or anything else that would be helpful for future agents to know.
 
 ## Self-improvement
 
