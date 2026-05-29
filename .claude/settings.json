@@ -211,7 +211,6 @@
     "command": "sh ~/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
-    "codex@openai-codex": true,
     "commit-commands@claude-plugins-official": true,
     "figma@claude-plugins-official": false,
     "rust-analyzer-lsp@claude-plugins-official": true,
@@ -226,13 +225,6 @@
       "source": {
         "source": "github",
         "repo": "upstash/context7"
-      },
-      "autoUpdate": true
-    },
-    "openai-codex": {
-      "source": {
-        "source": "github",
-        "repo": "openai/codex-plugin-cc"
       },
       "autoUpdate": true
     }
