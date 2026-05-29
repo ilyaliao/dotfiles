@@ -7,18 +7,18 @@ Always respond in Chinese-traditional
 - If you don't know something (env vars, API endpoints, CLI flags, model names, library APIs), stop and verify or say you don't know. Never invent technical details.
 - Your training data is stale. Verify model names, package versions, and API surfaces before relying on them.
 - Don't say a task is done until typechecks, linters, and tests pass. If none are configured, say so explicitly instead of claiming success.
-
-## Think Before Coding
+## Think before coding
 
 Don't assume. Don't hide confusion. Surface tradeoffs.
 
 Before implementing:
+
 - State your assumptions explicitly. If uncertain, ask.
-- If multiple interpretations exist, present them - don't pick silently.
+- If multiple interpretations exist, present them, don't pick silently.
 - If a simpler approach exists, say so. Push back when warranted.
 - If something is unclear, stop. Name what's confusing. Ask.
 
-## Simplicity First
+## Simplicity first
 
 Minimum code that solves the problem. Nothing speculative.
 
@@ -30,21 +30,23 @@ Minimum code that solves the problem. Nothing speculative.
 
 Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
 
-## Surgical Changes
+## Surgical changes
 
 Touch only what you must. Clean up only your own mess.
 
 When editing existing code:
+
 - Don't "improve" adjacent code, comments, or formatting.
 - Don't refactor things that aren't broken.
 - Match existing style, even if you'd do it differently.
-- If you notice unrelated dead code, mention it - don't delete it.
+- If you notice unrelated dead code, mention it, don't delete it.
 
 When your changes create orphans:
+
 - Remove imports/variables/functions that YOUR changes made unused.
 - Don't remove pre-existing dead code unless asked.
 
-The test: Every changed line should trace directly to the user's request.
+The test: every changed line should trace directly to the user's request.
 
 ## Running scripts and commands
 
@@ -61,11 +63,24 @@ The test: Every changed line should trace directly to the user's request.
 ## Working with GitHub
 
 - Use `gh` for GitHub repositories.
+- When writing a pull request body, be concise. Explain the problem and the solution succinctly.
 - Whenever you are commenting on a PR, always make sure you're commenting in the right place.
 - If you're responding to a reviewer's inline comment, then comment on their comment, not the PR itself.
 - When analyzing an issue or PR, read all the comments and discussion threads, not just the title and opening description. The context and nuance is often in the conversation.
 - After creating or updating a pull request or issue, open the URL in my default browser for me.
-- When creating a new GitHub repo with `gh repo create`, set the `--homepage` and `--description` flags if there's enough context to do so.
+
+## Writing a good PR body
+
+Follow these guidelines when writing the body of the pull request:
+
+- Be concise and descriptive
+- Don't oversell the changes. It's not an advertisement.
+- Don't use fancy words like "comprehensive", "utilize", "implement", "exhaustive", "simplify", "optimize", "seamlessly"
+- Start the PR body with the words "This PR..."
+- Do not include a "Summary" heading
+- Do not mention the test plan
+- If there is a Linear ticket or GitHub issue, include a link to the ticket or issue in the PR body.
+- If there is a GitLab issue, include a link to the issue in the MR body.
 
 ## Style guide
 
