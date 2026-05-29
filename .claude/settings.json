@@ -7,7 +7,8 @@
     "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
     "CLAUDE_CODE_NO_FLICKER": "1",
     "ENABLE_TOOL_SEARCH": "true",
-    "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD": "1"
+    "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD": "1",
+    "DISABLE_AUTOUPDATER": "1"
   },
   "includeCoAuthoredBy": true,
   "permissions": {
@@ -237,6 +238,7 @@
   "viewMode": "focus",
   "language": "繁體中文台灣用語",
   "alwaysThinkingEnabled": true,
+  "showThinkingSummaries": true,
   "showClearContextOnPlanAccept": true,
   "skipDangerousModePermissionPrompt": true,
   "verbose": false,
