@@ -9,7 +9,8 @@
     "CLAUDE_CODE_ENABLE_AUTO_MODE": "1",
     "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD": "1",
     "ENABLE_TOOL_SEARCH": "true",
-    "DISABLE_AUTOUPDATER": "1"
+    "DISABLE_AUTOUPDATER": "1",
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "80"
   },
   "includeCoAuthoredBy": true,
   "permissions": {
@@ -243,6 +244,7 @@
   "showClearContextOnPlanAccept": true,
   "skipDangerousModePermissionPrompt": true,
   "verbose": false,
+  "autoCompactEnabled": true,
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": false,
   "skipAutoPermissionPrompt": true,
