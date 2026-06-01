@@ -9,3 +9,8 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_VERIFY
+
+# Completion
+zstyle ':completion:*:complete:-command-:*:*' ignored-patterns '*.pdf|*.exe|*.dll'
+zstyle ':completion:*:*sh:*:' tag-order files
+zstyle ':completion:*' menu select
