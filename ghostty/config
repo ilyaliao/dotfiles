@@ -2,12 +2,13 @@
 window-save-state = always
 window-padding-balance = true
 background-opacity = 0.6
+background-blur-radius = 10
 background-opacity-cells = true
 font-thicken = true
-background-blur = macos-glass-clear 
+background-blur = macos-glass-clear
 macos-titlebar-style = transparent
 macos-icon = blueprint
-theme = GitHub Dark
+theme = dark:Catppuccin Mocha,light:Catppuccin Latte
 background = #101216
 foreground = #8b949e
 selection-invert-fg-bg = true
