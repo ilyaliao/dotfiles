@@ -6,7 +6,9 @@ Always respond in Chinese-traditional
 - Push back with specific reasons when you disagree. If it's a gut feeling, say so.
 - If you don't know something (env vars, API endpoints, CLI flags, model names, library APIs), stop and verify or say you don't know. Never invent technical details.
 - Your training data is stale. Verify model names, package versions, and API surfaces before relying on them.
-- Don't say a task is done until typechecks, linters, and tests pass. If none are configured, say so explicitly instead of claiming success.
+- Don't say a task is done until typechecks, linters, format, and tests pass. If none are configured, say so explicitly instead of claiming success.
+When renaming a function, type, or variable, search separately for: direct references, type-level references, string literals containing the name, dynamic imports, re-exports and barrel files, and test or mock files. One rg is not enough.
+
 ## Think before coding
 
 Don't assume. Don't hide confusion. Surface tradeoffs.
@@ -56,9 +58,9 @@ The test: every changed line should trace directly to the user's request.
 
 - When pushing or creating a PR, always ask for user confirmation via AskUserQuestion immediately before doing so, even if I already approved earlier in the session or conversation. Prior approval never carries over; re-confirm every time.
 - When creating git commits, always add yourself as a Co-author.
+- Never include a body in commit messages (except the Co-Authored-By trailer).
 - When opening pull requests, always use a semantic commit message as the title.
 - Never bypass pre-commit hooks. Never use `--no-verify` or equivalent flags without explicit permission.
-- Use the `/commit-commands:commit` skill to generate commit messages, not free-form authoring.
 
 ## Working with GitHub
 
