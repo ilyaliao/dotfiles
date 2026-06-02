@@ -204,7 +204,6 @@
     ]
   },
   "worktree": {
-    "baseRef": "fresh",
     "bgIsolation": "none"
   },
   "statusLine": {
@@ -233,8 +232,8 @@
   "viewMode": "focus",
   "language": "繁體中文台灣用語",
   "alwaysThinkingEnabled": true,
-  "showThinkingSummaries": true,
   "showClearContextOnPlanAccept": true,
+  "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,
   "verbose": false,
   "autoCompactEnabled": true,
