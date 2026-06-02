@@ -73,12 +73,20 @@ setup_ni() {
   log_info "~/.nirc -> ~/dotfiles/nirc"
 }
 
+setup_starship() {
+  fmt_title_underline "Starship (~/.config/starship.toml)"
+  mkdir -p ~/.config
+  ln -sfn ~/dotfiles/starship/starship.toml ~/.config/starship.toml
+  log_info "~/.config/starship.toml -> ~/dotfiles/starship/starship.toml"
+}
+
 setup_symlinks() {
   setup_claude
   setup_codex
   setup_cursor
   setup_tmux
   setup_ni
+  setup_starship
 }
 
 setup_symlinks
