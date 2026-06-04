@@ -52,7 +52,7 @@ The test: every changed line should trace directly to the user's request.
 
 ## Running scripts and commands
 
-- If the project has a "scripts" or "script" directory, run those scripts for tasks like testing, linting, formatting, etc.
+- If the project has a `package.json`, use the scripts defined in it for tasks like testing, linting, formatting, etc.
 
 ## Working with Git
 
