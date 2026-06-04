@@ -5,6 +5,7 @@
 - [`zsh`](https://www.zsh.org) — newer than the macOS bundled shell
 - [`mise`](https://mise.jdx.dev) — runtime & CLI version manager
 - [`agent-browser`](https://agent-browser.dev/) — browser automation CLI for AI agents
+- [`lumen`](https://github.com/jnsahaj/lumen) (`jnsahaj/lumen`) — terminal diff viewer TUI
 - [`im-select`](https://github.com/daipeihust/im-select) (`daipeihust/tap`) — input-method switcher for Vim
 - [`mole`](https://github.com/tw93/Mole) — Mac cleanup / optimization
 - [`tmux`](https://github.com/tmux/tmux) — terminal multiplexer

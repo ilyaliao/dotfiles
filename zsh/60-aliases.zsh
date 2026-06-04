@@ -40,6 +40,11 @@ alias yarn="sfw yarn"
 alias ll="eza -l -g --icons"
 alias lla="ll -a"
 
+# lumen — brew install jnsahaj/lumen/lumen
+diff() {
+  lumen diff "$@"
+}
+
 # Git
 alias grt='cd "$(git rev-parse --show-toplevel)"'
 

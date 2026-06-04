@@ -2,22 +2,6 @@ function glp() {
   git --no-pager log -$1
 }
 
-function gd() {
-  if [[ -z $1 ]] then
-    git diff --color | diff-so-fancy
-  else
-    git diff --color $1 | diff-so-fancy
-  fi
-}
-
-function gdc() {
-  if [[ -z $1 ]] then
-    git diff --color --cached | diff-so-fancy
-  else
-    git diff --color --cached $1 | diff-so-fancy
-  fi
-}
-
 # I put
 # `~/i` for my projects
 # `~/f` for forks
