@@ -11,7 +11,9 @@ macos-titlebar-style = transparent
 macos-icon = blueprint
 selection-invert-fg-bg = true
 window-subtitle = working-directory
-cursor-style = bar
+cursor-style = block
+cursor-color = #ffffff
+shell-integration-features = no-cursor
 scrollback-limit = 300000000
 
 font-size = 14
