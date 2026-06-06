@@ -69,6 +69,7 @@
   "search.exclude": {
     "**/*.snap": true,
     "**/*.svg": true,
+    "**/.ghfs": true,
     "**/.git": true,
     "**/.github": false,
     "**/.nuxt": true,
