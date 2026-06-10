@@ -32,14 +32,6 @@ function dotfiles() {
   cd ~/dotfiles
 }
 
-function pr() {
-  if [ $1 = "ls" ]; then
-    gh pr list
-  else
-    gh pr checkout $1
-  fi
-}
-
 function dir() {
   mkdir $1 && cd $1
 }

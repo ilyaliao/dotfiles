@@ -54,6 +54,11 @@ alias main='git checkout --force main'
 alias gundo='git reset --soft HEAD~1'
 alias gsha='git rev-parse HEAD | pbcopy'
 
+alias prs='gh pr list'
+alias prd='gh pr diff'
+alias prv='gh pr view'
+alias prc='gh pr checkout'
+
 alias ghci='gh run list -L 1'
 alias gct='git branch --all | fzf --preview "git log --oneline -10 {1}" | sed "s/remotes\/origin\///" | xargs git checkout'
 
