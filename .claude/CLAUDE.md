@@ -35,6 +35,7 @@ This is a thinking-first rule, not a mandate to refactor on every fix: the root-
 - Whenever you are commenting on a PR, always make sure you're commenting in the right place.
 - If you're responding to a reviewer's inline comment, then comment on their comment, not the PR itself.
 - When analyzing an issue or PR, read all the comments and discussion threads, not just the title and opening description. The context and nuance is often in the conversation.
+- After creating or updating a pull request or issue, open the URL in my default browser for me.
 
 ## Writing a good PR body
 
