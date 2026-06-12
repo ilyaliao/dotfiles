@@ -2,7 +2,7 @@
 # Claude Code Statusline
 #
 # Layout:
-#   model_icon model | ctx% (limit) | version
+#   model_icon model | ctx% (limit) | version [| config_dir]
 #   dir | branch [worktree]
 #   time | session duration | cost
 #   用量 ████░░░░░░ 40% (剩 N 小時 重置)
@@ -58,7 +58,7 @@ EOF
 # ║                       CONTEXT % CALCULATION                        ║
 # ╚════════════════════════════════════════════════════════════════════╝
 
-compact_win=$(jq -r '.env.CLAUDE_CODE_AUTO_COMPACT_WINDOW // empty' "$HOME/.claude/settings.json" 2>/dev/null)
+compact_win=$(jq -r '.env.CLAUDE_CODE_AUTO_COMPACT_WINDOW // empty' "${CLAUDE_CONFIG_DIR:-$HOME/.claude}/settings.json" 2>/dev/null)
 
 # Compute ctx_pct: compact-window-based first, then API field, then context_window_size fallback.
 tok_total=$(( ${tok_input:-0} + ${tok_cache_create:-0} + ${tok_cache_read:-0} ))
@@ -75,6 +75,16 @@ session_duration_s=""
 [ -n "$duration_ms" ] && session_duration_s=$(( duration_ms / 1000 ))
 
 _now=$(date +%s)
+
+# ╔════════════════════════════════════════════════════════════════════╗
+# ║                         CONFIG DIR BADGE                           ║
+# ╚════════════════════════════════════════════════════════════════════╝
+
+# Show a badge when CLAUDE_CONFIG_DIR differs from the default ~/.claude
+config_badge=""
+if [ -n "$CLAUDE_CONFIG_DIR" ] && [ "$CLAUDE_CONFIG_DIR" != "$HOME/.claude" ]; then
+  config_badge=$(basename "$CLAUDE_CONFIG_DIR")
+fi
 
 # ╔════════════════════════════════════════════════════════════════════╗
 # ║                              GIT INFO                              ║
@@ -244,6 +254,7 @@ if [ -n "$ctx_pct" ]; then
   [ -n "$ctx_limit_fmt" ] && printf " %s(%s)%s" "$DIM" "$ctx_limit_fmt" "$RESET"
 fi
 [ -n "$version" ] && printf " %s|%s %s%s  %sv%s%s" "$DIM" "$RESET" "$MAUVE" "$RESET" "$MAUVE" "$version" "$RESET"
+[ -n "$config_badge" ] && printf " %s|%s %s󰒓  %s%s" "$DIM" "$RESET" "$ORANGE" "$config_badge" "$RESET"
 printf "\n"
 
 # ╔════════════════════════════════════════════════════════════════════╗
