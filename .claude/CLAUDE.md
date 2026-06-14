@@ -27,6 +27,7 @@ This is a thinking-first rule, not a mandate to refactor on every fix: the root-
 - Never include a body in commit messages (except the Co-Authored-By trailer).
 - When opening pull requests, always use a semantic commit message as the title.
 - Never bypass pre-commit hooks. Never use `--no-verify` or equivalent flags without explicit permission.
+- When you create a commit, state the commit message you used in your reply to me.
 
 ## Working with GitHub
 
