@@ -58,7 +58,7 @@ alias ghci='gh run list -L 1'
 alias gct='git branch --all | fzf --preview "git log --oneline -10 {1}" | sed "s/remotes\/origin\///" | xargs git checkout'
 
 # Homebrew
-alias homeupdate="brew update && brew upgrade && brew cleanup"
+alias homeupdate="brew update && brew upgrade -y && brew cleanup"
 homeuninstall() {
   local name
   for name in "$@"; do
