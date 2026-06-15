@@ -28,6 +28,7 @@ This is a thinking-first rule, not a mandate to refactor on every fix: the root-
 - When opening pull requests, always use a semantic commit message as the title.
 - Never bypass pre-commit hooks. Never use `--no-verify` or equivalent flags without explicit permission.
 - When you create a commit, state the commit message you used in your reply to me.
+- Never `git add` or stage files without an explicit instruction to do so.
 
 ## Working with GitHub
 
