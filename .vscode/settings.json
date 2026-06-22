@@ -49,6 +49,7 @@
   "files.insertFinalNewline": true,
   "files.simpleDialog.enable": true,
   "git.autofetch": true,
+  "git.blame.editorDecoration.enabled": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
   "git.untrackedChanges": "separate",
@@ -68,6 +69,8 @@
   "search.useParentIgnoreFiles": true,
   "search.exclude": {
     "**/*.snap": true,
+    "**/*.test.*": true,
+    "**/*.spec.*": true,
     "**/*.svg": true,
     "**/.ghfs": true,
     "**/.git": true,
