@@ -19,7 +19,9 @@ scrollback-limit = 300000000
 font-size = 14
 font-family = Berkeley Mono
 font-family = Symbols Nerd Font
-font-family = Hannotate SC
+font-family = Hannotate TC
+
+font-codepoint-map = U+E000-U+F8FF=Symbols Nerd Font
 
 adjust-cell-height = 3
 
