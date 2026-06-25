@@ -29,6 +29,6 @@ clipboard-read = allow
 clipboard-write = allow
 copy-on-select = clipboard
 
-keybind = shift+enter=text:\n
+keybind = shift+enter=text:\x1b\r
 
 auto-update-channel = tip
