@@ -236,6 +236,7 @@
   "language": "繁體中文台灣用語",
   "alwaysThinkingEnabled": true,
   "showClearContextOnPlanAccept": true,
+  "tui": "fullscreen",
   "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,
   "skipWorkflowUsageWarning": true,
