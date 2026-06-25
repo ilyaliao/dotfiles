@@ -18,3 +18,25 @@ Assume a correct architecture has no bugs — so every bug is evidence that the 
 Prefer fixes that remove the structural condition that let the bug exist — so this bug and others like it can no longer occur — over patches at the symptom layer (a guard, a special case, or a workaround that leaves the enabling structure in place). Reach for a symptom-layer patch only when the root-cause fix is **provably** infeasible or genuinely belongs in a separate change, never merely because it is larger or harder; when you do, say so and name the root cause you are deferring.
 
 This is a thinking-first rule, not a mandate to refactor on every fix: the root-cause analysis is **always** required; reshaping the architecture to act on it is frequent but conditional on its being the right and feasible move.
+
+## Working with Git
+
+- When creating git commits, always add yourself as a Co-author.
+- Never include a body in commit messages (except the Co-Authored-By trailer).
+
+## Working with GitHub
+
+- Use `gh` for GitHub repositories.
+- When writing a pull request body, be concise. Explain the problem and the solution succinctly.
+- Whenever you are commenting on a PR, always make sure you're commenting in the right place.
+- When analyzing an issue or PR, read all the comments and discussion threads, not just the title and opening description. The context and nuance is often in the conversation.
+- After creating or updating a pull request or issue, open the URL in my default browser for me.
+
+## Important rules
+
+- IMPORTANT: When pushing or creating a PR, always ask for user confirmation via AskUserQuestion immediately before doing so, even if I already approved earlier in the session or conversation. Prior approval never carries over; re-confirm every time.
+- IMPORTANT: If your last message included HTTP or HTTPS URLs, offer to open those for me in my default browser.
+
+## General advice
+
+- Whenever it's possible to do something via API or CLI, favor that over using a web-based flow, which requires manual clicking and is less efficient for automation.
