@@ -30,6 +30,7 @@ This is a thinking-first rule, not a mandate to refactor on every fix: the root-
 - When writing a pull request body, be concise. Explain the problem and the solution succinctly.
 - Whenever you are commenting on a PR, always make sure you're commenting in the right place.
 - When analyzing an issue or PR, read all the comments and discussion threads, not just the title and opening description. The context and nuance is often in the conversation.
+- When a chat is about a GitHub issue or pull request, rename the chat to `Issue #123` or `PR #123` once the type and number are known.
 - After creating or updating a pull request or issue, open the URL in my default browser for me.
 
 ## Important rules
