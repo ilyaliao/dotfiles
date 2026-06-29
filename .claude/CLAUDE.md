@@ -34,12 +34,11 @@ This is a thinking-first rule, not a mandate to refactor on every fix: the root-
 - Whenever you are commenting on a PR, always make sure you're commenting in the right place.
 - When analyzing an issue or PR, read all the comments and discussion threads, not just the title and opening description. The context and nuance is often in the conversation.
 - When a chat is about a GitHub issue or pull request, rename the chat to `Issue #123` or `PR #123` once the type and number are known.
-- After creating or updating a pull request or issue, open the URL in my default browser for me.
 
 ## Important rules
 
 - IMPORTANT: When pushing or creating a PR, always ask for user confirmation via AskUserQuestion immediately before doing so, even if I already approved earlier in the session or conversation. Prior approval never carries over; re-confirm every time.
-- IMPORTANT: If your last message included HTTP or HTTPS URLs, offer to open those for me in my default browser.
+- IMPORTANT: If your last message included HTTP or HTTPS URLs, open them directly when you support a built-in browser; otherwise, ask whether to open them for me.
 
 ## General advice
 
