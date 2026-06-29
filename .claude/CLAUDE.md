@@ -22,7 +22,10 @@ This is a thinking-first rule, not a mandate to refactor on every fix: the root-
 ## Working with Git
 
 - When creating git commits, always add yourself as a Co-author.
+- When creating git commits, always use a semantic commit prefix, with or without parenthetical qualifiers.
 - Never include a body in commit messages (except the Co-Authored-By trailer).
+- Never bypass pre-commit hooks. Never use --no-verify or equivalent flags without explicit permission.
+- When opening pull requests or merge requests, always use a semantic commit message as the title.
 
 ## Working with GitHub
 
