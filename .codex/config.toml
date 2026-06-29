@@ -1,15 +1,19 @@
 model = "gpt-5.5"
-model_reasoning_effort = "high"
-tool_output_token_limit = 25000
-model_auto_compact_token_limit = 233000
+model_reasoning_effort = "medium"
 web_search = "live"
+personality = "pragmatic"
 suppress_unstable_features_warning = true
 approval_policy = "on-request"
 approvals_reviewer = "auto_review"
-sandbox_mode = "workspace-write"
+sandbox_mode = "danger-full-access"
+
+notify = ["/Users/ilyal/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+service_tier = "priority"
 
 [features]
+memories = true
 multi_agent = true
+fast_mode = true
 ghost_commit = false
 unified_exec = true
 apply_patch_freeform = true
@@ -17,7 +21,125 @@ skills = true
 shell_snapshot = true
 terminal_resize_reflow = true
 goals = true
-prevent_sleep_while_running = true
+prevent_idle_sleep = true
+js_repl = false
+chronicle = true
 
 [tui]
+terminal_title = []
+
 status_line = ["model-with-reasoning", "current-dir", "git-branch", "context-used", "five-hour-limit", "weekly-limit"]
+
+[desktop]
+followUpQueueMode = "queue"
+keepRemoteControlAwakeWhilePluggedIn = true
+selected-avatar-id = "seedy"
+dictationDictionary = []
+localeOverride = "zh-TW"
+sansFontSize = 14
+usePointerCursors = true
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#339cff"
+contrast = 60
+ink = "#ffffff"
+opaqueWindows = false
+surface = "#181818"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+code = "Berkeley Mono"
+ui = "Hannotate TC"
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#40c977"
+diffRemoved = "#fa423e"
+skill = "#ad7bf9"
+
+[desktop.appearanceLightChromeTheme]
+accent = "#339cff"
+contrast = 45
+ink = "#1a1c1f"
+opaqueWindows = false
+surface = "#ffffff"
+
+[desktop.appearanceLightChromeTheme.fonts]
+code = "Berkeley Mono"
+ui = "Hannotate TC"
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#00a240"
+diffRemoved = "#ba2623"
+skill = "#924ff7"
+
+[marketplaces.openai-bundled]
+last_updated = "2026-06-28T15:15:59Z"
+source_type = "local"
+source = "/Users/ilyal/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-06-26T14:51:23Z"
+source_type = "local"
+source = "/Users/ilyal/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[mcp_servers.node_repl]
+args = []
+command = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/Codex.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/ilyal/.codex"
+CODEX_HOME = "/Users/ilyal/.codex"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "59e7bb81812ddd5f102e1d580335166e552c91686b5726218a985b59b4f89ca1"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.623.42026"
+CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
+
+[hooks.state]
+
+[hooks.state."/Users/ilyal/.codex/hooks.json:post_tool_use:0:0"]
+trusted_hash = "sha256:63be244ab87e18a6ec89a355ca5295b518555c9fe928361b6d90b1a8146654c1"
+
+[hooks.state."/Users/ilyal/.codex/hooks.json:user_prompt_submit:0:0"]
+trusted_hash = "sha256:7dab68cdb6f61195a9786d8515285f194d250b29c27723816753fed73597b5ab"
+
+[hooks.state."/Users/ilyal/.codex/hooks.json:session_start:0:0"]
+trusted_hash = "sha256:d8df596d7196a9d532c5752fb4bbba6213fd1fa2d43e53b327e16121367018ca"
+
+[hooks.state."/Users/ilyal/.codex/hooks.json:stop:0:0"]
+trusted_hash = "sha256:d3df3709252e711e57c324c252b139ad60af1d1bc5d67a8a879cdd3ae44d272c"
+
+[hooks.state."/Users/ilyal/.codex/hooks.json:permission_request:0:0"]
+trusted_hash = "sha256:5ae3cdd0ec73ff8d8747e814299d07862d3ae316538e744583e74dfd93a10cf7"
+
+[memories]
+disable_on_external_context = true
