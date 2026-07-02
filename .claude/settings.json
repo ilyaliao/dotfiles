@@ -65,9 +65,6 @@
       "WebFetch(domain:*.ilyal.me)",
       "WebSearch"
     ],
-    "deny": [
-      "Skill(commit-push-pr)"
-    ],
     "defaultMode": "auto"
   },
   "hooks": {
