@@ -231,13 +231,29 @@
     "security-guidance@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
-    "swift-lsp@claude-plugins-official": true
+    "swift-lsp@claude-plugins-official": true,
+    "codex@openai-codex": true,
+    "ast-grep@ast-grep-marketplace": true
   },
   "extraKnownMarketplaces": {
     "context7-marketplace": {
       "source": {
         "source": "github",
         "repo": "upstash/context7"
+      },
+      "autoUpdate": true
+    },
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      },
+      "autoUpdate": true
+    },
+    "ast-grep-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "ast-grep/agent-skill"
       },
       "autoUpdate": true
     }
