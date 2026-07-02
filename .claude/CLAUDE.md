@@ -39,6 +39,7 @@ This is a thinking-first rule, not a mandate to refactor on every fix: the root-
 
 - IMPORTANT: When pushing or creating a PR, always ask for user confirmation via AskUserQuestion immediately before doing so, even if I already approved earlier in the session or conversation. Prior approval never carries over; re-confirm every time.
 - IMPORTANT: If your last message included HTTP or HTTPS URLs, open them directly when you support a built-in browser; otherwise, ask whether to open them for me.
+- IMPORTANT: When writing code comments, comments must focus on the code itself, not on explaining decisions. Never use a comment as an ADR.
 
 ## General advice
 
