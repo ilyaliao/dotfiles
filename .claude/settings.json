@@ -1,7 +1,22 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "agentPushNotifEnabled": false,
+  "alwaysThinkingEnabled": true,
+  "autoCompactEnabled": true,
   "cleanupPeriodDays": 180,
-  "skillListingBudgetFraction": 0.03,
+  "enabledPlugins": {
+    "ast-grep@ast-grep-marketplace": true,
+    "codex@openai-codex": true,
+    "commit-commands@claude-plugins-official": true,
+    "context7-plugin@context7-marketplace": true,
+    "feature-dev@claude-plugins-official": true,
+    "figma@claude-plugins-official": false,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "swift-lsp@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true
+  },
   "env": {
     "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "80",
     "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD": "1",
@@ -15,7 +30,180 @@
     "DISABLE_UPGRADE_COMMAND": "1",
     "ENABLE_TOOL_SEARCH": "true"
   },
+  "extraKnownMarketplaces": {
+    "ast-grep-marketplace": {
+      "autoUpdate": true,
+      "source": {
+        "repo": "ast-grep/agent-skill",
+        "source": "github"
+      }
+    },
+    "context7-marketplace": {
+      "autoUpdate": true,
+      "source": {
+        "repo": "upstash/context7",
+        "source": "github"
+      }
+    },
+    "openai-codex": {
+      "autoUpdate": true,
+      "source": {
+        "repo": "openai/codex-plugin-cc",
+        "source": "github"
+      }
+    }
+  },
+  "feedbackSurveyState": {
+    "lastShownTime": 1754041037675
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'",
+            "timeout": 86400,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "jq -r '.tool_input.file_path' | { read file_path; if echo \"$file_path\" | rg -Eiq '\\.(ts|mts|tsx|js|mjs|jsx|json|css|html|md|vue)$'; then nr lint --fix \"$file_path\"; fi; }",
+            "type": "command"
+          }
+        ],
+        "matcher": "Edit|MultiEdit|Write"
+      },
+      {
+        "hooks": [
+          {
+            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "jq -r '.tool_input.file_path' | { read file_path; if echo \"$file_path\" | rg -Eq '(^|/)\\.env(\\.|$)'; then exit 2; fi; }",
+            "type": "command"
+          }
+        ],
+        "matcher": "Read"
+      },
+      {
+        "hooks": [
+          {
+            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "StopFailure": [
+      {
+        "hooks": [
+          {
+            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude --hook-id claude_custom_0; exit 0'",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'",
+            "type": "command"
+          }
+        ]
+      }
+    ]
+  },
   "includeCoAuthoredBy": true,
+  "language": "繁體中文台灣用語",
+  "model": "claude-fable-5[1m]",
   "permissions": {
     "allow": [
       "Bash(mkdir:*)",
@@ -67,209 +255,22 @@
     ],
     "defaultMode": "auto"
   },
-  "hooks": {
-    "Notification": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'"
-          }
-        ]
-      }
-    ],
-    "PermissionRequest": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'",
-            "timeout": 86400
-          }
-        ]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "Edit|MultiEdit|Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "jq -r '.tool_input.file_path' | { read file_path; if echo \"$file_path\" | rg -Eiq '\\.(ts|mts|tsx|js|mjs|jsx|json|css|html|md|vue)$'; then nr lint --fix \"$file_path\"; fi; }"
-          }
-        ]
-      },
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'"
-          }
-        ]
-      }
-    ],
-    "PreCompact": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'"
-          }
-        ]
-      }
-    ],
-    "PreToolUse": [
-      {
-        "matcher": "Read",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "jq -r '.tool_input.file_path' | { read file_path; if echo \"$file_path\" | rg -Eq '(^|/)\\.env(\\.|$)'; then exit 2; fi; }"
-          }
-        ]
-      },
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'"
-          }
-        ]
-      }
-    ],
-    "SessionEnd": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'"
-          }
-        ]
-      }
-    ],
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'"
-          }
-        ]
-      }
-    ],
-    "StopFailure": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude --hook-id claude_custom_0; exit 0'"
-          }
-        ]
-      }
-    ],
-    "SubagentStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'"
-          }
-        ]
-      }
-    ],
-    "SubagentStop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'"
-          }
-        ]
-      }
-    ],
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/bin/sh -c '[ -x \"$HOME/.vibe-island/bin/vibe-island-bridge\" ] && \"$HOME/.vibe-island/bin/vibe-island-bridge\" --source claude; exit 0'"
-          }
-        ]
-      }
-    ]
-  },
-  "worktree": {
-    "bgIsolation": "none"
-  },
-  "statusLine": {
-    "type": "command",
-    "command": "sh ~/.claude/statusline-command.sh"
-  },
-  "enabledPlugins": {
-    "commit-commands@claude-plugins-official": true,
-    "context7-plugin@context7-marketplace": true,
-    "feature-dev@claude-plugins-official": true,
-    "figma@claude-plugins-official": false,
-    "rust-analyzer-lsp@claude-plugins-official": true,
-    "security-guidance@claude-plugins-official": true,
-    "skill-creator@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true,
-    "swift-lsp@claude-plugins-official": true,
-    "codex@openai-codex": true,
-    "ast-grep@ast-grep-marketplace": true
-  },
-  "extraKnownMarketplaces": {
-    "context7-marketplace": {
-      "source": {
-        "source": "github",
-        "repo": "upstash/context7"
-      },
-      "autoUpdate": true
-    },
-    "openai-codex": {
-      "source": {
-        "source": "github",
-        "repo": "openai/codex-plugin-cc"
-      },
-      "autoUpdate": true
-    },
-    "ast-grep-marketplace": {
-      "source": {
-        "source": "github",
-        "repo": "ast-grep/agent-skill"
-      },
-      "autoUpdate": true
-    }
-  },
-  "viewMode": "focus",
-  "language": "繁體中文台灣用語",
-  "alwaysThinkingEnabled": true,
+  "remoteControlAtStartup": true,
   "showClearContextOnPlanAccept": true,
-  "tui": "fullscreen",
   "showThinkingSummaries": true,
+  "skillListingBudgetFraction": 0.03,
+  "skipAutoPermissionPrompt": true,
   "skipDangerousModePermissionPrompt": true,
   "skipWorkflowUsageWarning": true,
-  "verbose": false,
-  "autoCompactEnabled": true,
-  "remoteControlAtStartup": true,
-  "agentPushNotifEnabled": false,
-  "skipAutoPermissionPrompt": true,
+  "statusLine": {
+    "command": "sh ~/.claude/statusline-command.sh",
+    "type": "command"
+  },
+  "tui": "fullscreen",
   "useAutoModeDuringPlan": true,
-  "feedbackSurveyState": {
-    "lastShownTime": 1754041037675
+  "verbose": false,
+  "viewMode": "focus",
+  "worktree": {
+    "bgIsolation": "none"
   }
 }
