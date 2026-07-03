@@ -35,11 +35,6 @@ alias re="nr release"
 alias ll="eza -l -g --icons"
 alias lla="ll -a"
 
-# lumen — brew install jnsahaj/lumen/lumen
-diff() {
-  lumen diff "$@"
-}
-
 # Git
 alias grt='cd "$(git rev-parse --show-toplevel)"'
 alias gpf='git push --force-with-lease'
