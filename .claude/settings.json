@@ -266,6 +266,7 @@
     "command": "sh ~/.claude/statusline-command.sh",
     "type": "command"
   },
+  "switchModelsOnFlag": false,
   "tui": "fullscreen",
   "useAutoModeDuringPlan": true,
   "verbose": false,
