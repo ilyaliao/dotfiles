@@ -6,8 +6,19 @@ suppress_unstable_features_warning = true
 approval_policy = "on-request"
 approvals_reviewer = "auto_review"
 sandbox_mode = "danger-full-access"
+full_cdp_access_enabled = true
 
 service_tier = "priority"
+
+[desktop]
+followUpQueueMode = "queue"
+dock-icon-preference = "codex-dark"
+git-branch-prefix = ""
+git-pull-request-merge-method = "squash"
+localeOverride = "zh-TW"
+mac-menu-bar-enabled = true
+preventSleepWhileRunning = true
+reviewDelivery = "inline"
 
 [features]
 memories = true
