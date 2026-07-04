@@ -234,6 +234,7 @@
   "worktree": {
     "bgIsolation": "none"
   },
+  "enableArtifact": false,
   "statusLine": {
     "type": "command",
     "command": "sh ~/.claude/statusline-command.sh"
