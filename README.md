@@ -21,7 +21,7 @@
 - [Ghostty](https://ghostty.org) — GPU-accelerated terminal
 - [OrbStack](https://orbstack.dev) — containers / Linux VMs
 - [Figma](https://www.figma.com) (`figma@beta`)
-- [Raycast](https://www.raycast.com) — trying [Raycast 2.0](https://www.raycast.com/new)
+- [Raycast](https://www.raycast.com) — Raycast 2.0
 - [Spotify](https://www.spotify.com)
 - [Discord](https://discord.com)
 - [Notion](https://www.notion.com)
@@ -90,6 +90,7 @@
 - [`tmux-pain-control`](https://github.com/tmux-plugins/tmux-pain-control)
 - [`tmux-prefix-highlight`](https://github.com/tmux-plugins/tmux-prefix-highlight)
 - [`catppuccin/tmux`](https://github.com/catppuccin/tmux)
+- [`tmux-fzf`](https://github.com/sainnhe/tmux-fzf) (`sainnhe/tmux-fzf`)
 - [`tpm`](https://github.com/tmux-plugins/tpm)
 
 ## Editor
@@ -122,9 +123,12 @@
 
 ## Claude Code
 
-- [`commit-commands`](https://claude.com/plugins/commit-commands) (claude-plugins-official)
-- [`skill-creator`](https://claude.com/plugins/skill-creator) (claude-plugins-official)
-- [`typescript-lsp`](https://claude.com/plugins/typescript-lsp) (claude-plugins-official)
-- [`rust-analyzer-lsp`](https://claude.com/plugins/rust-analyzer-lsp) (claude-plugins-official)
-- [`swift-lsp`](https://claude.com/plugins/swift-lsp) (claude-plugins-official)
+- [`ast-grep`](https://github.com/ast-grep/agent-skill) (ast-grep-marketplace)
+- [`codex`](https://github.com/openai/codex-plugin-cc) (openai-codex)
 - [`context7-plugin`](https://github.com/upstash/context7) (context7-marketplace)
+- `feature-dev` (claude-plugins-official)
+- [`rust-analyzer-lsp`](https://claude.com/plugins/rust-analyzer-lsp) (claude-plugins-official)
+- `security-guidance` (claude-plugins-official)
+- [`skill-creator`](https://claude.com/plugins/skill-creator) (claude-plugins-official)
+- [`swift-lsp`](https://claude.com/plugins/swift-lsp) (claude-plugins-official)
+- [`typescript-lsp`](https://claude.com/plugins/typescript-lsp) (claude-plugins-official)
