@@ -11,25 +11,24 @@
 
 ### Apps (casks)
 
-- [Claude](https://code.claude.com/docs/zh-TW/desktop)
 - [`claude-code@latest`](https://code.claude.com/docs/en/overview)
 - [Codex CLI](https://github.com/openai/codex) (`codex`) — terminal coding agent
 - [Codex](https://developers.openai.com/codex) (`codex-app`) — desktop app
 - [`codexbar`](https://codexbar.app/) — menu-bar Codex companion
+- [Cursor](https://www.cursor.com/) — AI code editor
 - [Vibe Island](https://vibeisland.app/) — Dynamic Island AI agent utility
-- [ChatWise](https://chatwise.app)
 - [Ghostty](https://ghostty.org) — GPU-accelerated terminal
 - [OrbStack](https://orbstack.dev) — containers / Linux VMs
-- [Figma](https://www.figma.com) (`figma@beta`)
-- [Raycast](https://www.raycast.com) — Raycast 2.0
+- [Raycast](https://www.raycast.com)
 - [Spotify](https://www.spotify.com)
 - [Discord](https://discord.com)
 - [Notion](https://www.notion.com)
+- [Dia](https://www.diabrowser.com/) — AI web browser
 - [AlDente](https://apphousekitchen.com) — battery charge limiter
 - [CleanShot](https://getcleanshot.com/) — screenshot tool
 - [Input Source Pro](https://inputsource.pro) — input-source manager
+- [Macs Fan Control](https://crystalidea.com/macs-fan-control) — fan speed control & monitoring
 - [MonitorControl](https://github.com/MonitorControl/MonitorControl) — external monitor brightness
-- [RepoBar](https://repobar.app/) — GitHub repo menu-bar dashboard
 - [Scroll Reverser](https://pilotmoon.com/scrollreverser/) — independent mouse scroll direction
 
 ### Fonts

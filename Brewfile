@@ -13,27 +13,26 @@ brew "mole"                          # Mac cleanup / optimization
 brew "tmux"                          # Terminal multiplexer
 
 # Apps
-cask "claude"
 cask "claude-code@latest"
 cask "codex"       # CLI
 cask "codex-app"   # Desktop app
 cask "codexbar"
+cask "cursor"      # AI code editor
 cask "discord"
-cask "figma@beta"
 cask "ghostty"
 cask "notion"
 cask "orbstack"
-# cask "raycast"          # Trying Raycast 2.0 instead — https://www.raycast.com/new
+cask "raycast"
 cask "spotify"
+cask "thebrowsercompany-dia"     # Dia browser
 cask "vibe-island"
 
 # Utilities (Apps)
 cask "aldente"            # Battery charge limiter
-cask "chatwise"           # Chat client
 cask "cleanshot"          # Screenshot tool
 cask "input-source-pro"   # Input source manager
+cask "macs-fan-control"   # Fan speed control / monitoring
 cask "monitorcontrol"     # External monitor brightness
-cask "repobar"            # GitHub repo menu-bar dashboard
 cask "scroll-reverser"    # Mouse scroll direction
 
 # Fonts
