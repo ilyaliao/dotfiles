@@ -452,7 +452,7 @@
   // ========== Cursor ==========
   "cursor.general.gitGraphIndexing": "enabled",
   "cursor.general.glassShowWarningNotifications": true,
-  "cursor.general.reduceTransparency": true,
+  "cursor.general.reduceTransparency": false,
   "cursor.composer.shouldAutoSaveNonAgent": true,
   "cursor.composer.shouldShowMarkdownHoverParticipantActions2": true,
   "cursor.composer.queueMessageDefaultBehavior": "queue",
@@ -461,6 +461,7 @@
   "cursor.composer.suggestNextPrompt": true,
   "cursor.composer.codeBlockWordWrap": true,
   "cursor.composer.cmdPFilePicker2": true,
+  "cursor.composer.conversationDensity": "detailed",
   "cursor.preferNotificationsSameAsChat": true,
   "cursor.cpp.enablePartialAccepts": true,
   "cursor.semanticSearch.includeCommitsWithFiles": true,

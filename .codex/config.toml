@@ -12,6 +12,7 @@ service_tier = "priority"
 
 [desktop]
 followUpQueueMode = "queue"
+composerEnterBehavior = "cmdAlways"
 dock-icon-preference = "codex-dark"
 git-branch-prefix = ""
 git-pull-request-merge-method = "squash"
