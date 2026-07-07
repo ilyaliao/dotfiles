@@ -22,6 +22,13 @@ preventSleepWhileRunning = true
 reviewDelivery = "inline"
 
 [features]
+apps = true
+auto_compaction = true
+browser_use = true
+browser_use_external = true
+browser_use_full_cdp_access = true
+computer_use = true
+guardian_approval = true
 memories = true
 multi_agent = true
 fast_mode = true
