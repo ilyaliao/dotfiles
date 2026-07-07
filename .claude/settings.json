@@ -288,7 +288,6 @@
   },
   "viewMode": "focus",
   "language": "繁體中文台灣用語",
-  "disableDeepLinkRegistration": "disable",
   "alwaysThinkingEnabled": true,
   "showClearContextOnPlanAccept": true,
   "tui": "fullscreen",
@@ -301,5 +300,6 @@
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": false,
   "skipAutoPermissionPrompt": true,
-  "useAutoModeDuringPlan": true
+  "useAutoModeDuringPlan": true,
+  "disableDeepLinkRegistration": "disable"
 }
