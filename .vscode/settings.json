@@ -450,19 +450,20 @@
   },
 
   // ========== Cursor ==========
-  "cursor.composer.shouldAutoSaveNonAgent": true,
   "cursor.general.gitGraphIndexing": "enabled",
   "cursor.general.glassShowWarningNotifications": true,
   "cursor.general.reduceTransparency": true,
+  "cursor.composer.shouldAutoSaveNonAgent": true,
   "cursor.composer.shouldShowMarkdownHoverParticipantActions2": true,
-  "cursor.preferNotificationsSameAsChat": true,
-  "cursor.cpp.enablePartialAccepts": true,
-  "cursor.composer.cmdPFilePicker2": true,
-  "cursor.semanticSearch.includeCommitsWithFiles": true,
   "cursor.composer.queueMessageDefaultBehavior": "queue",
   "cursor.composer.usageSummaryDisplay": "always",
   "cursor.composer.shouldChimeAfterChatFinishes": false,
   "cursor.composer.suggestNextPrompt": true,
+  "cursor.composer.codeBlockWordWrap": true,
+  "cursor.composer.cmdPFilePicker2": true,
+  "cursor.preferNotificationsSameAsChat": true,
+  "cursor.cpp.enablePartialAccepts": true,
+  "cursor.semanticSearch.includeCommitsWithFiles": true,
 
   // updated 2025-12-26 02:26
   // https://github.com/antfu/vscode-file-nesting-config
