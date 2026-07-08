@@ -67,6 +67,9 @@ setup_macos() {
   log_info "Press Ctrl+Cmd to drag windows from anywhere"
   defaults write -g NSWindowShouldDragOnGesture -bool true
 
+  log_info "Allow forbidden targets for Computer Use"
+  defaults write -g ComputerUseAllowForbiddenTargets -bool YES
+
   log_info "Disable press-and-hold for keys in favor of key repeat"
   defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
