@@ -72,7 +72,19 @@
     ],
     "deny": [
       "Read(**/.env)",
-      "Read(**/.env.*)"
+      "Read(**/.env.*)",
+      "EnterPlanMode",
+      "ExitPlanMode",
+      "DesignSync",
+      "NotebookEdit",
+      "SendMessage",
+      "PushNotification",
+      "RemoteTrigger",
+      "ReportFindings",
+      "ScheduleWakeup",
+      "CronCreate",
+      "CronDelete",
+      "CronList"
     ],
     "ask": [
       "Bash(git push:*)",
@@ -95,6 +107,8 @@
     ],
     "defaultMode": "auto"
   },
+  "disableClaudeAiConnectors": true,
+  "disableBundledSkills": true,
   "hooks": {
     "Notification": [
       {
@@ -245,6 +259,7 @@
   "worktree": {
     "bgIsolation": "none"
   },
+  "disableArtifact": true,
   "enableArtifact": false,
   "statusLine": {
     "type": "command",
@@ -288,6 +303,7 @@
   "viewMode": "focus",
   "language": "繁體中文台灣用語",
   "alwaysThinkingEnabled": true,
+  "advisorModel": "fable",
   "showClearContextOnPlanAccept": true,
   "tui": "fullscreen",
   "showThinkingSummaries": true,
@@ -300,6 +316,5 @@
   "agentPushNotifEnabled": false,
   "skipAutoPermissionPrompt": true,
   "useAutoModeDuringPlan": true,
-  "disableDeepLinkRegistration": "disable",
-  "advisorModel": "fable"
+  "disableDeepLinkRegistration": "disable"
 }
