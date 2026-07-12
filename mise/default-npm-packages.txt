@@ -1,3 +1,4 @@
+@vscode/vsce
 degit
 esno
 pnpm-patch-i

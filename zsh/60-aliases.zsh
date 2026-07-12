@@ -31,7 +31,7 @@ alias lintf="nr lint --fix"
 alias release="nr release"
 alias re="nr release"
 
-# eza — brew install eza
+# eza — mise install eza
 alias ll="eza -l -g --icons"
 alias lla="ll -a"
 
