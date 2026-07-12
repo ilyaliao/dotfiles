@@ -268,7 +268,6 @@
   "enabledPlugins": {
     "ast-grep@ast-grep-marketplace": true,
     "codex@openai-codex": true,
-    "feature-dev@claude-plugins-official": true,
     "figma@claude-plugins-official": false,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
