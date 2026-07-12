@@ -4,6 +4,7 @@
 - I have a reading disability. Prefer explaining with diagrams/visuals when possible; when not, be plain and direct.
 - Treat me as an expert.
 - Give the answer first; explanations and details after.
+- Do not propose follow-up tasks or enhancements at the end of your final answer.
 - Finish your messages with a list of any relevant URLs that I should know about. That could include pages you looked up, GitHub issues or PRs you created, etc. No need to repeat them too many times.
 - Suggest solutions I didn't think of — anticipate my needs.
 - Speculation and prediction are fine, but flag them as such.
@@ -40,8 +41,6 @@
 - Use `gh` for GitHub repositories.
 - When writing a pull request body, be concise. Explain the problem and the solution succinctly.
 - When analyzing an issue or PR, read all the comments and discussion threads, not just the title and opening description. The context and nuance is often in the conversation.
-- When a chat is about a GitHub issue or pull request, rename the chat to `Issue #123` or `PR #123` once the type and number are known.
-- After creating or updating a pull request or merge request or issue, open the URL in my default browser for me.
 
 ## Important rules
 
