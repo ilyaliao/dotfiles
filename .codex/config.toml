@@ -8,7 +8,7 @@ approvals_reviewer = "auto_review"
 sandbox_mode = "danger-full-access"
 full_cdp_access_enabled = true
 
-service_tier = "priority"
+service_tier = "default"
 
 [desktop]
 followUpQueueMode = "queue"
@@ -20,12 +20,18 @@ localeOverride = "zh-TW"
 mac-menu-bar-enabled = true
 preventSleepWhileRunning = true
 reviewDelivery = "inline"
+conversationDetailMode = "STEPS_COMMANDS"
+show-context-window-usage = true
+hotkey-window-projectless-default-enabled = true
+enabled-reasoning-efforts = ["low", "medium", "high", "xhigh", "ultra"]
+show-ultra-in-model-picker-slider = true
 
 [features]
 fast_mode = false
 memories = true
 prevent_idle_sleep = true
 chronicle = true
+js_repl = false
 
 [tui]
 terminal_title = []
