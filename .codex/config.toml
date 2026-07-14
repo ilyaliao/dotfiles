@@ -30,6 +30,7 @@ show-ultra-in-model-picker-slider = true
 
 [features]
 fast_mode = false
+default_mode_request_user_input = true
 memories = true
 prevent_idle_sleep = true
 chronicle = true
