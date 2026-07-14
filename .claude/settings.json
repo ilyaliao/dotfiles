@@ -266,7 +266,6 @@
     "command": "sh ~/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
-    "ast-grep@ast-grep-marketplace": true,
     "codex@openai-codex": true,
     "figma@claude-plugins-official": false,
     "rust-analyzer-lsp@claude-plugins-official": true,
@@ -277,13 +276,6 @@
     "context7@context7-marketplace": true
   },
   "extraKnownMarketplaces": {
-    "ast-grep-marketplace": {
-      "source": {
-        "source": "github",
-        "repo": "ast-grep/agent-skill"
-      },
-      "autoUpdate": true
-    },
     "context7-marketplace": {
       "source": {
         "source": "github",
