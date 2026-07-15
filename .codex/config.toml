@@ -25,7 +25,7 @@ reviewDelivery = "inline"
 conversationDetailMode = "STEPS_COMMANDS"
 show-context-window-usage = true
 hotkey-window-projectless-default-enabled = true
-enabled-reasoning-efforts = ["low", "medium", "high", "xhigh", "ultra"]
+enabled-reasoning-efforts = ["medium", "xhigh", "ultra"]
 show-ultra-in-model-picker-slider = true
 
 [features]
