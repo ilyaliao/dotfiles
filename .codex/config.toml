@@ -5,12 +5,9 @@ model_verbosity = "low"
 model_reasoning_summary = "concise"
 web_search = "live"
 suppress_unstable_features_warning = true
-approval_policy = "on-request"
-approvals_reviewer = "auto_review"
+approval_policy = "never"
 sandbox_mode = "danger-full-access"
 full_cdp_access_enabled = true
-
-service_tier = "default"
 
 [desktop]
 followUpQueueMode = "queue"
@@ -24,6 +21,7 @@ preventSleepWhileRunning = true
 reviewDelivery = "inline"
 conversationDetailMode = "STEPS_COMMANDS"
 show-context-window-usage = true
+notifications-turn-mode = "off"
 hotkey-window-projectless-default-enabled = true
 enabled-reasoning-efforts = ["medium", "xhigh", "ultra"]
 show-ultra-in-model-picker-slider = true
@@ -40,3 +38,9 @@ js_repl = false
 terminal_title = []
 
 status_line = ["model-with-reasoning", "current-dir", "git-branch", "context-used", "five-hour-limit", "weekly-limit"]
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
