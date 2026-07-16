@@ -27,6 +27,12 @@ hotkey-window-projectless-default-enabled = true
 enabled-reasoning-efforts = ["medium", "xhigh", "ultra"]
 show-ultra-in-model-picker-slider = true
 
+[desktop.appearanceDarkChromeTheme.fonts]
+code = "Berkeley Mono"
+
+[desktop.appearanceLightChromeTheme.fonts]
+code = "Berkeley Mono"
+
 [features]
 fast_mode = false
 default_mode_request_user_input = true
