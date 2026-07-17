@@ -26,12 +26,40 @@ notifications-turn-mode = "off"
 hotkey-window-projectless-default-enabled = true
 enabled-reasoning-efforts = ["medium", "xhigh", "ultra"]
 show-ultra-in-model-picker-slider = true
+appearanceDarkCodeThemeId = "codex"
+appshotDestination = "last-chat"
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#0169cc"
+contrast = 50
+ink = "#fcfcfc"
+opaqueWindows = false
+surface = "#111111"
 
 [desktop.appearanceDarkChromeTheme.fonts]
 code = "Berkeley Mono"
+ui = "SF Pro"
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#00a240"
+diffRemoved = "#e02e2a"
+skill = "#b06dff"
+
+[desktop.appearanceLightChromeTheme]
+accent = "#339cff"
+contrast = 45
+ink = "#1a1c1f"
+opaqueWindows = false
+surface = "#ffffff"
 
 [desktop.appearanceLightChromeTheme.fonts]
 code = "Berkeley Mono"
+ui = "SF Pro"
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#00a240"
+diffRemoved = "#ba2623"
+skill = "#924ff7"
 
 [features]
 fast_mode = false
@@ -39,7 +67,6 @@ default_mode_request_user_input = true
 memories = true
 prevent_idle_sleep = true
 chronicle = true
-js_repl = false
 
 [features.multi_agent_v2]
 enabled = true
@@ -49,9 +76,3 @@ max_concurrent_threads_per_session = 11
 terminal_title = []
 
 status_line = ["model-with-reasoning", "current-dir", "git-branch", "context-used", "five-hour-limit", "weekly-limit"]
-
-[plugins."computer-use@openai-bundled"]
-enabled = true
-
-[plugins."browser@openai-bundled"]
-enabled = true
