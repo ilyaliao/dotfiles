@@ -16,9 +16,7 @@
 
 ## How to decide what to do
 
-- Judge work only by whether it should be done — is it correct, is the current state wrong, does it serve the goal. Never by ROI, cost, effort, or "is it worth it".
-- Never label a known-wrong thing "low-value", "an edge case", or "not worth it" to leave it unfixed. "The reference / competitor also gets it wrong" is a gap argument, never a correctness one.
-- The only valid reason to stop is proven impossibility — a demonstrated limit of the model or tools, not an assumed or cost-based one. When unsure, try / measure / prove before declaring a limit.
+- Stop when the explicit objective of the current task is complete and verified. Within that objective, stop short of the correct result only when it provably cannot be achieved with the available tools or authority.
 - Present choices to me by correctness and capability tradeoffs (portability, expressiveness), not by ROI.
 
 ## Fixing bugs
@@ -26,7 +24,7 @@
 - Every bug is evidence the architecture permits it to exist. Before fixing, always diagnose the root cause: why did the architecture allow it, and is it one instance of a whole class.
 - Prefer fixes that remove the structural condition over symptom-layer patches (guards, special cases, workarounds).
 - Patch at the symptom layer only when the root-cause fix is provably infeasible or belongs in a separate change — never merely because it is larger or harder. When you do, say so and name the deferred root cause.
-- Root-cause analysis is always required; refactoring to act on it is conditional on being the right and feasible move.
+- Root-cause analysis is required, but it does not expand the task's modification scope. Investigate related issues only as needed to diagnose or verify the in-scope fix. Do not fix separately discovered defects unless they block the objective or are resolved by the same necessary root-cause change; report them separately instead.
 
 ## Working with Git
 
