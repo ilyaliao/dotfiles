@@ -303,6 +303,8 @@
   "skipWorkflowUsageWarning": true,
   "verbose": false,
   "autoCompactEnabled": true,
+  "autoDreamEnabled": true,
+  "autoMemoryEnabled": true,
   "switchModelsOnFlag": false,
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": false,
