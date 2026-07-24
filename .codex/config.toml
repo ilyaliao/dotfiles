@@ -7,10 +7,15 @@ web_search = "live"
 suppress_unstable_features_warning = true
 approval_policy = "on-request"
 approvals_reviewer = "auto_review"
-sandbox_mode = "danger-full-access"
+sandbox_mode = "workspace-write"
 full_cdp_access_enabled = true
 
+[sandbox_workspace_write]
+network_access = true
+
 [desktop]
+defaultTerminalLocation = "right"
+usePointerCursors = true
 followUpQueueMode = "queue"
 composerEnterBehavior = "enter"
 dock-icon-preference = "codex-dark"
