@@ -12,4 +12,4 @@ ni = "30.1.0"
 starship = "1.25.1"
 
 [settings]
-experimental = false
+experimental = true
