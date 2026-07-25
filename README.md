@@ -46,6 +46,7 @@
 
 ### CLI tools
 
+- [ast-grep](https://ast-grep.github.io) — structural code search & rewrite
 - [bat](https://github.com/sharkdp/bat) — cat with syntax highlighting
 - [eza](https://eza.rocks) — modern `ls`
 - [fd](https://github.com/sharkdp/fd) — friendlier `find`
@@ -126,7 +127,6 @@
 
 ## Claude Code
 
-- [`ast-grep`](https://github.com/ast-grep/agent-skill) (ast-grep-marketplace)
 - [`codex`](https://github.com/openai/codex-plugin-cc) (openai-codex)
 - [`context7`](https://github.com/upstash/context7) (context7-marketplace)
 - [`rust-analyzer-lsp`](https://claude.com/plugins/rust-analyzer-lsp) (claude-plugins-official)
