@@ -271,9 +271,7 @@
   "enabledPlugins": {
     "codex@openai-codex": true,
     "figma@claude-plugins-official": false,
-    "rust-analyzer-lsp@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
-    "swift-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "context7@context7-marketplace": true
