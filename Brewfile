@@ -1,14 +1,12 @@
 # Taps
 tap "daipeihust/tap"
 tap "vorssaint/tap"
-tap "yusukebe/tap"
 
 brew "zsh"
 
 # Development
 brew "mise"
 brew "agent-browser"  # Browser automation CLI for AI agents
-brew "yusukebe/tap/ax"  # HTML fetch / extract CLI
 
 # Utilities
 brew "daipeihust/tap/im-select"      # Input method switcher (for Vim)
