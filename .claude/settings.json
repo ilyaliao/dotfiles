@@ -1,9 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "attribution": {
-    "pr": "",
-    "sessionUrl": false
-  },
   "cleanupPeriodDays": 180,
   "env": {
     "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD": "1",
@@ -16,6 +12,10 @@
     "DISABLE_FEEDBACK_COMMAND": "1",
     "DISABLE_UPGRADE_COMMAND": "1",
     "ENABLE_TOOL_SEARCH": "true"
+  },
+  "attribution": {
+    "pr": "",
+    "sessionUrl": false
   },
   "permissions": {
     "allow": [
@@ -113,7 +113,6 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "claude-fable-5[1m]",
   "disableClaudeAiConnectors": true,
   "disableBundledSkills": true,
   "hooks": {
@@ -310,13 +309,13 @@
   "advisorModel": "fable",
   "showClearContextOnPlanAccept": true,
   "tui": "fullscreen",
+  "autoMemoryEnabled": true,
+  "autoDreamEnabled": true,
   "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,
   "skipWorkflowUsageWarning": true,
   "verbose": false,
   "autoCompactEnabled": true,
-  "autoDreamEnabled": true,
-  "autoMemoryEnabled": true,
   "switchModelsOnFlag": false,
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": false,
