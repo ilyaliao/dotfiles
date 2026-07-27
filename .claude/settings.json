@@ -278,7 +278,8 @@
     "security-guidance@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
-    "context7@context7-marketplace": true
+    "context7@context7-marketplace": true,
+    "ponytail@ponytail": true
   },
   "extraKnownMarketplaces": {
     "context7-marketplace": {
@@ -292,6 +293,13 @@
       "source": {
         "source": "github",
         "repo": "openai/codex-plugin-cc"
+      },
+      "autoUpdate": true
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
       },
       "autoUpdate": true
     }
