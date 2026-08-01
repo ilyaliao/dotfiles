@@ -16,10 +16,9 @@ cursor-color = #ffffff
 shell-integration-features = no-cursor
 scrollback-limit = 300000000
 
-font-size = 14
-font-family = Berkeley Mono
+font-size = 13
+font-family = Comic Code Ligatures
 font-family = Symbols Nerd Font
-font-family = Hannotate TC
 
 font-codepoint-map = U+E000-U+F8FF=Symbols Nerd Font
 
