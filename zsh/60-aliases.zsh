@@ -1,7 +1,3 @@
-# IDE
-alias code="open $1 -a \"Cursor\""
-alias cursor="open $1 -a \"Cursor\""
-
 # Claude Code
 alias cc="claude"
 alias ccc="claude -c"

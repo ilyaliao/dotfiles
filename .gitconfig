@@ -27,4 +27,4 @@
 	tool = default-difftool
 
 [difftool "default-difftool"]
-	cmd = cursor-nightly --wait --diff $LOCAL $REMOTE
+	cmd = cursor --wait --diff "$LOCAL" "$REMOTE"
