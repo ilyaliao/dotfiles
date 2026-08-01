@@ -23,16 +23,17 @@ git-branch-prefix = ""
 git-pull-request-merge-method = "squash"
 localeOverride = "zh-TW"
 mac-menu-bar-enabled = true
-preventSleepWhileRunning = true
+preventSleepWhileRunning = false
 reviewDelivery = "inline"
 conversationDetailMode = "STEPS_COMMANDS"
 show-context-window-usage = true
 notifications-turn-mode = "off"
 hotkey-window-projectless-default-enabled = true
-enabled-reasoning-efforts = ["medium", "xhigh", "ultra"]
-show-ultra-in-model-picker-slider = true
+enabled-reasoning-efforts = ["medium", "xhigh", "ultra", "max"]
+show-ultra-in-model-picker-slider = false
 appearanceDarkCodeThemeId = "codex"
 appshotDestination = "last-chat"
+sansFontSize = 13
 
 [desktop.appearanceDarkChromeTheme]
 accent = "#0169cc"
@@ -43,7 +44,7 @@ surface = "#111111"
 
 [desktop.appearanceDarkChromeTheme.fonts]
 code = "Berkeley Mono"
-ui = "SF Pro"
+ui = "Comic Code Ligatures"
 
 [desktop.appearanceDarkChromeTheme.semanticColors]
 diffAdded = "#00a240"
@@ -70,7 +71,7 @@ skill = "#924ff7"
 fast_mode = false
 default_mode_request_user_input = true
 memories = true
-prevent_idle_sleep = true
+prevent_idle_sleep = false
 chronicle = true
 
 [features.multi_agent_v2]
