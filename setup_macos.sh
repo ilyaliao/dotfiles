@@ -121,6 +121,30 @@ setup_mise() {
   fi
 }
 
+setup_zinit() {
+  local zinit_home="${XDG_DATA_HOME:-$HOME/.local/share}/zinit/zinit.git"
+
+  if [ -f "$zinit_home/zinit.zsh" ]; then
+    log_info "Zinit already installed"
+    return 0
+  fi
+
+  if [ -e "$zinit_home" ]; then
+    log_error "Zinit path exists but zinit.zsh is missing: $zinit_home"
+    return 1
+  fi
+
+  if ! command -v git >/dev/null 2>&1; then
+    log_error "git is required to install Zinit"
+    return 1
+  fi
+
+  log_info "Installing Zinit"
+  mkdir -p "$(dirname "$zinit_home")" && \
+    git clone https://github.com/zdharma-continuum/zinit.git "$zinit_home"
+}
+
 # Run the setup functions
 setup_macos
+setup_zinit || exit 1
 setup_mise
