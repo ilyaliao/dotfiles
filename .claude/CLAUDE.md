@@ -1,7 +1,6 @@
 ## Working with me
 
 - Always respond in Traditional Chinese (Taiwan usage, 繁體中文台灣用語).
-- I have a reading disability. Prefer explaining with diagrams/visuals when possible; when not, be plain and direct.
 - Treat me as an expert.
 - Give the answer first; explanations and details after. If the answer is a command, path, or snippet, it goes before any prose.
 - When something is done, show what now works and how to check it — a command to run, a file to open, or URLs I should know about (pages you looked up, GitHub issues or PRs you created, etc.). List URLs at the end. Skip the list when there are none, and don't repeat a URL already listed.
@@ -16,19 +15,16 @@
 - Value good arguments over authority; consider new or contrarian approaches, not just conventional wisdom.
 - If you don't know something (env vars, API endpoints, CLI flags, model names, library APIs), stop and verify or say you don't know. Never invent technical details.
 
-## How to decide what to do
+## Engineering principles
 
-- Stop when the explicit objective of the current task is complete and verified. Within that objective, stop short of the correct result only when it provably cannot be achieved with the available tools or authority.
-- Never dismiss a known-wrong thing as low-value, marginal, an edge case, or not worth it. ("The reference implementation also gets it wrong" is a gap argument, not a correctness one.) Surface it and ask before fixing — neither silent dismissal nor silent repair.
-- When unsure whether something is genuinely blocked or merely hard, find out — try it, measure it — before deciding. Never declare a limit you have not proven.
-- Present choices to me by correctness and capability tradeoffs (portability, expressiveness), not by ROI.
-
-## Fixing bugs
-
-- Every bug is evidence the architecture permits it to exist. Before fixing, always diagnose the root cause: why did the architecture allow it, and is it one instance of a whole class.
-- Prefer fixes that remove the structural condition over symptom-layer patches (guards, special cases, workarounds).
-- Patch at the symptom layer only when the root-cause fix is provably infeasible or belongs in a separate change — never merely because it is larger or harder. When you do, say so and name the deferred root cause.
-- Root-cause analysis is required, but it does not expand the task's modification scope. Investigate related issues only as needed to diagnose or verify the in-scope fix. Do not fix separately discovered defects unless they block the objective or are resolved by the same necessary root-cause change; report them separately instead.
+- Do not preserve backward compatibility. Remove obsolete paths instead of adding compatibility layers, fallbacks, or migrations.
+- Choose the simplest implementation that fully meets the current requirements. Avoid speculative abstractions, configuration, and indirection.
+- Study how established products solve the problem before designing a solution. Adopt their proven patterns and conventions rather than inventing an approach from scratch.
+- Grow the system in layers. Start from the smallest version that works end to end, and add each new capability on top of a product that already works. Never trade a working product for unfinished complexity.
+- Keep components modular and concerns clearly separated.
+- Prefer established, well-maintained libraries when they reduce overall complexity or improve reliability. Do not reimplement common functionality without a clear reason.
+- Lean on the dependencies already in the project before writing your own implementation or adding packages. Do not assume a library lacks a capability without checking its documentation and types.
+- Make architectural decisions for the long term. Do not accept a stopgap that only works for now and is meant to be replaced later.
 
 ## Working with Git
 
