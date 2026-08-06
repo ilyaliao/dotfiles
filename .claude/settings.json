@@ -296,7 +296,6 @@
     "codex@openai-codex": true,
     "context7@context7-marketplace": true,
     "figma@claude-plugins-official": false,
-    "ponytail@ponytail": true,
     "security-guidance@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
@@ -314,13 +313,6 @@
       "source": {
         "source": "github",
         "repo": "openai/codex-plugin-cc"
-      },
-      "autoUpdate": true
-    },
-    "ponytail": {
-      "source": {
-        "source": "github",
-        "repo": "DietrichGebert/ponytail"
       },
       "autoUpdate": true
     }
