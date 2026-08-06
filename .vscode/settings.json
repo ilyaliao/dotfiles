@@ -462,6 +462,7 @@
   "cursor.composer.codeBlockWordWrap": true,
   "cursor.composer.cmdPFilePicker2": true,
   "cursor.composer.conversationDensity": "detailed",
+  "cursor.composer.textSizeScale": 0.85,
   "cursor.preferNotificationsSameAsChat": true,
   "cursor.cpp.enablePartialAccepts": true,
   "cursor.semanticSearch.includeCommitsWithFiles": true,
