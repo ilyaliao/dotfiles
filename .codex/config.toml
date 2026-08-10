@@ -9,6 +9,7 @@ approval_policy = "on-request"
 approvals_reviewer = "auto_review"
 sandbox_mode = "workspace-write"
 full_cdp_access_enabled = true
+service_tier = "fast"
 
 [sandbox_workspace_write]
 network_access = true
@@ -69,7 +70,7 @@ diffRemoved = "#ba2623"
 skill = "#924ff7"
 
 [features]
-fast_mode = false
+fast_mode = true
 default_mode_request_user_input = true
 memories = true
 prevent_idle_sleep = false
