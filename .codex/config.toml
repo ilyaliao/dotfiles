@@ -6,13 +6,10 @@ model_reasoning_summary = "concise"
 web_search = "live"
 suppress_unstable_features_warning = true
 approval_policy = "on-request"
-approvals_reviewer = "auto_review"
-sandbox_mode = "workspace-write"
+approvals_reviewer = "user"
+sandbox_mode = "danger-full-access"
 full_cdp_access_enabled = true
 service_tier = "fast"
-
-[sandbox_workspace_write]
-network_access = true
 
 [desktop]
 defaultTerminalLocation = "right"
