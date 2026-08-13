@@ -73,10 +73,6 @@ memories = true
 prevent_idle_sleep = false
 chronicle = true
 
-[features.multi_agent_v2]
-enabled = true
-max_concurrent_threads_per_session = 11
-
 [tui]
 terminal_title = []
 
