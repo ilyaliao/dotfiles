@@ -6,7 +6,6 @@ brew "zsh"
 
 # Development
 brew "mise"
-brew "agent-browser"  # Browser automation CLI for AI agents
 
 # Utilities
 brew "daipeihust/tap/im-select"      # Input method switcher (for Vim)

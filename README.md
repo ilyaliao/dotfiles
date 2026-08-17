@@ -4,7 +4,6 @@
 
 - [`zsh`](https://www.zsh.org) — newer than the macOS bundled shell
 - [`mise`](https://mise.jdx.dev) — runtime & CLI version manager
-- [`agent-browser`](https://agent-browser.dev/) — browser automation CLI for AI agents
 - [`ax`](https://github.com/yusukebe/ax) (`yusukebe/tap`) — HTML fetch / extract CLI
 - [`im-select`](https://github.com/daipeihust/im-select) (`daipeihust/tap`) — input-method switcher for Vim
 - [`mole`](https://github.com/tw93/Mole) — Mac cleanup / optimization
@@ -53,6 +52,7 @@
 - [fzf](https://github.com/junegunn/fzf) — fuzzy finder
 - [gh](https://cli.github.com) — GitHub CLI
 - [ni](https://github.com/antfu/ni) — universal `npm` / `pnpm` / `yarn` / `bun` runner
+- [`agent-browser`](https://agent-browser.dev/) — browser automation CLI for AI agents
 - [Starship](https://starship.rs) — prompt
 
 ## npm
