@@ -45,7 +45,7 @@ surface = "#111111"
 
 [desktop.appearanceDarkChromeTheme.fonts]
 code = "Berkeley Mono"
-ui = "SF Pro"
+ui = "Hannotate TC"
 
 [desktop.appearanceDarkChromeTheme.semanticColors]
 diffAdded = "#00a240"
@@ -61,7 +61,7 @@ surface = "#ffffff"
 
 [desktop.appearanceLightChromeTheme.fonts]
 code = "Berkeley Mono"
-ui = "SF Pro"
+ui = "Hannotate TC"
 
 [desktop.appearanceLightChromeTheme.semanticColors]
 diffAdded = "#00a240"
