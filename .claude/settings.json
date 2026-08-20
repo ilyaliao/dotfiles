@@ -299,7 +299,9 @@
     "security-guidance@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
-    "mattpocock-skills@claude-plugins-official": true
+    "mattpocock-skills@claude-plugins-official": true,
+    "atlassian@claude-plugins-official": true,
+    "discernment-nudge@anthropic-agent-skills": true
   },
   "extraKnownMarketplaces": {
     "context7-marketplace": {
@@ -313,6 +315,13 @@
       "source": {
         "source": "github",
         "repo": "openai/codex-plugin-cc"
+      },
+      "autoUpdate": true
+    },
+    "anthropic-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/skills"
       },
       "autoUpdate": true
     }
