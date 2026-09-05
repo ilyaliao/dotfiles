@@ -1,7 +1,7 @@
-model = "gpt-5.6-sol"
+model = "gpt-6-astra"
 model_context_window = 1000000
 model_auto_compact_token_limit = 900000
-model_reasoning_effort = "medium"
+model_reasoning_effort = "high"
 personality = "pragmatic"
 model_verbosity = "low"
 model_reasoning_summary = "concise"
@@ -72,6 +72,9 @@ default_mode_request_user_input = true
 memories = true
 prevent_idle_sleep = false
 chronicle = true
+
+[features.context_management]
+experimental_mode = true
 
 [tui]
 terminal_title = []
