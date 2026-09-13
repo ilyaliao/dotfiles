@@ -295,13 +295,12 @@
   "enabledPlugins": {
     "codex@openai-codex": true,
     "context7@context7-marketplace": true,
-    "figma@claude-plugins-official": false,
     "security-guidance@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
-    "mattpocock-skills@claude-plugins-official": true,
     "atlassian@claude-plugins-official": true,
-    "discernment-nudge@anthropic-agent-skills": true
+    "discernment-nudge@anthropic-agent-skills": true,
+    "pstack@pstack-claude": true
   },
   "extraKnownMarketplaces": {
     "context7-marketplace": {
@@ -324,11 +323,17 @@
         "repo": "anthropics/skills"
       },
       "autoUpdate": true
+    },
+    "pstack-claude": {
+      "source": {
+        "source": "github",
+        "repo": "michael-denyer/pstack-claude"
+      }
     }
   },
+  "outputStyle": "Concise",
   "viewMode": "focus",
   "language": "繁體中文台灣用語",
-  "outputStyle": "Concise",
   "alwaysThinkingEnabled": true,
   "showClearContextOnPlanAccept": true,
   "tui": "fullscreen",
