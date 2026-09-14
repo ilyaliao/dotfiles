@@ -127,10 +127,8 @@
 
 ## Claude Code
 
-- [`codex`](https://github.com/openai/codex-plugin-cc) (openai-codex)
 - [`context7`](https://github.com/upstash/context7) (context7-marketplace)
-- [`rust-analyzer-lsp`](https://claude.com/plugins/rust-analyzer-lsp) (claude-plugins-official)
+- [`pstack`](https://github.com/michael-denyer/pstack-claude) (pstack-claude)
 - `security-guidance` (claude-plugins-official)
 - [`skill-creator`](https://claude.com/plugins/skill-creator) (claude-plugins-official)
-- [`swift-lsp`](https://claude.com/plugins/swift-lsp) (claude-plugins-official)
 - [`typescript-lsp`](https://claude.com/plugins/typescript-lsp) (claude-plugins-official)
