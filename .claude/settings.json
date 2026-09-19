@@ -317,6 +317,13 @@
       "autoUpdate": true
     }
   },
+  "pluginConfigs": {
+    "agents-md@builtin": {
+      "options": {
+        "instructionFiles": "claude-md-and-agents-md"
+      }
+    }
+  },
   "outputStyle": "Concise",
   "viewMode": "focus",
   "language": "繁體中文台灣用語",
