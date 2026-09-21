@@ -29,7 +29,7 @@
 - [CleanShot](https://getcleanshot.com/) — screenshot tool
 - [Input Source Pro](https://inputsource.pro) — input-source manager
 - [MonitorControl](https://github.com/MonitorControl/MonitorControl) — external monitor brightness
-- [Vorssaint](https://github.com/vorssaint/vorssaint-utils) (`vorssaint/tap`) — menu bar toolkit (scroll direction, volume mixer, system monitor, …)
+- [Vorssaint](https://github.com/vorssaint/vorssaint-utils) (`vorssaint`) — menu bar toolkit (scroll direction, volume mixer, system monitor, …)
 
 ### Fonts
 

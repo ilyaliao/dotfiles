@@ -1,6 +1,5 @@
 # Taps
 tap "daipeihust/tap"
-tap "vorssaint/tap"
 
 brew "zsh"
 
@@ -33,7 +32,7 @@ cask "aldente"            # Battery charge limiter
 cask "cleanshot"          # Screenshot tool
 cask "input-source-pro"   # Input source manager
 cask "monitorcontrol"     # External monitor brightness
-cask "vorssaint/tap/vorssaint"  # Menu bar toolkit (scroll direction, volume mixer, …)
+cask "vorssaint"          # Menu bar toolkit (scroll direction, volume mixer, …)
 
 # Fonts
 cask "font-sf-mono"
