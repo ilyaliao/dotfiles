@@ -37,6 +37,13 @@
 - [MonitorControl](https://github.com/MonitorControl/MonitorControl) — external monitor brightness
 - [Vorssaint](https://github.com/vorssaint/vorssaint-utils) (`vorssaint`) — menu bar toolkit (scroll direction, volume mixer, system monitor, …)
 
+### Apps managed outside Homebrew
+
+- App Store or TestFlight receipts: Googly Eyes, Lettera, Numbers, Keynote, Pages, and TestFlight.
+- Supercharge: no Homebrew installation record or matching cask in the catalog checked on 2026-09-19; use the vendor installer.
+- Xcode beta: managed separately from Homebrew.
+- Safari: managed by macOS.
+
 ### Fonts
 
 - [`font-sf-mono`](https://developer.apple.com/fonts/)
