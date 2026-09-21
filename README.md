@@ -16,13 +16,20 @@
 - [ChatGPT Classic](https://chatgpt.com/) (`chatgpt-classic`)
 - [`codexbar`](https://codexbar.app/) — menu-bar Codex companion
 - [Cursor](https://www.cursor.com/) — AI code editor
+- Cursor CLI (`cursor-cli`)
+- Google Chrome (`google-chrome`)
+- Graker (`graker`)
+- Grok Bot (`grok-bot`)
 - [Grok Build](https://x.ai/cli) (`grok-build`) — terminal coding agent
+- Mimestream (`mimestream`)
+- [T3 Code Nightly](https://t3.codes/) (`t3-code@nightly`)
 - [Vibe Island](https://vibeisland.app/) — Dynamic Island AI agent utility
 - [Ghostty](https://ghostty.org) — GPU-accelerated terminal
 - [OrbStack](https://orbstack.dev) — containers / Linux VMs
 - [Raycast](https://www.raycast.com)
 - [Spotify](https://www.spotify.com)
 - [Discord](https://discord.com)
+- Figma font helper (`figma-agent`) — cask provides a manual installer
 - [Notion](https://www.notion.com)
 - [AlDente](https://apphousekitchen.com) — battery charge limiter
 - [CleanShot](https://getcleanshot.com/) — screenshot tool

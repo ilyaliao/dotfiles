@@ -17,13 +17,20 @@ cask "claude-code@latest"
 cask "codex"       # CLI
 cask "codexbar"
 cask "cursor"      # AI code editor
+cask "cursor-cli"
 cask "discord"
+cask "figma-agent"  # Browser font helper
 cask "ghostty"
+cask "google-chrome"
+cask "graker"
+cask "grok-bot"
 cask "grok-build"  # Grok Build CLI
+cask "mimestream"
 cask "notion"
 cask "orbstack"
 cask "raycast"
 cask "spotify"
+cask "t3-code@nightly"
 cask "vibe-island"
 
 # Utilities (Apps)
