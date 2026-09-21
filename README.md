@@ -12,7 +12,8 @@
 
 - [`claude-code@latest`](https://code.claude.com/docs/en/overview)
 - [Codex CLI](https://github.com/openai/codex) (`codex`) — terminal coding agent
-- [Codex](https://developers.openai.com/codex) (`codex-app`) — desktop app
+- [ChatGPT](https://chatgpt.com/) (`chatgpt`) — desktop app; replaces the deprecated `codex-app` cask
+- [ChatGPT Classic](https://chatgpt.com/) (`chatgpt-classic`)
 - [`codexbar`](https://codexbar.app/) — menu-bar Codex companion
 - [Cursor](https://www.cursor.com/) — AI code editor
 - [Grok Build](https://x.ai/cli) (`grok-build`) — terminal coding agent

@@ -12,9 +12,10 @@ brew "daipeihust/tap/im-select"      # Input method switcher (for Vim)
 brew "mole"                          # Mac cleanup / optimization
 
 # Apps
+cask "chatgpt"     # Desktop app
+cask "chatgpt-classic"
 cask "claude-code@latest"
 cask "codex"       # CLI
-cask "codex-app"   # Desktop app
 cask "codexbar"
 cask "cursor"      # AI code editor
 cask "discord"
