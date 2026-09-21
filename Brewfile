@@ -12,7 +12,6 @@ brew "mole"                          # Mac cleanup / optimization
 
 # Apps
 cask "chatgpt"     # Desktop app
-cask "chatgpt-classic"
 cask "claude-code@latest"
 cask "codex"       # CLI
 cask "codexbar"
