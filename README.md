@@ -24,7 +24,6 @@
 - [Spotify](https://www.spotify.com)
 - [Discord](https://discord.com)
 - [Notion](https://www.notion.com)
-- [Dia](https://www.diabrowser.com/) — AI web browser
 - [AlDente](https://apphousekitchen.com) — battery charge limiter
 - [CleanShot](https://getcleanshot.com/) — screenshot tool
 - [Input Source Pro](https://inputsource.pro) — input-source manager

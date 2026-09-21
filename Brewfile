@@ -24,7 +24,6 @@ cask "notion"
 cask "orbstack"
 cask "raycast"
 cask "spotify"
-cask "thebrowsercompany-dia"     # Dia browser
 cask "vibe-island"
 
 # Utilities (Apps)
