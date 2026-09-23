@@ -9,6 +9,9 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_VERIFY
 
+setopt AUTO_PUSHD
+setopt PUSHD_SILENT
+
 # Completion
 zstyle ':completion:*:complete:-command-:*:*' ignored-patterns '*.pdf|*.exe|*.dll'
 zstyle ':completion:*:*sh:*:' tag-order files

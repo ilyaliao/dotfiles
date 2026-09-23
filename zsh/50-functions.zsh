@@ -45,19 +45,23 @@ function clone() {
 }
 
 function clonei() {
-  i && clone "$@" && code . && cd ~2
+  local back="$PWD"
+  i && clone "$@" && code . && cd "$back"
 }
 
 function cloner() {
-  repros && clone "$@" && code . && cd ~2
+  local back="$PWD"
+  repros && clone "$@" && code . && cd "$back"
 }
 
 function clonef() {
-  forks && clone "$@" && code . && cd ~2
+  local back="$PWD"
+  forks && clone "$@" && code . && cd "$back"
 }
 
 function clonew () {
-  works && clone "$@" && code . && cd ~2
+  local back="$PWD"
+  works && clone "$@" && code . && cd "$back"
 }
 
 function codei() {
