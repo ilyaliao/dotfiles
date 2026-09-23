@@ -21,4 +21,22 @@ DO NOT GIVE ME HIGH LEVEL SHIT, IF I ASK FOR FIX OR EXPLANATION, I WANT ACTUAL C
 
 If I ask for adjustments to code I have provided you, do not repeat all of my code unnecessarily. Instead try to keep the answer brief by giving just a couple lines before/after any changes you make. Multiple code blocks are ok.
 
-@~/.claude/pstack-models.md
+## pstack model overrides
+
+feature, refactoring: gpt-6-sol
+bug-fix: gpt-6-astra
+perf-issue: gpt-6-astra
+hillclimb: gpt-6-astra
+judgment and prose: gpt-6-sol
+strongest judgment: gpt-6-astra
+how explorer: gpt-6-sol
+how explainer: gpt-6-sol
+why investigators: gpt-6-sol
+why synthesizer: gpt-6-sol
+reflect tooling: gpt-6-sol
+reflect judgment, divergent, synthesizer: gpt-6-sol
+arena runners: gpt-6-astra, gpt-6-sol, gpt-5.6-terra
+arena cross-judge pool: gpt-6-astra, gpt-6-sol, gpt-5.6-terra
+swarm workers: gpt-6-sol
+architect runners: gpt-6-astra, gpt-6-sol, gpt-5.6-terra
+interrogate reviewers: gpt-6-astra, gpt-6-sol, gpt-5.6-terra

@@ -43,8 +43,8 @@ setup_codex() {
   mkdir -p ~/.codex
   ln -sfn ~/dotfiles/.codex/config.toml ~/.codex/config.toml
   log_info "~/.codex/config.toml -> ~/dotfiles/.codex/config.toml"
-  ln -sfn ~/dotfiles/.claude/CLAUDE.md ~/.codex/AGENTS.md
-  log_info "~/.codex/AGENTS.md -> ~/dotfiles/.claude/CLAUDE.md"
+  ln -sfn ~/dotfiles/.codex/AGENTS.md ~/.codex/AGENTS.md
+  log_info "~/.codex/AGENTS.md -> ~/dotfiles/.codex/AGENTS.md"
 }
 
 setup_cursor() {
