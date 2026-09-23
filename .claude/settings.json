@@ -317,6 +317,11 @@
       "autoUpdate": true
     }
   },
+  "outputStyle": "Concise",
+  "viewMode": "focus",
+  "language": "繁體中文台灣用語",
+  "alwaysThinkingEnabled": true,
+  "showClearContextOnPlanAccept": true,
   "pluginConfigs": {
     "agents-md@builtin": {
       "options": {
@@ -324,11 +329,6 @@
       }
     }
   },
-  "outputStyle": "Concise",
-  "viewMode": "focus",
-  "language": "繁體中文台灣用語",
-  "alwaysThinkingEnabled": true,
-  "showClearContextOnPlanAccept": true,
   "tui": "fullscreen",
   "autoMemoryEnabled": true,
   "autoDreamEnabled": true,
