@@ -10,6 +10,7 @@ fzf = "0.72.0"
 gh = "2.92.0"
 ni = "30.1.0"
 "npm:agent-browser" = "0.37.1"
+"github:yusukebe/ax" = "0.1.25"
 starship = "1.25.1"
 
 [settings]

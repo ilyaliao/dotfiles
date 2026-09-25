@@ -66,6 +66,7 @@
 - [gh](https://cli.github.com) — GitHub CLI
 - [ni](https://github.com/antfu/ni) — universal `npm` / `pnpm` / `yarn` / `bun` runner
 - [`agent-browser`](https://agent-browser.dev/) — browser automation CLI for AI agents
+- [`ax`](https://github.com/yusukebe/ax) — fetch, discover & extract structured data from web pages for AI agents
 - [Starship](https://starship.rs) — prompt
 
 ## npm
