@@ -18,7 +18,6 @@ cask "codexbar"
 cask "cursor"      # AI code editor
 cask "cursor-cli"
 cask "discord"
-cask "figma-agent"  # Browser font helper
 cask "ghostty"
 cask "google-chrome"
 cask "graker"
