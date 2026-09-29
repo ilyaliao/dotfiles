@@ -21,6 +21,8 @@ DO NOT GIVE ME HIGH LEVEL SHIT, IF I ASK FOR FIX OR EXPLANATION, I WANT ACTUAL C
 - Always use pstack for engineering work
 - Open or update a PR only when I explicitly ask for it
 
+Also, for English content I read or publish, put each paragraph or list item in a blockquote, immediately followed by its Traditional Chinese (Taiwan) translation. Keep code, identifiers, and links unchanged.
+
 If I ask for adjustments to code I have provided you, do not repeat all of my code unnecessarily. Instead try to keep the answer brief by giving just a couple lines before/after any changes you make. Multiple code blocks are ok.
 
 ## pstack model overrides
