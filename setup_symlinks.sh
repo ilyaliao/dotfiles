@@ -32,6 +32,8 @@ setup_claude() {
   log_info "~/.claude/keybindings.json -> ~/dotfiles/.claude/keybindings.json"
   ln -sfn ~/dotfiles/.claude/settings.json ~/.claude/settings.json
   log_info "~/.claude/settings.json -> ~/dotfiles/.claude/settings.json"
+  ln -sfn ~/dotfiles/.claude/pstack-models.md ~/.claude/pstack-models.md
+  log_info "~/.claude/pstack-models.md -> ~/dotfiles/.claude/pstack-models.md"
   ln -sfn ~/dotfiles/.claude/statusline-command.sh ~/.claude/statusline-command.sh
   log_info "~/.claude/statusline-command.sh -> ~/dotfiles/.claude/statusline-command.sh"
   ln -sfn ~/dotfiles/.claude/bin ~/.claude/bin
