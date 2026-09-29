@@ -63,6 +63,15 @@ setup_cursor() {
   log_info "Cursor/User/keybindings.json -> ~/dotfiles/.vscode/keybindings.json"
 }
 
+setup_devin() {
+  fmt_title_underline "Devin (~/.config/devin/)"
+  mkdir -p ~/.config/devin
+  ln -sfn ~/dotfiles/devin/AGENTS.md ~/.config/devin/AGENTS.md
+  log_info "~/.config/devin/AGENTS.md -> ~/dotfiles/devin/AGENTS.md"
+  ln -sfn ~/dotfiles/devin/config.json ~/.config/devin/config.json
+  log_info "~/.config/devin/config.json -> ~/dotfiles/devin/config.json"
+}
+
 setup_ni() {
   fmt_title_underline "ni (~/.nirc)"
   ln -sfn ~/dotfiles/nirc ~/.nirc
@@ -80,6 +89,7 @@ setup_symlinks() {
   setup_claude
   setup_codex
   setup_cursor
+  setup_devin
   setup_ni
   setup_starship
 }
