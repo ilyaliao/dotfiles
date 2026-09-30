@@ -19,7 +19,6 @@ cask "cursor"      # AI code editor
 cask "cursor-cli"
 cask "discord"
 cask "ghostty"
-cask "google-chrome"
 cask "graker"
 cask "grok-bot"
 cask "grok-build"  # Grok Build CLI
@@ -29,6 +28,7 @@ cask "orbstack"
 cask "raycast"
 cask "spotify"
 cask "t3-code@nightly"
+cask "thebrowsercompany-dia"  # Browser
 cask "vibe-island"
 
 # Utilities (Apps)

@@ -16,7 +16,7 @@
 - [`codexbar`](https://codexbar.app/) — menu-bar Codex companion
 - [Cursor](https://www.cursor.com/) — AI code editor
 - Cursor CLI (`cursor-cli`)
-- Google Chrome (`google-chrome`)
+- [Dia](https://www.diabrowser.com/) (`thebrowsercompany-dia`) — browser by The Browser Company
 - Graker (`graker`)
 - Grok Bot (`grok-bot`)
 - [Grok Build](https://x.ai/cli) (`grok-build`) — terminal coding agent
@@ -138,6 +138,20 @@
 - [`vibe-island.terminal-focus`](https://vibeisland.app/)
 - [`anysphere.remote-ssh`](https://docs.cursor.com/remote) — Cursor Remote SSH
 - [`anysphere.remote-containers`](https://docs.cursor.com/remote) — Cursor Remote Containers
+
+## Browser Extensions
+
+- [Catppuccin for Web File Explorer Icons](https://chromewebstore.google.com/detail/lnjaiaapbakfhlbjenjkhffcdpoompki)
+- [ChatGPT](https://chromewebstore.google.com/detail/hehggadaopoacecdllhhajmbjkdcmajg)
+- [Claude](https://chromewebstore.google.com/detail/fcoeoabgfenejglbffodgkkbkcdhcgfn)
+- [Github Colorful Contribution Graph](https://chromewebstore.google.com/detail/jgalpejpppcokelegimcapjbbokpjpfa)
+- [Grammarly](https://chromewebstore.google.com/detail/kbfnbcaeplbcioakkpcpgfkobkghlhen)
+- [iCloud Passwords](https://chromewebstore.google.com/detail/icloud-passwords/pejdijmoenmkgeppbflobdenhhabjlaj) — not installed
+- [I don't care about cookies](https://chromewebstore.google.com/detail/fihnjjcciajhdojfnbdddfaoknhalnja)
+- [Immersive Translate](https://chromewebstore.google.com/detail/bpoadfkcbjbfhfodiogcnhhhpibjhbnh)
+- [Jira Assistant](https://chromewebstore.google.com/detail/momjbjbjpbcbnepbgkkiaofkgimihbii)
+- [Refined GitHub](https://chromewebstore.google.com/detail/hlepfoohegkhhmjieoechaddaejaokhf)
+- [Tampermonkey](https://chromewebstore.google.com/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 
 ## Claude Code
 
