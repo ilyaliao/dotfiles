@@ -68,8 +68,8 @@ setup_cursor() {
 setup_devin() {
   fmt_title_underline "Devin (~/.config/devin/)"
   mkdir -p ~/.config/devin
-  ln -sfn ~/dotfiles/devin/AGENTS.md ~/.config/devin/AGENTS.md
-  log_info "~/.config/devin/AGENTS.md -> ~/dotfiles/devin/AGENTS.md"
+  ln -sfn ~/dotfiles/.claude/CLAUDE.md ~/.config/devin/AGENTS.md
+  log_info "~/.config/devin/AGENTS.md -> ~/dotfiles/.claude/CLAUDE.md"
   ln -sfn ~/dotfiles/devin/config.json ~/.config/devin/config.json
   log_info "~/.config/devin/config.json -> ~/dotfiles/devin/config.json"
 }
