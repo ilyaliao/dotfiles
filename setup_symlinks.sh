@@ -47,6 +47,8 @@ setup_codex() {
   log_info "~/.codex/config.toml -> ~/dotfiles/.codex/config.toml"
   ln -sfn ~/dotfiles/.codex/AGENTS.md ~/.codex/AGENTS.md
   log_info "~/.codex/AGENTS.md -> ~/dotfiles/.codex/AGENTS.md"
+  ln -sfn ~/dotfiles/.codex/pstack-models.md ~/.codex/pstack-models.md
+  log_info "~/.codex/pstack-models.md -> ~/dotfiles/.codex/pstack-models.md"
 }
 
 setup_cursor() {
