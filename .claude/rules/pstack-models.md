@@ -21,4 +21,3 @@ architect runners: opus, fable, sonnet
 interrogate reviewers: opus, fable, sonnet
 
 default effort: session
-session hook: off
