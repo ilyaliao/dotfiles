@@ -173,6 +173,15 @@
             "async": true
           }
         ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
       }
     ],
     "SessionEnd": [

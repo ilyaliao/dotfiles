@@ -45,3 +45,5 @@ architect runners: gpt-6.1-sol @xhigh, gpt-5.6-sol @xhigh, gpt-6-astra @xhigh
 interrogate reviewers: gpt-6.1-sol, gpt-5.6-sol, gpt-6-astra
 
 default effort: high
+
+@/Users/ilyal/.codex/RTK.md
