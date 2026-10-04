@@ -1,6 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "cleanupPeriodDays": 180,
+  "syncClaudeAiSkills": false,
+  "syncClaudeAiPlugins": false,
   "env": {
     "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD": "1",
     "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
@@ -13,7 +15,11 @@
     "ENABLE_TOOL_SEARCH": "true",
     "FORCE_AUTOUPDATE_PLUGINS": "1"
   },
-  "attribution": false,
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
   "permissions": {
     "allow": [
       "Bash(mkdir:*)",
@@ -93,6 +99,8 @@
     ],
     "defaultMode": "auto"
   },
+  "disableClaudeAiConnectors": true,
+  "disableBundledSkills": true,
   "hooks": {
     "Notification": [
       {
@@ -277,6 +285,7 @@
   "worktree": {
     "bgIsolation": "none"
   },
+  "enableArtifact": false,
   "statusLine": {
     "type": "command",
     "command": "sh ~/.claude/statusline-command.sh"
@@ -286,7 +295,8 @@
     "security-guidance@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
-    "pstack@pstack-claude": true
+    "pstack@pstack-claude": true,
+    "cc-plugin-you-should-know@builtin": true
   },
   "extraKnownMarketplaces": {
     "context7-marketplace": {
@@ -318,14 +328,9 @@
   "autoDreamEnabled": true,
   "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,
+  "skipWorkflowUsageWarning": true,
+  "switchModelsOnFlag": false,
   "remoteControlAtStartup": true,
   "skipAutoPermissionPrompt": true,
-  "disableDeepLinkRegistration": "disable",
-  "syncClaudeAiSkills": false,
-  "syncClaudeAiPlugins": false,
-  "disableClaudeAiConnectors": true,
-  "disableBundledSkills": true,
-  "enableArtifact": false,
-  "skipWorkflowUsageWarning": true,
-  "switchModelsOnFlag": false
+  "disableDeepLinkRegistration": "disable"
 }
