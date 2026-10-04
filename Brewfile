@@ -5,6 +5,7 @@ brew "zsh"
 
 # Development
 brew "mise"
+brew "rtk"                           # Token-optimized CLI proxy
 
 # Utilities
 brew "daipeihust/tap/im-select"      # Input method switcher (for Vim)

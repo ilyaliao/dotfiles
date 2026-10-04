@@ -4,6 +4,7 @@
 
 - [`zsh`](https://www.zsh.org) — newer than the macOS bundled shell
 - [`mise`](https://mise.jdx.dev) — runtime & CLI version manager
+- [`rtk`](https://www.rtk-ai.app/) — token-optimized CLI proxy
 - [`ax`](https://github.com/yusukebe/ax) (`yusukebe/tap`) — HTML fetch / extract CLI
 - [`im-select`](https://github.com/daipeihust/im-select) (`daipeihust/tap`) — input-method switcher for Vim
 - [`mole`](https://github.com/tw93/Mole) — Mac cleanup / optimization
