@@ -21,7 +21,6 @@ cask "discord"
 cask "ghostty"
 cask "graker"
 cask "grok-bot"
-cask "grok-build"  # Grok Build CLI
 cask "mimestream"
 cask "notion"
 cask "orbstack"

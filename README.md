@@ -19,7 +19,6 @@
 - [Dia](https://www.diabrowser.com/) (`thebrowsercompany-dia`) — browser by The Browser Company
 - Graker (`graker`)
 - Grok Bot (`grok-bot`)
-- [Grok Build](https://x.ai/cli) (`grok-build`) — terminal coding agent
 - Mimestream (`mimestream`)
 - [T3 Code Nightly](https://t3.codes/) (`t3-code@nightly`)
 - [Vibe Island](https://vibeisland.app/) — Dynamic Island AI agent utility
