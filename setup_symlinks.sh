@@ -23,34 +23,6 @@ fmt_title_underline() {
   echo -e "${BLUE}$(echo "$1" | sed 's/./=/g')${NC}"
 }
 
-setup_claude() {
-  fmt_title_underline "Claude Code (~/.claude/)"
-  mkdir -p ~/.claude
-  ln -sfn ~/dotfiles/.claude/CLAUDE.md ~/.claude/CLAUDE.md
-  log_info "~/.claude/CLAUDE.md -> ~/dotfiles/.claude/CLAUDE.md"
-  ln -sfn ~/dotfiles/.claude/keybindings.json ~/.claude/keybindings.json
-  log_info "~/.claude/keybindings.json -> ~/dotfiles/.claude/keybindings.json"
-  ln -sfn ~/dotfiles/.claude/settings.json ~/.claude/settings.json
-  log_info "~/.claude/settings.json -> ~/dotfiles/.claude/settings.json"
-  ln -sfn ~/dotfiles/.claude/rules ~/.claude/rules
-  log_info "~/.claude/rules -> ~/dotfiles/.claude/rules"
-  ln -sfn ~/dotfiles/.claude/statusline-command.sh ~/.claude/statusline-command.sh
-  log_info "~/.claude/statusline-command.sh -> ~/dotfiles/.claude/statusline-command.sh"
-  ln -sfn ~/dotfiles/.claude/bin ~/.claude/bin
-  log_info "~/.claude/bin -> ~/dotfiles/.claude/bin"
-}
-
-setup_codex() {
-  fmt_title_underline "Codex (~/.codex/)"
-  mkdir -p ~/.codex
-  ln -sfn ~/dotfiles/.codex/config.toml ~/.codex/config.toml
-  log_info "~/.codex/config.toml -> ~/dotfiles/.codex/config.toml"
-  ln -sfn ~/dotfiles/.codex/AGENTS.md ~/.codex/AGENTS.md
-  log_info "~/.codex/AGENTS.md -> ~/dotfiles/.codex/AGENTS.md"
-  ln -sfn ~/dotfiles/.codex/pstack-models.md ~/.codex/pstack-models.md
-  log_info "~/.codex/pstack-models.md -> ~/dotfiles/.codex/pstack-models.md"
-}
-
 setup_cursor() {
   fmt_title_underline "Cursor (~/.cursor/ and app)"
   mkdir -p ~/.cursor
@@ -79,8 +51,6 @@ setup_starship() {
 }
 
 setup_symlinks() {
-  setup_claude
-  setup_codex
   setup_cursor
   setup_ni
   setup_starship
