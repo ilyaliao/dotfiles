@@ -45,6 +45,8 @@ setup_codex() {
   mkdir -p ~/.codex
   ln -sfn ~/dotfiles/.codex/AGENTS.md ~/.codex/AGENTS.md
   log_info "~/.codex/AGENTS.md -> ~/dotfiles/.codex/AGENTS.md"
+  ln -sfn ~/dotfiles/.codex/hooks.json ~/.codex/hooks.json
+  log_info "~/.codex/hooks.json -> ~/dotfiles/.codex/hooks.json"
   ln -sfn ~/dotfiles/.codex/pstack-models.md ~/.codex/pstack-models.md
   log_info "~/.codex/pstack-models.md -> ~/dotfiles/.codex/pstack-models.md"
   if [[ -e ~/.codex/config.toml && ! -L ~/.codex/config.toml ]]; then
