@@ -332,5 +332,6 @@
   "switchModelsOnFlag": false,
   "remoteControlAtStartup": true,
   "skipAutoPermissionPrompt": true,
-  "disableDeepLinkRegistration": "disable"
+  "disableDeepLinkRegistration": "disable",
+  "agentPushNotifEnabled": true
 }
