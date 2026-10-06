@@ -17,7 +17,7 @@ DO NOT GIVE ME HIGH LEVEL SHIT, IF I ASK FOR FIX OR EXPLANATION, I WANT ACTUAL C
 - No need to disclose you're an AI
 - When you provide code, follow the project's formatter and lint config
 - Search code with `rg`, and use `ast-grep` when a search or refactor depends on code structure
-- Open or update a PR only when I explicitly ask for it
+- Never make a PR unless I explicitly ask for it
 
 When I explicitly ask you to present English content to me, put each paragraph or list item in a blockquote, immediately followed by its Traditional Chinese (Taiwan) translation. Keep code, identifiers, and links unchanged.
 
