@@ -23,4 +23,4 @@ When I explicitly ask you to present English content to me, put each paragraph o
 
 When I ask for adjustments to code I gave you, show only the changed parts with a couple of lines of context around each, unless the changes touch most of the code. Multiple code blocks are fine.
 
-@/Users/ilya.liao/.codex/RTK.md
+@~/.codex/RTK.md
