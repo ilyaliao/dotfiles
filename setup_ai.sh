@@ -28,6 +28,7 @@ setup_claude() {
   mkdir -p ~/.claude
   ln -sfn ~/dotfiles/.claude/CLAUDE.md ~/.claude/CLAUDE.md
   log_info "~/.claude/CLAUDE.md -> ~/dotfiles/.claude/CLAUDE.md"
+  mkdir -p ~/dotfiles/.claude/rules
   ln -sfn ~/dotfiles/.claude/rules ~/.claude/rules
   log_info "~/.claude/rules -> ~/dotfiles/.claude/rules"
   ln -sfn ~/dotfiles/.claude/keybindings.json ~/.claude/keybindings.json
@@ -47,8 +48,6 @@ setup_codex() {
   log_info "~/.codex/AGENTS.md -> ~/dotfiles/.codex/AGENTS.md"
   ln -sfn ~/dotfiles/.codex/hooks.json ~/.codex/hooks.json
   log_info "~/.codex/hooks.json -> ~/dotfiles/.codex/hooks.json"
-  ln -sfn ~/dotfiles/.codex/pstack-models.md ~/.codex/pstack-models.md
-  log_info "~/.codex/pstack-models.md -> ~/dotfiles/.codex/pstack-models.md"
   if [[ -e ~/.codex/config.toml && ! -L ~/.codex/config.toml ]]; then
     log_info "~/.codex/config.toml is a local file, left in place"
   else
