@@ -101,6 +101,11 @@
   },
   "disableClaudeAiConnectors": true,
   "disableBundledSkills": true,
+  "modelSettings": {
+    "claude-haiku-5-5": {
+      "autoCompactWindow": 100000
+    }
+  },
   "hooks": {
     "Notification": [
       {
