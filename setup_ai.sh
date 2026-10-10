@@ -112,20 +112,19 @@ setup_skills() {
     return
   fi
 
-  install_skill_pkg antfu/skills -s antfu -s nitro -s nuxt -s pinia -s pnpm -s slidev -s tsdown -s turborepo -s unocss -s vite -s vitepress -s vitest -s vue -s vue-router-best-practices -s vue-testing-best-practices -s vueuse-functions -s web-design-guidelines
-  install_skill_pkg antfu/design -s antfu-design
+  install_skill_pkg antfu/skills -s antfu -s antfu-create-pr -s nitro -s nuxt -s pinia -s pnpm -s unocss -s vite -s vitepress -s vitest -s vue
+  install_skill_pkg slidevjs/slidev -s slidev
+  install_skill_pkg rolldown/tsdown -s tsdown -s tsdown-migrate
+  install_skill_pkg vercel/turborepo -s turborepo
+  install_skill_pkg vueuse/vueuse -s vueuse-functions
+  install_skill_pkg vercel-labs/agent-skills -s web-design-guidelines
   install_skill_pkg git@github.com:posva/vue-rulekit.git -s pinia-colada
   install_skill_pkg zeke/faster-gh-cli-skill -s faster-gh-cli-skill
-  install_skill_pkg ast-grep/agent-skill -s ast-grep -s ast-grep-outline
+  install_skill_pkg ast-grep/agent-skill -s ast-grep-outline
   install_skill_pkg vercel-labs/agent-browser -s agent-browser
-  install_skill_pkg vuejs-ai/skills -s vue-debug-guides -s vue-pinia-best-practices
+  install_skill_pkg vuejs-ai/skills -s vue-router-best-practices -s vue-testing-best-practices -s vue-debug-guides -s vue-pinia-best-practices
   install_skill_pkg cursor/plugins -s deslop
-  install_skill_pkg cloudflare/security-audit-skill -s security-audit
-  install_skill_pkg anthropics/claude-plugins-community -s eli5
-  install_skill_pkg humanlayer/skills -s show-me
   install_skill_pkg yusukebe/ax -s ax
-  install_skill_pkg mattpocock/skills -s pr
-  install_skill_pkg moeru-ai/upload-github-attachment-skill -s upload-github-attachment
   rm -f ~/skills-lock.json
 }
 
