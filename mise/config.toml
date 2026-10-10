@@ -1,17 +1,22 @@
 [tools]
-node = "lts"
-python = "3.12.13"
+node = { version = "24", auto_update = false }
+python = { version = "3.12", auto_update = true }
 
-ast-grep = "0.45.0"
-bat = "0.26.1"
-eza = "0.23.4"
-fd = "10.4.2"
-fzf = "0.72.0"
-gh = "2.92.0"
-ni = "30.1.0"
-"npm:agent-browser" = "0.37.1"
-"github:yusukebe/ax" = "0.1.25"
-starship = "1.25.1"
+ast-grep = { version = "latest", auto_update = true }
+bat = { version = "latest", auto_update = true }
+bun = { version = "latest", auto_update = true }
+eza = { version = "latest", auto_update = true }
+fd = { version = "latest", auto_update = true }
+fzf = { version = "latest", auto_update = true }
+gh = { version = "latest", auto_update = true }
+ni = { version = "latest", auto_update = true }
+"npm:agent-browser" = { version = "latest", auto_update = true }
+"github:yusukebe/ax" = { version = "latest", auto_update = true }
+starship = { version = "latest", auto_update = true }
+pnpm = "latest"
 
 [settings]
 experimental = true
+
+[bootstrap.services.mise-tool-update]
+builtin = "tool-update"
