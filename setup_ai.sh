@@ -57,5 +57,15 @@ setup_codex() {
   fi
 }
 
+setup_other_agents() {
+  fmt_title_underline "Other agents (AGENTS.md copies)"
+  for target in ~/.config/devin/AGENTS.md ~/.factory/AGENTS.md ~/.config/opencode/AGENTS.md; do
+    mkdir -p "$(dirname "$target")"
+    grep -v '^@' ~/dotfiles/.codex/AGENTS.md > "$target"
+    log_info "synced ~/dotfiles/.codex/AGENTS.md -> $target (@ includes stripped)"
+  done
+}
+
 setup_claude
 setup_codex
+setup_other_agents
