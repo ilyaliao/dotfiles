@@ -37,9 +37,6 @@ setup_macos() {
   log_info "Finder: show all filename extensions"
   defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-  log_info "show hidden files by default"
-  defaults write com.apple.Finder AppleShowAllFiles -bool false
-
   log_info "only use UTF-8 in Terminal.app"
   defaults write com.apple.terminal StringEncodings -array 4
 
@@ -88,8 +85,12 @@ setup_macos() {
   log_info "Enable tap to click (Trackpad)"
   defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 
-  log_info "Set Caps Lock delay to 0 (instant)"
-  hidutil property --set '{"CapsLockDelayOverride":0}'
+  if pgrep -x Supercharge >/dev/null 2>&1; then
+    log_warning "Supercharge is running; skipped settings restore (quit it and re-run to apply)"
+  elif [ -f ~/dotfiles/supercharge/Supercharge.app-settings ]; then
+    log_info "Restore Supercharge settings"
+    defaults import com.sindresorhus.Supercharge ~/dotfiles/supercharge/Supercharge.app-settings
+  fi
 
   log_info "Killing affected applications"
   for app in Safari Finder Dock Mail SystemUIServer; do killall "$app" >/dev/null 2>&1; done
