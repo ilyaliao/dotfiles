@@ -57,15 +57,30 @@ setup_codex() {
   fi
 }
 
-setup_other_agents() {
-  fmt_title_underline "Other agents (AGENTS.md copies)"
-  for target in ~/.config/devin/AGENTS.md ~/.factory/AGENTS.md ~/.config/opencode/AGENTS.md; do
-    mkdir -p "$(dirname "$target")"
-    grep -v '^@' ~/dotfiles/.codex/AGENTS.md > "$target"
-    log_info "synced ~/dotfiles/.codex/AGENTS.md -> $target (@ includes stripped)"
-  done
+sync_agents_md() {
+  local target="$1"
+  mkdir -p "$(dirname "$target")"
+  grep -v '^@' ~/dotfiles/.codex/AGENTS.md > "$target"
+  log_info "synced ~/dotfiles/.codex/AGENTS.md -> $target (@ includes stripped)"
+}
+
+setup_devin() {
+  fmt_title_underline "Devin (~/.config/devin/)"
+  sync_agents_md ~/.config/devin/AGENTS.md
+}
+
+setup_droid() {
+  fmt_title_underline "Factory Droid (~/.factory/)"
+  sync_agents_md ~/.factory/AGENTS.md
+}
+
+setup_opencode() {
+  fmt_title_underline "OpenCode (~/.config/opencode/)"
+  sync_agents_md ~/.config/opencode/AGENTS.md
 }
 
 setup_claude
 setup_codex
-setup_other_agents
+setup_devin
+setup_droid
+setup_opencode
