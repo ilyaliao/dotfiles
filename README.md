@@ -53,23 +53,25 @@
 
 ### Runtimes
 
-- [Node.js](https://nodejs.org) (LTS)
+- [Node.js](https://nodejs.org) 24 (pinned)
 - [Python](https://www.python.org) 3.12
 
 ### CLI tools
 
 - [ast-grep](https://ast-grep.github.io) — structural code search & rewrite
 - [bat](https://github.com/sharkdp/bat) — cat with syntax highlighting
+- [Bun](https://bun.com) — JS runtime & toolkit
 - [eza](https://eza.rocks) — modern `ls`
 - [fd](https://github.com/sharkdp/fd) — friendlier `find`
 - [fzf](https://github.com/junegunn/fzf) — fuzzy finder
 - [gh](https://cli.github.com) — GitHub CLI
 - [ni](https://github.com/antfu/ni) — universal `npm` / `pnpm` / `yarn` / `bun` runner
+- [pnpm](https://pnpm.io) — package manager; also hosts the global JS tools below
 - [`agent-browser`](https://agent-browser.dev/) — browser automation CLI for AI agents
 - [`ax`](https://github.com/yusukebe/ax) — fetch, discover & extract structured data from web pages for AI agents
 - [Starship](https://starship.rs) — prompt
 
-## npm
+## pnpm (global)
 
 - [`@vscode/vsce`](https://github.com/microsoft/vscode-vsce) — VS Code extension packaging
 - [`degit`](https://github.com/Rich-Harris/degit)
