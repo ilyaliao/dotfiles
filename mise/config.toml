@@ -9,9 +9,11 @@ eza = { version = "latest", auto_update = true }
 fd = { version = "latest", auto_update = true }
 fzf = { version = "latest", auto_update = true }
 gh = { version = "latest", auto_update = true }
+mole = { version = "latest", auto_update = true }
 ni = { version = "latest", auto_update = true }
 "npm:agent-browser" = { version = "latest", auto_update = true }
 "github:yusukebe/ax" = { version = "latest", auto_update = true }
+rtk = { version = "latest", auto_update = true }
 starship = { version = "latest", auto_update = true }
 pnpm = "latest"
 
