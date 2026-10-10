@@ -39,7 +39,7 @@
 ### Apps managed outside Homebrew
 
 - App Store or TestFlight receipts: Googly Eyes, Lettera, Numbers, Keynote, Pages, and TestFlight.
-- Supercharge: no Homebrew installation record or matching cask in the catalog checked on 2026-09-19; use the vendor installer.
+- Supercharge: no Homebrew installation record or matching cask in the catalog checked on 2026-09-19; use the vendor installer. Settings are backed up at `supercharge/Supercharge.app-settings`; restore while the app is closed via `defaults import com.sindresorhus.Supercharge <file>` or by opening the file.
 - Xcode beta: managed separately from Homebrew.
 - Safari: managed by macOS.
 
