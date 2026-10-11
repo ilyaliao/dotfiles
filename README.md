@@ -4,6 +4,7 @@
 
 - [`zsh`](https://www.zsh.org)
 - [`mise`](https://mise.jdx.dev)
+- [`vite-plus`](https://viteplus.dev)
 - [`tokens`](https://tokens.ci) (`owo-network/brew`)
 - [`im-select`](https://github.com/daipeihust/im-select) (`daipeihust/tap`)
 
@@ -81,34 +82,29 @@
 
 ### Runtimes
 
-- [Node.js](https://nodejs.org) 24 (pinned)
 - [Python](https://www.python.org) 3.12
 
 ### CLI tools
 
 - [ast-grep](https://ast-grep.github.io)
 - [bat](https://github.com/sharkdp/bat)
-- [Bun](https://bun.com)
 - [eza](https://eza.rocks)
 - [fd](https://github.com/sharkdp/fd)
 - [fzf](https://github.com/junegunn/fzf)
 - [gh](https://cli.github.com)
 - [mole](https://github.com/tw93/Mole)
-- [ni](https://github.com/antfu/ni)
-- [pnpm](https://pnpm.io)
 - [`agent-browser`](https://agent-browser.dev)
 - [`ax`](https://ax.yusuke.run)
 - [`rtk`](https://www.rtk-ai.app)
 - [Starship](https://starship.rs)
 
-## pnpm (global)
+## Vite+ (global)
 
 - [`@vscode/vsce`](https://github.com/microsoft/vscode-vsce)
 - [`degit`](https://github.com/Rich-Harris/degit)
 - [`esno`](https://github.com/esbuild-kit/esno)
 - [`pnpm-patch-i`](https://github.com/antfu/pnpm-patch-i)
 - [`rimraf`](https://github.com/isaacs/rimraf)
-- [`sfw`](https://github.com/SocketDev/sfw-installer)
 - [`taze`](https://github.com/antfu/taze)
 - [`typescript`](https://www.typescriptlang.org)
 

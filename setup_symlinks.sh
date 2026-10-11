@@ -37,12 +37,6 @@ setup_cursor() {
   log_info "Cursor/User/keybindings.json -> ~/dotfiles/.vscode/keybindings.json"
 }
 
-setup_ni() {
-  fmt_title_underline "ni (~/.nirc)"
-  ln -sfn ~/dotfiles/nirc ~/.nirc
-  log_info "~/.nirc -> ~/dotfiles/nirc"
-}
-
 setup_starship() {
   fmt_title_underline "Starship (~/.config/starship.toml)"
   mkdir -p ~/.config
@@ -52,7 +46,6 @@ setup_starship() {
 
 setup_symlinks() {
   setup_cursor
-  setup_ni
   setup_starship
 }
 

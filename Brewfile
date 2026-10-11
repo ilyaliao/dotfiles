@@ -8,6 +8,7 @@ brew "zsh"
 
 # Development
 brew "mise"
+brew "vite-plus"                   # JavaScript runtimes, package managers and tooling
 brew "owo-network/brew/tokens"       # AI token-usage tracking / leaderboard
 
 # Utilities

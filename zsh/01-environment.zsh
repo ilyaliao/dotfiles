@@ -1,16 +1,7 @@
 # mise must activate before OMZ fzf/starship so binaries resolve via shims
 command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
 
-export NI_AUTO_INSTALL=true
 export PATH="$HOME/.local/bin:$PATH"
-
-# pnpm
-export PNPM_HOME="$HOME/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac
-# pnpm end
 
 export LAUNCH_EDITOR="cursor"
 

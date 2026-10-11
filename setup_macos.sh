@@ -115,10 +115,24 @@ setup_mise() {
   mise trust "$HOME/dotfiles/mise/config.toml" 2>/dev/null || true
 
   mise install
+}
 
-  if [ -f "$HOME/dotfiles/mise/default-npm-packages.txt" ]; then
-    log_info "Installing global npm packages..."
-    xargs -I {} npm install -g {} < "$HOME/dotfiles/mise/default-npm-packages.txt"
+setup_vp() {
+  fmt_title_underline "Setting up Vite+"
+
+  if ! command -v vp >/dev/null 2>&1; then
+    log_warning "vp not found — run 'brew bundle --file=~/dotfiles/Brewfile' first"
+    return 1
+  fi
+
+  vp env setup && vp env on || return 1
+  vp env default node@24 || return 1
+  vp env install node@24 || return 1
+  source "$HOME/.config/vite-plus/env" || return 1
+
+  if [ -f "$HOME/dotfiles/vp/global-packages.txt" ]; then
+    log_info "Installing Vite+ global packages..."
+    xargs -I {} vp install -g --node 24 {} < "$HOME/dotfiles/vp/global-packages.txt"
   fi
 }
 
@@ -148,4 +162,5 @@ setup_zinit() {
 # Run the setup functions
 setup_macos
 setup_zinit || exit 1
+setup_vp || exit 1
 setup_mise

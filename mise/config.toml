@@ -1,21 +1,17 @@
 [tools]
-node = { version = "24", auto_update = false }
 python = { version = "3.12", auto_update = false }
 
 ast-grep = { version = "latest", auto_update = true }
 bat = { version = "latest", auto_update = true }
-bun = { version = "latest", auto_update = true }
 eza = { version = "latest", auto_update = true }
 fd = { version = "latest", auto_update = true }
 fzf = { version = "latest", auto_update = true }
 gh = { version = "latest", auto_update = true }
 mole = { version = "latest", auto_update = true }
-ni = { version = "latest", auto_update = true }
 "npm:agent-browser" = { version = "latest", auto_update = true }
 "github:yusukebe/ax" = { version = "latest", auto_update = true }
 rtk = { version = "latest", auto_update = true }
 starship = { version = "latest", auto_update = true }
-pnpm = "latest"
 
 [settings]
 experimental = true
