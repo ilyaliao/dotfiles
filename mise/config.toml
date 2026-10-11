@@ -1,6 +1,6 @@
 [tools]
 node = { version = "24", auto_update = false }
-python = { version = "3.12", auto_update = true }
+python = { version = "3.12", auto_update = false }
 
 ast-grep = { version = "latest", auto_update = true }
 bat = { version = "latest", auto_update = true }
