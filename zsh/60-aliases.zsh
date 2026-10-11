@@ -4,11 +4,6 @@ alias ccc="claude -c"
 alias ccr="claude -r"
 alias ccd="claude --dangerously-skip-permissions"
 
-# Cursor Agent
-alias ca="agent"
-alias cac="agent --continue"
-alias car="agent --resume"
-
 # Node Package Manager — https://github.com/antfu/ni
 alias nio="ni --prefer-offline"
 alias s="nr start"
