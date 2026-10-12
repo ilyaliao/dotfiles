@@ -8,6 +8,9 @@
 [push]
 	default = simple
 
+[fetch]
+	prune = true
+
 [color]
 	status = auto
 	diff = auto
