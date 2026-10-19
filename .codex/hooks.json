@@ -1,128 +1,14 @@
 {
-  "hooks" : {
-    "PermissionRequest" : [
+  "hooks": {
+    "PreToolUse": [
       {
-        "hooks" : [
+        "hooks": [
           {
-            "command" : "~\/.vibe-island\/bin\/vibe-island-bridge --source codex",
-            "timeout" : 7200,
-            "type" : "command"
-          }
-        ]
-      }
-    ],
-    "PostCompact" : [
-      {
-        "hooks" : [
-          {
-            "command" : "~\/.vibe-island\/bin\/vibe-island-bridge --source codex",
-            "timeout" : 5,
-            "type" : "command"
+            "command": "rtk hook codex",
+            "type": "command"
           }
         ],
-        "matcher" : "manual|auto"
-      }
-    ],
-    "PostToolUse" : [
-      {
-        "hooks" : [
-          {
-            "command" : "~\/.vibe-island\/bin\/vibe-island-bridge --source codex",
-            "timeout" : 5,
-            "type" : "command"
-          }
-        ],
-        "matcher" : ""
-      }
-    ],
-    "PreCompact" : [
-      {
-        "hooks" : [
-          {
-            "command" : "~\/.vibe-island\/bin\/vibe-island-bridge --source codex",
-            "timeout" : 5,
-            "type" : "command"
-          }
-        ],
-        "matcher" : "manual|auto"
-      }
-    ],
-    "PreToolUse" : [
-      {
-        "hooks" : [
-          {
-            "command" : "rtk hook codex",
-            "type" : "command"
-          }
-        ],
-        "matcher" : "Bash"
-      }
-    ],
-    "SessionEnd" : [
-      {
-        "hooks" : [
-          {
-            "command" : "~\/.vibe-island\/bin\/vibe-island-bridge --source codex",
-            "timeout" : 3,
-            "type" : "command"
-          }
-        ]
-      }
-    ],
-    "SessionStart" : [
-      {
-        "hooks" : [
-          {
-            "command" : "~\/.vibe-island\/bin\/vibe-island-bridge --source codex",
-            "timeout" : 5,
-            "type" : "command"
-          }
-        ],
-        "matcher" : "startup|resume|clear"
-      }
-    ],
-    "Stop" : [
-      {
-        "hooks" : [
-          {
-            "command" : "~\/.vibe-island\/bin\/vibe-island-bridge --source codex",
-            "timeout" : 5,
-            "type" : "command"
-          }
-        ]
-      }
-    ],
-    "SubagentStart" : [
-      {
-        "hooks" : [
-          {
-            "command" : "~\/.vibe-island\/bin\/vibe-island-bridge --source codex",
-            "timeout" : 5,
-            "type" : "command"
-          }
-        ]
-      }
-    ],
-    "SubagentStop" : [
-      {
-        "hooks" : [
-          {
-            "command" : "~\/.vibe-island\/bin\/vibe-island-bridge --source codex",
-            "timeout" : 5,
-            "type" : "command"
-          }
-        ]
-      }
-    ],
-    "UserPromptSubmit" : [
-      {
-        "hooks" : [
-          {
-            "command" : "~\/.vibe-island\/bin\/vibe-island-bridge --source codex",
-            "timeout" : 5,
-            "type" : "command"
-          }
-        ]
+        "matcher": "Bash"
       }
     ]
   }
