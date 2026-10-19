@@ -190,7 +190,7 @@
 ## Claude Code plugins
 
 - [`context7`](https://github.com/upstash/context7) (context7-marketplace)
-- [`pstack`](https://github.com/michael-denyer/pstack-claude) (pstack-claude)
+- [`t3-pstack`](https://github.com/chhoumann/t3-pstack) (t3-pstack, T3 Code)
 - `cc-plugin-you-should-know` (builtin)
 - [`security-guidance`](https://claude.com/marketplace/plugins/security-guidance) (claude-plugins-official)
 - [`typescript-lsp`](https://claude.com/marketplace/plugins/typescript-lsp) (claude-plugins-official)
@@ -199,7 +199,7 @@
 
 - [Codex Security Cloud](https://chatgpt.com/plugins/codex-security)
 - [GitHub](https://chatgpt.com/plugins/github) (openai-curated-remote)
-- [`pstack`](https://github.com/michael-denyer/pstack-claude) (pstack-claude)
+- [`t3-pstack`](https://github.com/chhoumann/t3-pstack) (t3-pstack, T3 Code)
 
 ## Agent skills (via vercel-labs/skills)
 

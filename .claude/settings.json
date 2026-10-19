@@ -136,8 +136,8 @@
     "context7@context7-marketplace": true,
     "security-guidance@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
-    "pstack@pstack-claude": true,
-    "cc-plugin-you-should-know@builtin": true
+    "cc-plugin-you-should-know@builtin": true,
+    "t3-pstack@t3-pstack": true
   },
   "extraKnownMarketplaces": {
     "context7-marketplace": {
@@ -147,10 +147,10 @@
       },
       "autoUpdate": true
     },
-    "pstack-claude": {
+    "t3-pstack": {
       "source": {
         "source": "github",
-        "repo": "michael-denyer/pstack-claude"
+        "repo": "chhoumann/t3-pstack"
       },
       "autoUpdate": true
     }
